@@ -33,7 +33,6 @@ module.exports = {
     });
   },
   delete: function(req, res, next) {
-    // delete by Id
     pool.getConnection(function(err, connection) {
       let id = +req.query.id;
       connection.query($sql.delete, id, function(err, result) {
