@@ -1,0 +1,347 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*CUSTOM CSS*/
+/*User - userHeader*/
+.userHeader {
+  /* Box-model */
+  position: relative;
+  top: 60px;
+  height: 200px;
+  overflow: hidden;
+  background-color: rgba(220,204,187,0.7);
+}
+
+.userBanner {
+  position: absolute;
+  top: -300px;
+  width: 100%;
+  z-index: -1;
+}
+
+.userBanner img {
+  width: 100%;
+}
+
+.avatar {
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+  width: 100px;
+  clip-path: circle(50px at center)
+}
+
+.avatarName {
+  position: absolute;
+  left: 160px;
+  bottom: 70px;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 1px 1px #828282;
+}
+
+.avatarInfo {
+  position: absolute;
+  left: 160px;
+  bottom: 40px;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  text-shadow: 1px 1px #828282;
+}
+
+/*User & Notification - sideBar*/
+
+.sideBar {
+  /* Positioning */
+  position: relative;
+  top: 100px;
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*z-index: 100;*/
+
+  /* Box-model */
+  display: flex;
+  flex-direction: column;
+  width: 333px;
+  height: 242px;
+
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+
+  /* Visual */
+  background-color: #f2f2f2;
+}
+
+.sideBarTitle {
+  /* Box-model */
+  padding: 25px 30px; 
+
+  /* Typography */
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #828282;
+}
+
+.sideBarItem {
+  /* Box-model */
+  padding: 20px 30px; 
+
+  /* Typography */
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000;
+}
+
+.sideBarItem:hover {
+  background-color: #dcccbb;
+  cursor: pointer;
+}
+
+/*all lists*/
+
+.postedAnnisList,
+.userMemoriesList,
+.userMarksList {
+  position: relative;
+  top: 100px;
+}
+
+.userMemoriesList,
+.userMarksList {
+  display: none;
+}
+
+
+.postedAnnis {
+  position: relative;
+}
+
+.youPosted,
+.youMarked,
+.youLeftMemories {
+  position: absolute;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #828282;
+}
+
+.postedAnnisDate,
+.leftMemoriesDate {
+  position: absolute;
+  right: 0;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #828282;
+}
+
+.annisContent {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 160px;
+  background-color: #f2f2f2;
+}
+
+.annisImage {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 30px;
+  overflow: hidden;
+  width: 180px;
+  height: 100px;
+}
+
+.annisImage img {
+  position: absolute;
+  top: -30px;
+}
+
+.annisText {
+  position: absolute;
+  top: 30px;
+  left: 230px;
+  right: 10px;
+}
+
+.annisTitle {
+  /* Typography */
+  font-family: 'Prata', serif;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.annisDate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000;
+}
+
+.annisDescription {
+  position: absolute;
+  top: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000;
+}
+
+.markNumber {
+  position: absolute;
+  top: 80px;
+
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000;
+}
+
+/*user memories*/
+
+.youLeftMemories a {
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #c6a48f;
+  text-decoration: none;
+}
+
+.youLeftMemories a:hover {
+  /* Typography */
+  color: #dcccbb;
+}
+
+.userMemoriesContent {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 50px;
+  background-color: #f2f2f2;
+}
+
+.userMemoriesText {
+  padding: 15px 30px;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000;
+}
+
+.userMemoriesActions {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  height: 30px;
+}
+
+.userMemoriesReplies,
+.userMemoriesLikes {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.userMemoriesRepliesNumbers,
+.userMemoriesLikesNumbers {
+  text-align: center;
+  padding: 5px;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #000;
+}
+
+/*user marks*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
