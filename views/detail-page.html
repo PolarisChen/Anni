@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Detail page</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
   <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
+  <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="script-detail-page.js"></script>
+  <script>
+      var searchIcon = document.getElementById("navbar-search-icon");
+      var searchBar = document.getElementById("navbar-searchbar");
+
+      searchIcon.onclick = function buttonOnClick() {
+          searchBar.style.display = "inline-block"; };
+  </script>
 </head>
 <body>
 <header>
@@ -30,8 +37,8 @@
     <div class="navbar-right">
 
       <div class="account-photo">
-                    <span style="font-size: 35px; color: #bdbdbd; font-weight: normal">
-                    <i class="fas fa-circle"></i>
+        <!--<span style="font-size: 35px; color: #bdbdbd; font-weight: normal">-->
+          <!--<i class="fas fa-circle"></i>-->
       </div>
 
       <div class="navbar-button">
@@ -39,19 +46,18 @@
       </div>
 
       <div class="navbar-notification-icon">
-                    <span style="font-size: 20px; color: #bdbdbd; font-weight: normal">
-                        <i class="fas fa-bell"></i>
-                    </span>
+        <i class="fas fa-bell"></i>
       </div>
 
       <div id="navbar-searchbar">
-        <input type="text" name="searchbar" placeholder="Search">
+        <div class="navbar-search-input">
+          <input type="text" name="searchbar" placeholder="Search">
+        </div>
+
       </div>
 
       <div id="navbar-search-icon">
-                    <span style="font-size: 20px; color: #bdbdbd; font-weight: normal">
-                            <i class="fas fa-search"></i>
-                    </span>
+        <i class="fas fa-search"></i>
       </div>
     </div>
   </div>
@@ -65,7 +71,7 @@
       <img src="img/cover-front-top-triangle.svg" alt="">
     </div>
     <div class="cover-img-container">
-      <img src="img/samuel_morse_500px.jpg" alt="">
+      <img src="img/cover-samuel-morse.jpg" alt="">
 
     </div>
     <div class="cover-back-left-triangle">
@@ -95,12 +101,12 @@
       <div class="cover-button-container">
 
         <div class="button-container">
-          <div class="button-send-a-cake-icon">
+          <div class="button-mark-it-icon">
             <i class="fas fa-birthday-cake"></i>
           </div>
           <div class="button-text-container">
             <div class="button-send-a-cake">
-              <a href="#">Send a cake</a>
+              <a href="#">Mark it</a>
             </div>
             <div class="button-subtitle">
               <p>3987 people did</p>
@@ -110,39 +116,241 @@
             <img src="img/button-triangle.svg" alt="">
           </div>
         </div>
-        <div class="button-container">
-          <div class="button-send-a-cake-icon">
-            <i class="fas fa-bookmark"></i>
-          </div>
-          <div class="button-text-container">
-            <div class="button-mark-it">
-              <a href="#">Mark it</a>
-            </div>
-            <div class="button-subtitle">
-              <p>3987 people did</p>
-            </div>
-          </div>
-          <div class="button-triangle-2">
-            <img src="img/button-triangle.svg" alt="">
-          </div>
-        </div>
       </div>
 
     </div>
     <div class="cover-background"></div>
   </div>
+</section>
 
-  <div class="annis-detail-and-comment-container">
+<section class="detail-page-main-body">
+  <div class="anni-and-memo-container">
+    <div class="pure-g container">
+      <div class="pure-u-2-3">
+        <div class="anni-container">
+          <!--Basic info-->
+          <div class="content-container">
+            <div class="content-title">
+              <h1>BASIC INFO</h1>
+            </div>
+            <div class="basic-info-content">
+              <p>Samuel Finley Breese Morse, OIC (April 27, 1791 – April 2, 1872) was an American painter and inventor. After having established his reputation as a portrait painter, in his middle age Morse contributed to the invention of a single-wire telegraph system based on European telegraphs. He was a co-developer of the Morse code and helped to develop the commercial use of telegraphy.</p>
+            </div>
+          </div>
+          <!--Album-->
+          <div class="content-container">
+            <div class="content-title">
+              <h1>ALBUM</h1>
+            </div>
+            <div class="album-container">
+              <div class="album-column-left">
+                <div class="album-first-img-container">
+                  <!--<img src="img/album-img-samuel-morse-1.jpeg" alt="">-->
+                  <div class="first-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
+                </div>
+                <div class="album-img-container">
+                  <img src="img/album-img-samuel-morse-4.jpg" alt="">
+                </div>
+              </div>
+              <div class="album-column-right">
+                <div class="album-img-container">
+                  <img src="img/album-img-samuel-morse-2.jpg" alt="">
+                </div>
+                <div class="album-img-container">
+                  <img src="img/album-img-samuel-morse-3.jpg" alt="">
+                </div>
+                <div class="album-img-container">
+                  <img src="img/album-img-samuel-morse-5.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="see-more-container">
+            <div class="see-more-triangle">
+            </div>
+            <div class="see-more-text">
+              <p>See more</p>
+            </div>
+          </div>
 
+          <footer>
+            <p>2019 @ Copiright </p>
+          </footer>
+
+        </div>
+      </div>
+
+
+      <!--Memos-->
+
+      <div class="pure-u-1-3">
+        <div class="memo-container">
+          <div class="add-memo">
+            <div class="input-box">
+              <input type="text" placeholder="Add memos here...">
+
+              <div class="memo-send-icon">
+                  <i class="fas fa-paper-plane"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hot-memos">
+            <div class="memo-type">
+              <h2>Hot memos</h2>
+            </div>
+            <div class="memo-card">
+              <div class="memo-account-photo-container">
+                <div class="account-photo"></div>
+              </div>
+              <div class="memo-text-container">
+                <div class="user-name">
+                  <p>@</p><p>Nicky Dooche</p>
+                </div>
+                <div class="memo-time">
+                  <p>Apr 13, 2019</p>
+                </div>
+                <div class="memo-content">
+                  <p>Novelist and play writers really need to thank him for inventing a universal cipher that can be easily applied to any suspense stories (way more than needed)</p>
+                </div>
+                <div class="memo-like-and-comment">
+                  <div class="memo-like">
+                    <div class="memo-icon">
+                      <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>12</p>
+                    </div>
+                  </div>
+                  <div class="memo-comment">
+                    <div class="memo-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="memo-card">
+              <div class="memo-account-photo-container">
+                <div class="account-photo"></div>
+              </div>
+              <div class="memo-text-container">
+                <div class="user-name">
+                  <p>@</p><p>Amanda Shelly</p>
+                </div>
+                <div class="memo-time">
+                  <p>Apr 20, 2019</p>
+                </div>
+                <div class="memo-content">
+                  <p>Samuel Morse was a co-developer, who is the other guy then?</p>
+                </div>
+                <div class="memo-like-and-comment">
+                  <div class="memo-like">
+                    <div class="memo-icon">
+                      <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>10</p>
+                    </div>
+                  </div>
+                  <div class="memo-comment">
+                    <div class="memo-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="recent-memos">
+            <div class="memo-type">
+              <h2>Recent memos</h2>
+            </div>
+            <div class="memo-card">
+              <div class="memo-account-photo-container">
+                <div class="account-photo"></div>
+              </div>
+              <div class="memo-text-container">
+                <div class="user-name">
+                  <p>@</p><p>Tanni Mussani</p>
+                </div>
+                <div class="memo-time">
+                  <p>1 hr ago</p>
+                </div>
+                <div class="memo-content">
+                  <p>Somehow I thought he was British...</p>
+                </div>
+                <div class="memo-like-and-comment">
+                  <div class="memo-like">
+                    <div class="memo-icon">
+                      <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>0</p>
+                    </div>
+                  </div>
+                  <div class="memo-comment">
+                    <div class="memo-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="memo-card">
+              <div class="memo-account-photo-container">
+                <div class="account-photo"></div>
+              </div>
+              <div class="memo-text-container">
+                <div class="user-name">
+                  <p>@</p><p>Levin Cha</p>
+                </div>
+                <div class="memo-time">
+                  <p>1 hr ago</p>
+                </div>
+                <div class="memo-content">
+                  <p>Tried (may times) to learn Morse but failed everytime</p>
+                </div>
+                <div class="memo-like-and-comment">
+                  <div class="memo-like">
+                    <div class="memo-icon">
+                      <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>0</p>
+                    </div>
+                  </div>
+                  <div class="memo-comment">
+                    <div class="memo-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
   </div>
 </section>
-<script>
-    var searchIcon = document.getElementById("navbar-search-icon");
-    var searchBar = document.getElementById("navbar-searchbar");
-
-    searchIcon.onclick = function buttonOnClick() {
-        searchBar.style.display = "inline-block"; };
-</script>
 
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="182px" height="157px" viewBox="0 0 182 157" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-374.000000, -422.000000)" stroke="#DCCCBB" stroke-width="3">
+            <path d="M490.304022,437.731754 L549.630409,530.884589 C558.530704,544.859615 554.416823,563.403727 540.441797,572.304022 C535.626266,575.370897 530.035595,577 524.326387,577 L405.673613,577 C389.105071,577 375.673613,563.568542 375.673613,547 C375.673613,541.290792 377.302717,535.70012 380.369591,530.884589 L439.695978,437.731754 C448.596273,423.756729 467.140385,419.642847 481.115411,428.543143 C484.812813,430.897913 487.949252,434.034352 490.304022,437.731754 Z" id="Triangle"></path>
+        </g>
+    </g>
+</svg>
