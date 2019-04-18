@@ -45,7 +45,6 @@ module.exports = {
         }
       } else {
         const salt = bcrypt.genSaltSync();
-        console.log('salt', salt);
         password = bcrypt.hashSync(password, salt);
         const ret = await userDao.add(email, password);
         if (typeof ret === 'undefined') {
