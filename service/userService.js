@@ -31,5 +31,38 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+
+  signup: async (email, password) => {
+    try {
+      const user = await userDao.queryByEmail(email);
+      if (typeof user !== 'undefined') {
+        return {
+          success: 0,
+          msg: 'User exists',
+          data: {}
+        }
+      } else {
+        const ret = await userDao.add(email, password);
+        if (typeof ret === 'undefined') {
+          return {
+            success: 0,
+            msg: 'Signup failed',
+            data: {}
+          }
+        } else {
+          return {
+            success: 1,
+            msg: '',
+            data: {
+              userId: ret.insertId
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 };

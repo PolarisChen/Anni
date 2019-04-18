@@ -14,21 +14,6 @@ let $sql = require('./userSqlMapping');
 // };
 
 module.exports = {
-  // add: function(req, res, next) {
-  //   pool.getConnection(function(err, connection) {
-  //     let param = req.query || req.params;
-  //     connection.query($sql.insert, [param.name, param.age], function(err, result) {
-  //       if (result) {
-  //         result = {
-  //           code: 200,
-  //           msg: 'Add Succeeded'
-  //         };
-  //       }
-  //       jsonWrite(res, result);
-  //       connection.release();
-  //     });
-  //   });
-  // },
   // delete: function(req, res, next) {
   //   pool.getConnection(function(err, connection) {
   //     let id = +req.query.id;
@@ -85,6 +70,16 @@ module.exports = {
   //     });
   //   });
   // },
+  add: async (email, password) => {
+    try {
+      const ret = await pool.query($sql.insert, [email, password]);
+      console.log('add', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
   queryByEmail: async (email) => {
     try {
       const users = await pool.query($sql.queryByEmail, email);

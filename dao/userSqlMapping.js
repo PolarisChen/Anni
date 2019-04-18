@@ -1,6 +1,6 @@
 
 let user = {
-  insert:'INSERT INTO users(id, name) VALUES(0,?)',
+  insert:'INSERT INTO users(email, password) VALUES(?,?)',
   update:'UPDATE users set name=? where id=?',
   delete: 'DELETE FROM users WHERE id=?',
   queryById: 'SELECT * FROM users WHERE id=?',

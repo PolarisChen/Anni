@@ -11,11 +11,23 @@ router.get('/', function(req, res, next) {
 // Login
 router
   .get('/login', (req, res, next) => {
-    res.render('login', { title: 'Log in' });
+    res.render('login', { title: 'Log In' });
   })
   .post('/login', (req, res, next) => {
     console.log(req.body.email, req.body.password);
     userService.login(req.body.email, req.body.password).then((data)=>{
+      res.json(data);
+    });
+  });
+
+// Signup
+router
+  .get('/signup', (req, res, next) => {
+    res.render('signup', { title: 'Sign Up' });
+  })
+  .post('/signup', (req, res, next) => {
+    console.log(req.body.email, req.body.password);
+    userService.signup(req.body.email, req.body.password).then((data)=>{
       res.json(data);
     });
   });
