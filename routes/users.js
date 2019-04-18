@@ -1,11 +1,24 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 let userDao = require('../dao/userDao');
+let userService = require('../service/userService');
 
-/* GET users listing. */
+// Fetch user data with id
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
+// Login
+router
+  .get('/login', (req, res, next) => {
+    res.render('login', { title: 'Log in' });
+  })
+  .post('/login', (req, res, next) => {
+    console.log(req.body.email, req.body.password);
+    userService.login(req.body.email, req.body.password).then((data)=>{
+      res.json(data);
+    });
+  });
 
 router.get('/addUser', function(req, res, next) {
   userDao.add(req, res, next);
