@@ -7,7 +7,15 @@ const sessionChecker = require('../middleware/sessionChecker');
 // Fetch user data with id
 router.get('/', sessionChecker, (req, res, next) => {
   // TODO - Return user data
-  res.send('respond with a resource (logged in)');
+  userService.getUser(req.session.userId).then((ret)=>{
+    res.json(ret);
+  });
+});
+router.get('/:userId', (req, res, next) => {
+  // TODO - Return user data
+  userService.getUser(req.params.userId).then((ret)=>{
+    res.json(ret);
+  });
 });
 
 // Login
@@ -20,10 +28,8 @@ router
     }
   })
   .post('/login', (req, res, next) => {
-    console.log(req.body.email, req.body.password);
     userService.login(req.body.email, req.body.password).then((ret)=>{
       if (ret.success === 1) {
-        console.log('login success', ret.data.userId);
         req.session.userId = ret.data.userId;
       }
       res.json(ret);

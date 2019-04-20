@@ -2,6 +2,35 @@ const bcrypt = require('bcrypt');
 const userDao = require('../dao/UserDao');
 
 module.exports = {
+  getUser: async (id) => {
+    try {
+      const user = await userDao.queryById(id);
+      if (typeof user === 'undefined') {
+        return {
+          success: 0,
+          msg: 'User not exists',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            bio: user.bio,
+            avatar: user.avatar,
+            cover: user.cover
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
   login: async (email, password) => {
     try {
       const user = await userDao.queryByEmail(email);
