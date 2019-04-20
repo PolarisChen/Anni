@@ -6,6 +6,7 @@ const sessionChecker = require('../middleware/sessionChecker');
 
 // Fetch user data with id
 router.get('/', sessionChecker, (req, res, next) => {
+  // TODO - Return user data
   res.send('respond with a resource (logged in)');
 });
 
@@ -48,29 +49,11 @@ router
     });
   });
 
+// Logout
 router.get('/logout', sessionChecker, (req, res) => {
+  // TODO - Destroy session
   res.clearCookie('userId');
   res.redirect('/');
-});
-
-router.get('/addUser', function(req, res, next) {
-  userDao.add(req, res, next);
-});
-
-router.get('/queryAll', function(req, res, next) {
-  userDao.queryAll(req, res, next);
-});
-
-router.get('/query', function(req, res, next) {
-  userDao.queryById(req, res, next);
-});
-
-router.get('/deleteUser', function(req, res, next) {
-  userDao.delete(req, res, next);
-});
-
-router.post('/updateUser', function(req, res, next) {
-  userDao.update(req, res, next);
 });
 
 module.exports = router;
