@@ -51,9 +51,14 @@ router
 
 // Logout
 router.get('/logout', sessionChecker, (req, res) => {
-  // TODO - Destroy session
   res.clearCookie('userId');
-  res.redirect('/');
+  req.session.destroy((err) => {
+    if (err) {
+      return console.log(err);
+    } else {
+      return res.redirect('/');
+    }
+  });
 });
 
 module.exports = router;
