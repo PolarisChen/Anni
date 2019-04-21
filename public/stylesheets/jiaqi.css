@@ -1,86 +1,58 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 /*CUSTOM CSS*/
+.userContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
 /*User - userHeader*/
 .userHeader {
-  /* Box-model */
   position: relative;
-  top: 60px;
+  /* Box-model */
+  display: flex;
+  margin-top: 80px;
   height: 200px;
-  overflow: hidden;
-  background-color: rgba(220,204,187,0.7);
+  background-image: url("../images/user-banner.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.userBanner {
+.dummyHeader {
+  margin-top: 40px;
+}
+
+.headerOverlay {
   position: absolute;
-  top: -300px;
-  width: 100%;
-  z-index: -1;
-}
-
-.userBanner img {
-  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(220,204,187,.7);
 }
 
 .avatar {
-  position: absolute;
-  left: 30px;
-  bottom: 20px;
-  width: 100px;
-  clip-path: circle(50px at center)
+  display: inline-block;
+  flex-basis: 100px;
+  margin-top: 80px;
+  margin-left: 30px;
+  background-image: url("../images/avatar-1.jpeg");
+  background-size: cover;
+  background-position: center;
+  clip-path: circle(50px at center);
+}
+
+.avatarText {
+  position: relative;
+  /* Box-model */
+  display: inline-block;
+  float: right;
+  margin-top: 120px;
+  margin-left: 30px;
 }
 
 .avatarName {
-  position: absolute;
-  left: 160px;
-  bottom: 70px;
+  /* Box-model */
+  margin-bottom: 10px;
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
@@ -90,9 +62,6 @@ table {
 }
 
 .avatarInfo {
-  position: absolute;
-  left: 160px;
-  bottom: 40px;
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
@@ -104,19 +73,11 @@ table {
 /*User & Notification - sideBar*/
 
 .sideBar {
-  /* Positioning */
-  position: relative;
-  top: 100px;
-  /*right: 0;*/
-  /*bottom: 0;*/
-  /*left: 0;*/
-  /*z-index: 100;*/
-
   /* Box-model */
   display: flex;
   flex-direction: column;
-  width: 333px;
-  height: 242px;
+  width: 100%;
+  margin-top: 40px;
 
   /* Typography */
   font-family: 'Lato', sans-serif;
@@ -135,6 +96,15 @@ table {
   color: #828282;
 }
 
+.contentBoxTitle {
+  padding-bottom: 30px;
+  /* Typography */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #828282;
+}
+
 .sideBarItem {
   /* Box-model */
   padding: 20px 30px; 
@@ -143,10 +113,12 @@ table {
   font-weight: 300;
   font-size: 1rem;
   color: #000;
+
+  transition: 0.6s;
 }
 
 .sideBarItem:hover {
-  background-color: #dcccbb;
+  background-color: #c4c4c4;
   cursor: pointer;
 }
 
@@ -154,36 +126,68 @@ table {
 
 .postedAnnisList,
 .userMemoriesList,
-.userMarksList {
-  position: relative;
-  top: 100px;
+.userBookmarksList,
+.userLikesList,
+.repliesList,
+.likesList,
+.bookmarksList,
+.systemNotificationsList {
+  margin-left: 30px;
+  margin-top: 40px;
 }
 
 .userMemoriesList,
-.userMarksList {
+.userBookmarksList,
+.userLikesList {
   display: none;
 }
 
+.likesList,
+.bookmarksList,
+.systemNotificationsList {
+  display: none;
+}
 
-.postedAnnis {
-  position: relative;
+.lineBreak {
+  padding-bottom: 10px;
+}
+
+.lineBreak hr {
+  border-top: 1px solid #dcccbb;
 }
 
 .youPosted,
-.youMarked,
-.youLeftMemories {
-  position: absolute;
+.youBookmarked,
+.youLeftMemories,
+.youLiked,
+.fromUser,
+.repliedYou,
+.likedYou,
+.bookmarkedYou,
+.notificationText {
+  /* Box-model */
+  display: inline-block;
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 1rem;
   color: #828282;
+}
+
+.fromUser {
+  font-weight: 400;
+  color: #000;
 }
 
 .postedAnnisDate,
-.leftMemoriesDate {
-  position: absolute;
-  right: 0;
+.leftMemoriesDate,
+.repliedDate,
+.likedDate,
+.bookmarkedDate,
+.notificationDate {
+  /* Box-model */
+  display: inline-block;
+  float: right;
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -191,37 +195,35 @@ table {
   color: #828282;
 }
 
-.annisContent {
-  position: absolute;
-  top: 30px;
-  width: 100%;
-  height: 160px;
+.annisContent,
+.userMemoriesContent,
+.repliesContent,
+.likesContent,
+.bookmarksContent,
+.systemNotificationsContent {
+  padding: 10px 30px;
   background-color: #f2f2f2;
 }
 
 .annisImage {
-  position: absolute;
-  top: 30px;
-  bottom: 30px;
-  left: 30px;
-  overflow: hidden;
-  width: 180px;
   height: 100px;
+  background-image: url("../images/samuel-morse-500px.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.annisImage img {
-  position: absolute;
-  top: -30px;
+.annisText .like-bookmark-edit-container {
+  margin-right: 0;
+  margin-bottom: 5px;
 }
 
-.annisText {
-  position: absolute;
-  top: 30px;
-  left: 230px;
-  right: 10px;
+
+.annisTitle {
+  margin-right: 30px;
 }
 
 .annisTitle {
+  margin-left: 10px;
   /* Typography */
   font-family: 'Prata', serif;
   font-size: 1.2rem;
@@ -229,9 +231,9 @@ table {
 }
 
 .annisDate {
-  position: absolute;
-  top: 0;
-  right: 0;
+  /* Box-model */
+  margin-left: 10px;
+  margin-bottom: 10px;
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -240,8 +242,9 @@ table {
 }
 
 .annisDescription {
-  position: absolute;
-  top: 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -251,24 +254,14 @@ table {
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 1rem;
-  color: #000;
-}
-
-.markNumber {
-  position: absolute;
-  top: 80px;
-
-  /* Typography */
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #000;
 }
 
 /*user memories*/
 
-.youLeftMemories a {
+.youLeftMemories a,
+.repliedYou a {
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -277,21 +270,14 @@ table {
   text-decoration: none;
 }
 
-.youLeftMemories a:hover {
+.youLeftMemories a:hover,
+.repliedYou a:hover {
   /* Typography */
   color: #dcccbb;
 }
 
-.userMemoriesContent {
-  position: absolute;
-  top: 30px;
-  width: 100%;
-  height: 50px;
-  background-color: #f2f2f2;
-}
-
-.userMemoriesText {
-  padding: 15px 30px;
+.userMemoriesText,
+.repliesText {
   /* Typography */
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -299,49 +285,36 @@ table {
   color: #000;
 }
 
-.userMemoriesActions {
-  position: absolute;
-  top: 90px;
-  width: 100%;
-  height: 30px;
+.userMemoriesContent .memo-like-and-comment,
+.repliesContent .memo-like-and-comment {
+  display: block;
+  text-align: right;
+  float: none;
 }
 
-.userMemoriesReplies,
-.userMemoriesLikes {
-  height: 100%;
-  background-color: #f2f2f2;
+@media only screen and (max-width: 1024px) {
+  .avatar {
+    flex-basis: 80px;
+    clip-path: circle(40px at center);
+  }
+
+  .postedAnnisList,
+  .userMemoriesList,
+  .userBookmarksList,
+  .userLikesList,
+  .repliesList,
+  .likesList,
+  .bookmarksList,
+  .systemNotificationsList {
+    margin-left: 0;
+  }
+
+  .leftMemoriesDate,
+  .repliedDate,
+  .likedDate,
+  .bookmarkedDate,
+  .notificationDate {
+    display: block;
+    float: none;
+  }
 }
-
-.userMemoriesRepliesNumbers,
-.userMemoriesLikesNumbers {
-  text-align: center;
-  padding: 5px;
-  /* Typography */
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  color: #000;
-}
-
-/*user marks*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
