@@ -80,13 +80,17 @@ header {
   padding-left: 10px;
   padding-right: 10px;
   font-family: "Lato Light";
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   text-align: center;
 }
 
 .navbar-menu-item a {
   text-decoration: none;
+  color: #828282;
+}
+
+.navbar-menu-item a:hover {
   color: #000;
 }
 
@@ -687,7 +691,8 @@ header {
 .like-bookmark-edit-container {
   display: flex;
   float: right;
-  width: 150px;
+  margin-right: 60px;
+  width: 130px;
   height: 30px;
 }
 
