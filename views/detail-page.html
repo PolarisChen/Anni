@@ -8,20 +8,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="script-detail-page.js"></script>
-  <script>
-      var searchIcon = document.getElementById("navbar-search-icon");
-      var searchBar = document.getElementById("navbar-searchbar");
-
-      searchIcon.onclick = function buttonOnClick() {
-          searchBar.style.display = "inline-block"; };
-  </script>
 </head>
 <body>
 <header>
-
   <div class="navbar-container">
     <div class="navbar-left">
-      <div class="navbar-logo"></div>
+      <div class="navbar-logo">
+        <svg width="70px" height="52px" viewBox="0 0 70 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Desktop-HD" transform="translate(-193.000000, -169.000000)">
+              <g id="Group" transform="translate(187.000000, 165.000000)">
+                <path d="M43.7959227,20.5904128 L61.8993215,53.1765306 C63.7768138,56.5560168 62.5592072,60.8176398 59.1797211,62.6951321 C58.1398151,63.2728576 56.9698303,63.5760311 55.7802205,63.5760311 L19.573423,63.5760311 C15.7074297,63.5760311 12.573423,60.4420244 12.573423,56.5760311 C12.573423,55.3864214 12.8765965,54.2164366 13.4543221,53.1765306 L31.5577208,20.5904128 C33.4352131,17.2109267 37.6968362,15.9933201 41.0763223,17.8708124 C42.2190027,18.5056349 43.1611002,19.4477324 43.7959227,20.5904128 Z" id="Triangle-Copy" stroke="#C6A48F" transform="translate(37.676822, 36.576031) rotate(-200.000000) translate(-37.676822, -36.576031) "></path>
+                <text id="anni" font-family="Avenir-Light, Avenir" font-size="24" font-weight="300" fill="#C6A48F">
+                  <tspan x="33" y="36">anni</tspan>
+                </text>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
       <div class="navbar-menu">
         <div class="navbar-menu-item">
           <a href="#">Home</a>
@@ -53,12 +58,20 @@
         <div class="navbar-search-input">
           <input type="text" name="searchbar" placeholder="Search">
         </div>
-
       </div>
+
 
       <div id="navbar-search-icon">
         <i class="fas fa-search"></i>
       </div>
+
+      <script>
+          var searchIcon = document.getElementById("navbar-search-icon");
+          var searchBar = document.getElementById("navbar-searchbar");
+
+          searchIcon.onclick = function buttonOnClick() {
+              searchBar.style.display = "inline-block"; };
+      </script>
     </div>
   </div>
 </header>

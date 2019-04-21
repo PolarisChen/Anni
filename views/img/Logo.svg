@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="77px" height="59px" viewBox="0 0 77 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop HD</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-190.000000, -166.000000)">
+            <path d="M230.795923,185.590413 L248.899321,218.176531 C250.776814,221.556017 249.559207,225.81764 246.179721,227.695132 C245.139815,228.272858 243.96983,228.576031 242.780221,228.576031 L206.573423,228.576031 C202.70743,228.576031 199.573423,225.442024 199.573423,221.576031 C199.573423,220.386421 199.876596,219.216437 200.454322,218.176531 L218.557721,185.590413 C220.435213,182.210927 224.696836,180.99332 228.076322,182.870812 C229.219003,183.505635 230.1611,184.447732 230.795923,185.590413 Z" id="Triangle-Copy" stroke="#C6A48F" transform="translate(224.676822, 201.576031) rotate(-200.000000) translate(-224.676822, -201.576031) "></path>
+            <text id="anni" font-family="Avenir-Light, Avenir" font-size="24" font-weight="300" fill="#C6A48F">
+                <tspan x="220" y="201">anni</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

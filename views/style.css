@@ -53,18 +53,17 @@ header {
   position: relative;
   z-index: 1000;
   width: 60%;
-  height: 40px;
-  -webkit-align-items: center;
+  /*height: 40px;*/
   float: left;
 }
 
 .navbar-logo {
   z-index: 1000;
   float:left;
-  width: 65px;
-  height: 100%;
-  align-items: center;
-  background-color: aquamarine;
+}
+
+.navbar-logo svg {
+  transform: scale(.8);
 }
 
 .navbar-menu {
@@ -77,7 +76,7 @@ header {
 .navbar-menu-item {
   display: inline-block;
   margin:0;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
   font-family: "Lato Light";
@@ -123,7 +122,6 @@ header {
   z-index: 1000;
   float: right;
   display: inline-block;
-  /*margin-top: 12px;*/
   padding-right: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -993,6 +991,149 @@ header {
 
 .recent-memos {
   border-top: 1px solid #E5E5E5;
+}
+
+/*Log in and sign up page*/
+.sign-up-log-in-page-container {
+  display: flex;
+  height: 100vh;
+  font-family: Lato Light, Lato Regular;
+}
+.sign-up-img-container {
+  width: 50%;
+}
+
+.sign-up-log-in-img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.sign-up-log-in-page-content-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #fff;
+}
+.sign-up-log-in-page-title {
+  font-weight: 200;
+  font-size: 24px;
+  color:#000;
+  text-align: center;
+}
+
+.sign-up-log-in-page-logo {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.sign-up-log-in-page-logo svg {
+  margin-left: -10px;
+}
+
+.sign-up-input-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  width: 333px;
+}
+
+.sign-up-input {
+  margin-top: 50px;
+  border-bottom: 1px solid #C4C4C4;
+
+}
+
+.sign-up-input input {
+  font-size: .8em;
+  font-weight: 200;
+  color: #C4C4C4;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.sign-up-log-in-page-button-container {
+  padding-top: 80px;
+
+}
+
+.sign-up-log-in-page-button {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background: #DCCCBB;
+  border-radius: 10px;
+  width: 200px;
+  height: 22px;
+  text-align: center;
+}
+
+.sign-up-log-in-page-button a {
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sign-up-log-in-page-button:hover {
+  background: #C6A48F;
+  transition: all .2s ease-in-out;
+}
+
+
+.have-an-account {
+  margin-top: 30px;
+  color: #828282;
+  font-size: .8em;
+  text-align: center;
+}
+
+.have-an-account a {
+  color: #C6A48F;
+  text-decoration: none;
+}
+
+.have-an-account a:hover {
+  text-decoration: underline;
+}
+
+.remember-me-forget-password-container {
+  margin-top: 20px;
+}
+
+.remember-me {
+  display: inline-block;
+  float: left;
+  color: #828282;
+  font-size: .8em;
+}
+
+.remember-me span {
+  padding-left: 10px;
+}
+
+.forget-password {
+  display: inline-block;
+  float: right;
+
+}
+
+.forget-password a {
+  font-size: .8em;
+  color: #C6A48F;
+  text-decoration: none;
+}
+
+.forget-password a:hover {
+  text-decoration: underline;
 }
 
 
