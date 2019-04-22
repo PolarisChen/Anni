@@ -88,5 +88,14 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+  queryById: async (id) => {
+    try {
+      const users = await pool.query($sql.queryById, +id);
+      return users[0];
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
   }
 };

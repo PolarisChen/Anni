@@ -6,7 +6,16 @@ const sessionChecker = require('../middleware/sessionChecker');
 
 // Fetch user data with id
 router.get('/', sessionChecker, (req, res, next) => {
-  res.send('respond with a resource (logged in)');
+  // TODO - Return user data
+  userService.getUser(req.session.userId).then((ret)=>{
+    res.json(ret);
+  });
+});
+router.get('/:userId', (req, res, next) => {
+  // TODO - Return user data
+  userService.getUser(req.params.userId).then((ret)=>{
+    res.json(ret);
+  });
 });
 
 // Login
@@ -19,10 +28,8 @@ router
     }
   })
   .post('/login', (req, res, next) => {
-    console.log(req.body.email, req.body.password);
     userService.login(req.body.email, req.body.password).then((ret)=>{
       if (ret.success === 1) {
-        console.log('login success', ret.data.userId);
         req.session.userId = ret.data.userId;
       }
       res.json(ret);
@@ -48,29 +55,16 @@ router
     });
   });
 
+// Logout
 router.get('/logout', sessionChecker, (req, res) => {
   res.clearCookie('userId');
-  res.redirect('/');
-});
-
-router.get('/addUser', function(req, res, next) {
-  userDao.add(req, res, next);
-});
-
-router.get('/queryAll', function(req, res, next) {
-  userDao.queryAll(req, res, next);
-});
-
-router.get('/query', function(req, res, next) {
-  userDao.queryById(req, res, next);
-});
-
-router.get('/deleteUser', function(req, res, next) {
-  userDao.delete(req, res, next);
-});
-
-router.post('/updateUser', function(req, res, next) {
-  userDao.update(req, res, next);
+  req.session.destroy((err) => {
+    if (err) {
+      return console.log(err);
+    } else {
+      return res.redirect('/');
+    }
+  });
 });
 
 module.exports = router;
