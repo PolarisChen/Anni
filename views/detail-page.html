@@ -448,7 +448,7 @@
                   $(document).ready(function(){
                       $(".memo-reply-container").hide();
                       $(".memo-comment .memo-icon i").click(function(){
-                          $(".memo-reply-container").toggle();
+                          $(this).closest(".memo-card").find(".memo-reply-container").toggle();
                       });
                   });
 
