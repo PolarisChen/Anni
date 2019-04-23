@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Detail page</title>
-  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
   <link rel="stylesheet" href="style.css">
@@ -13,23 +15,21 @@
 <body>
   <header>
     <div class="navbar-container">
-      <div class="navbar-left">
-        <!--<div class="mobile-hamburger-menu">-->
-          <div id="hamburger-menu-icon">
-            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="20" height="2" rx="1" fill="#C6A48F"/>
-              <rect y="14" width="20" height="2" rx="1" fill="#C6A48F"/>
-              <rect y="7" width="15" height="2" rx="1" fill="#C6A48F"/>
-            </svg>
-          </div>
-
-
-        <!--</div>-->
+      <div class="mobile-menu-search-container">
+        <div id="hamburger-menu-icon">
+          <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="20" height="2" rx="1" fill="#C6A48F"/>
+            <rect y="14" width="20" height="2" rx="1" fill="#C6A48F"/>
+            <rect y="7" width="15" height="2" rx="1" fill="#C6A48F"/>
+          </svg>
+        </div>
 
 
         <div class="mobile-search-icon">
           <i class="fas fa-search"></i>
         </div>
+      </div>
+      <div class="navbar-left">
 
         <div class="navbar-logo">
           <svg width="70px" height="52px" viewBox="0 0 70 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -55,6 +55,23 @@
           <div class="navbar-menu-item">
             <a href="#">About</a>
           </div>
+        </div>
+      </div>
+
+      <div class="navbar-middle">
+        <div class="navbar-logo">
+          <svg width="70px" height="52px" viewBox="0 0 70 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Desktop-HD" transform="translate(-193.000000, -169.000000)">
+                <g id="Group" transform="translate(187.000000, 165.000000)">
+                  <path d="M43.7959227,20.5904128 L61.8993215,53.1765306 C63.7768138,56.5560168 62.5592072,60.8176398 59.1797211,62.6951321 C58.1398151,63.2728576 56.9698303,63.5760311 55.7802205,63.5760311 L19.573423,63.5760311 C15.7074297,63.5760311 12.573423,60.4420244 12.573423,56.5760311 C12.573423,55.3864214 12.8765965,54.2164366 13.4543221,53.1765306 L31.5577208,20.5904128 C33.4352131,17.2109267 37.6968362,15.9933201 41.0763223,17.8708124 C42.2190027,18.5056349 43.1611002,19.4477324 43.7959227,20.5904128 Z" id="Triangle-Copy" stroke="#C6A48F" transform="translate(37.676822, 36.576031) rotate(-200.000000) translate(-37.676822, -36.576031) "></path>
+                  <text id="anni" font-family="Avenir-Light, Avenir" font-size="24" font-weight="300" fill="#C6A48F">
+                    <tspan x="33" y="36">anni</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
 
@@ -94,12 +111,21 @@
         </div>
 
         <script>
-            var searchIcon = document.getElementById("navbar-search-icon");
-            var searchBar = document.getElementById("navbar-searchbar");
-
-            searchIcon.onclick = function buttonOnClick() {
-                searchBar.style.display = "inline-block"; };
+            $(document).ready(function(){
+                $("#navbar-searchbar").hide();
+                $("#navbar-search-icon").click(function(){
+                    $("#navbar-searchbar").toggle();
+                });
+            });
         </script>
+
+        <!--<script>-->
+            <!--var searchIcon = document.getElementById("navbar-search-icon");-->
+            <!--var searchBar = document.getElementById("navbar-searchbar");-->
+
+            <!--searchIcon.onclick = function buttonOnClick() {-->
+                <!--searchBar.style.display = "inline-block"; };-->
+        <!--</script>-->
       </div>
     </div>
 
@@ -116,12 +142,37 @@
     </div>
 
     <script>
-        var hamburgerIcon = document.getElementById("hamburger-menu-icon");
-        var mobileMenu = document.getElementById("mobile-menu");
-
-        hamburgerIcon.onclick = function buttonOnClick() {
-            mobileMenu.style.display = "flex"; };
+        $(document).ready(function(){
+            $ ("#mobile-menu").hide();
+            $("#hamburger-menu-icon").click(function(){
+                $("#mobile-menu").toggle();
+            });
+        });
     </script>
+
+    <div id="mobile-searchbar">
+      <!--<div class="mobile-search-input">-->
+        <input type="text" name="searchbar" placeholder="Search">
+      </div>
+    <!--</div>-->
+
+    <script>
+        $(document).ready(function(){
+            $ ("#mobile-searchbar").hide();
+            $(".mobile-search-icon").click(function(){
+                $("#mobile-searchbar").toggle();
+            });
+        });
+    </script>
+
+
+    <!--<script>-->
+        <!--var hamburgerIcon = document.getElementById("hamburger-menu-icon");-->
+        <!--var mobileMenu = document.getElementById("mobile-menu");-->
+
+        <!--hamburgerIcon.onclick = function buttonOnClick() {-->
+            <!--mobileMenu.style.display = "flex"; };-->
+    <!--</script>-->
 
   </header>
 
@@ -258,9 +309,11 @@
               </div>
             </div>
 
-            <footer>
-              <p>2019 @ Copiright </p>
-            </footer>
+            <div class="web-footer">
+              <footer>
+                <p>2019 @ Copiright </p>
+              </footer>
+            </div>
 
           </div>
         </div>
@@ -281,79 +334,127 @@
               </div>
             </div>
 
+            <script>
+
+            </script>
+
             <div class="hot-memos">
               <div class="memo-type">
                 <h2>Hot memos</h2>
               </div>
-              <div class="memo-card">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo"></div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p>Nicky Dooche</p>
-                  </div>
-                  <div class="memo-time">
-                    <p>Apr 13, 2019</p>
-                  </div>
-                  <div class="memo-content">
-                    <p>Novelist and play writers really need to thank him for inventing a universal cipher that can be easily applied to any suspense stories (way more than needed)</p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>12</p>
-                      </div>
-                    </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>3</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div class="memo-card">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo"></div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p>Amanda Shelly</p>
+                <div class="memo-original">
+                  <div class="memo-account-photo-container">
+                    <div class="account-photo"></div>
                   </div>
-                  <div class="memo-time">
-                    <p>Apr 20, 2019</p>
-                  </div>
-                  <div class="memo-content">
-                    <p>Samuel Morse was a co-developer, who is the other guy then?</p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
+                  <div class="memo-text-container">
+                    <div class="user-name">
+                      <p>@</p><p>Amanda Shelly</p>
+                    </div>
+                    <div class="memo-time">
+                      <p>Apr 20, 2019</p>
+                    </div>
+                    <div class="memo-content">
+                      <p>Samuel Morse was a co-developer, who is the other guy then?</p>
+                    </div>
+                    <div class="memo-like-and-comment">
+                      <div class="memo-like">
+                        <div class="memo-icon">
+                          <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="memo-stat">
+                          <p>10</p>
+                        </div>
                       </div>
-                      <div class="memo-stat">
-                        <p>10</p>
+                      <div class="memo-comment">
+                        <div class="memo-icon">
+                          <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="memo-stat">
+                          <p>3</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
+                  </div>
+                </div>
+                <div class="memo-reply-container">
+                  <div class="reply-input-container">
+                    <div class="input-box">
+                      <input type="text" placeholder="Reply here...">
+                      <div class="memo-send-icon">
+                        <i class="fas fa-paper-plane"></i>
                       </div>
-                      <div class="memo-stat">
-                        <p>3</p>
+                    </div>
+                  </div>
+                  <div class="memo-reply">
+                    <div class="memo-account-photo-container">
+                      <div class="account-photo"></div>
+                    </div>
+                    <div class="memo-text-container">
+                      <div class="user-name">
+                        <p>@</p><p>Larry Glashya</p>
+                      </div>
+                      <div class="memo-time">
+                        <p>Apr 13, 2019</p>
+                      </div>
+                      <div class="memo-content">
+                        <p>Reply <p>@</p><p style="color: #C6A48F">Nicky Dooche</p><p>: </p></p><p>Totally agree</p>
+                      </div>
+                      <div class="memo-like-and-comment">
+                        <div class="memo-like">
+                          <div class="memo-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </div>
+                          <div class="memo-stat">
+                            <p>1</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="memo-reply">
+                    <div class="memo-account-photo-container">
+                      <div class="account-photo"></div>
+                    </div>
+                    <div class="memo-text-container">
+                      <div class="user-name">
+                        <p>@</p><p>Hannah Rochester</p>
+                      </div>
+                      <div class="memo-time">
+                        <p>Apr 13, 2019</p>
+                      </div>
+                      <div class="memo-content">
+                        <p>Reply <p>@</p><p style="color: #C6A48F">Nicky Dooche</p><p>: </p></p><p>Haha and I bet they'll never stop</p>
+                      </div>
+                      <div class="memo-like-and-comment">
+                        <div class="memo-like">
+                          <div class="memo-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                          </div>
+                          <div class="memo-stat">
+                            <p>1</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+
               </div>
+
+              <script>
+                  $(document).ready(function(){
+                      $(".memo-reply-container").hide();
+                      $(".memo-comment .memo-icon i").click(function(){
+                          $(".memo-reply-container").toggle();
+                      });
+                  });
+
+              </script>
+
+
 
             </div>
 
@@ -361,82 +462,124 @@
               <div class="memo-type">
                 <h2>Recent memos</h2>
               </div>
+
               <div class="memo-card">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo"></div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p>Tanni Mussani</p>
+                <div class="memo-original">
+                  <div class="memo-account-photo-container">
+                    <div class="account-photo"></div>
                   </div>
-                  <div class="memo-time">
-                    <p>1 hr ago</p>
-                  </div>
-                  <div class="memo-content">
-                    <p>Somehow I thought he was British...</p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
+                  <div class="memo-text-container">
+                    <div class="user-name">
+                      <p>@</p><p>Tanni Mussani</p>
+                    </div>
+                    <div class="memo-time">
+                      <p>1 hr ago</p>
+                    </div>
+                    <div class="memo-content">
+                      <p>Somehow I thought he was British...</p>
+                    </div>
+                    <div class="memo-like-and-comment">
+                      <div class="memo-like">
+                        <div class="memo-icon">
+                          <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="memo-stat">
+                          <p>0</p>
+                        </div>
                       </div>
-                      <div class="memo-stat">
-                        <p>0</p>
+                      <div class="memo-comment">
+                        <div class="memo-icon">
+                          <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="memo-stat">
+                          <p>0</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>0</p>
+                  </div>
+                </div>
+                <div class="memo-reply-container">
+                  <div class="reply-input-container">
+                    <div class="input-box">
+                      <input type="text" placeholder="Reply here...">
+
+                      <div class="memo-send-icon">
+                        <i class="fas fa-paper-plane"></i>
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
+
+
               </div>
 
               <div class="memo-card">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo"></div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p>Levin Cha</p>
+                <div class="memo-original">
+                  <div class="memo-account-photo-container">
+                    <div class="account-photo"></div>
                   </div>
-                  <div class="memo-time">
-                    <p>1 hr ago</p>
-                  </div>
-                  <div class="memo-content">
-                    <p>Tried (may times) to learn Morse but failed everytime</p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
+                  <div class="memo-text-container">
+                    <div class="user-name">
+                      <p>@</p><p>Levin Cha</p>
+                    </div>
+                    <div class="memo-time">
+                      <p>1 hr ago</p>
+                    </div>
+                    <div class="memo-content">
+                      <p>Tried (may times) to learn Morse but failed everytime</p>
+                    </div>
+                    <div class="memo-like-and-comment">
+                      <div class="memo-like">
+                        <div class="memo-icon">
+                          <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="memo-stat">
+                          <p>10</p>
+                        </div>
                       </div>
-                      <div class="memo-stat">
-                        <p>0</p>
+                      <div class="memo-comment">
+                        <div class="memo-icon">
+                          <i class="fas fa-comment"></i>
+                        </div>
+                        <div class="memo-stat">
+                          <p>3</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>0</p>
+                  </div>
+                </div>
+                <div class="memo-reply-container">
+                  <div class="reply-input-container">
+                    <div class="input-box">
+                      <input type="text" placeholder="Reply here...">
+
+                      <div class="memo-send-icon">
+                        <i class="fas fa-paper-plane"></i>
+                        </span>
                       </div>
                     </div>
                   </div>
+
+
                 </div>
+
+
               </div>
+
+
             </div>
 
           </div>
         </div>
+      </div>
     </div>
   </section>
-
+ <div class="mobile-footer">
+   <footer>
+     <p>2019 @ Copiright </p>
+   </footer>
+ </div>
 
 
 </body>
