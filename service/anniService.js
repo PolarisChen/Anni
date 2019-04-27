@@ -135,5 +135,29 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+
+  deleteAnni: async (anniId) => {
+    try {
+      const ret = await anniDao.delete(anniId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Delete anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: ret.insertId // TODO change key name
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 };

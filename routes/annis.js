@@ -28,4 +28,11 @@ router.post('/update', sessionChecker, (req, res, next) => {
   });
 });
 
+router.post('/delete', sessionChecker, (req, res, next) => {
+  const {anniId} = req.body;
+  anniService.deleteAnni(anniId).then((ret)=>{
+    res.json(ret);
+  });
+});
+
 module.exports = router;
