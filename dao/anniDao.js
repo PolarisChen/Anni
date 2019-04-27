@@ -69,5 +69,15 @@ module.exports = {
       console.log(err);
       return err;
     }
-  }
+  },
+  update: async (title, desc, quote, month, day, type, markType, cover, anniId) => {
+    try {
+      const ret = await pool.query($sql.update, [title, desc, quote, month, day, type, markType, cover, anniId]);
+      console.log('update', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
 };

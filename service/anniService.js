@@ -111,5 +111,29 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+
+  updateAnni: async (title, desc, quote, month, day, type, markType, cover, anniId) => {
+    try {
+      const ret = await anniDao.add(title, desc, quote, month, day, type, markType, cover, anniId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Update anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: ret.insertId // TODO change key name
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 };

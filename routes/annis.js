@@ -21,4 +21,11 @@ router.post('/add', sessionChecker, (req, res, next) => {
   });
 });
 
+router.post('/update', sessionChecker, (req, res, next) => {
+  const {title, desc, quote, month, day, type, markType, cover, anniId} = req.body;
+  anniService.updateAnni(title, desc, quote, month, day, type, markType, cover, anniId).then((ret)=>{
+    res.json(ret);
+  });
+});
+
 module.exports = router;
