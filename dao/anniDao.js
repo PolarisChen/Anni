@@ -51,9 +51,9 @@ module.exports = {
       return err;
     }
   },
-  add: async (title, desc, quote, month, day, userId, type, markType, cover) => {
+  add: async (title, desc, quote, month, day, type, markType, cover, userId) => {
     try {
-      const ret = await pool.query($sql.insert, [title, desc, quote, month, day, userId, type, markType, cover]);
+      const ret = await pool.query($sql.insert, [title, desc, quote, month, day, type, markType, cover, userId]);
       console.log('add', ret);
       return ret;
     } catch(err) {

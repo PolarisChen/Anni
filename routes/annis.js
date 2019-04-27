@@ -15,8 +15,8 @@ router.get('/:anniId', (req, res, next) => {
 });
 
 router.post('/add', sessionChecker, (req, res, next) => {
-  const {title, desc, quote, month, day, userId, type, markType, cover} = req.body;
-  anniService.addAnni(title, desc, quote, month, day, userId, type, markType, cover).then((ret)=>{
+  const {title, desc, quote, month, day, type, markType, cover, userId} = req.body;
+  anniService.addAnni(title, desc, quote, month, day, type, markType, cover, userId).then((ret)=>{
     res.json(ret);
   });
 });
