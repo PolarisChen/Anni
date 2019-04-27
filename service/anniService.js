@@ -43,7 +43,7 @@ module.exports = {
       console.log(err);
       return err;
     }
-  }
+  },
 
   getAnni: async (id) => {
     try {
@@ -65,7 +65,7 @@ module.exports = {
       console.log(err);
       return err;
     }
-  }
+  },
 
   getAnni: async (id) => {
     try {
