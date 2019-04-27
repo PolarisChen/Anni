@@ -4,10 +4,9 @@ const anniService = require('../service/anniService');
 const sessionChecker = require('../middleware/sessionChecker');
 
 router.get('/', (req, res, next) => {
-  // TODO - Return all anni data
-  // anniService.getAllAnni().then((ret)=>{
-  //   res.json(ret);
-  // });
+  anniService.getAllAnnis().then((ret)=>{
+    res.json(ret);
+  });
 });
 router.get('/:anniId', (req, res, next) => {
   anniService.getAnni(req.params.anniId).then((ret)=>{

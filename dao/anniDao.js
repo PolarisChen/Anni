@@ -42,14 +42,15 @@ module.exports = {
   //     });
   //   });
   // },
-  // queryAll: function(req, res, next) {
-  //   pool.getConnection(function(err, connection) {
-  //     connection.query($sql.queryAll, function(err, result) {
-  //       jsonWrite(res, result);
-  //       connection.release();
-  //     });
-  //   });
-  // },
+  queryAll: async () => {
+    try {
+      const annis = await pool.query($sql.queryAll);
+      return annis;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
   add: async (email, password) => {
     try {
       const ret = await pool.query($sql.insert, [email, password]);
