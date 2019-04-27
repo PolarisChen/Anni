@@ -14,4 +14,11 @@ router.get('/:anniId', (req, res, next) => {
   });
 });
 
+router.post('/add', sessionChecker, (req, res, next) => {
+  const {title, desc, quote, month, day, userId, type, markType, cover} = req.body;
+  anniService.addAnni(title, desc, quote, month, day, userId, type, markType, cover).then((ret)=>{
+    res.json(ret);
+  });
+});
+
 module.exports = router;
