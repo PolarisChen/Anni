@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <style>
+    .container {
+      width: 960px;
+      margin: 0 auto;
+    }
+    .font-sample {
+      font-family: 'Lato', sans-serif;
+      font-family: 'Prata', serif;
+    }
+  </style>
+</head>
+<body>
+
+  <%- include('global/header', {title: title}); %>
+
+  <header class="container">
+    <h1><%= title %></h1>
+    <p>Welcome to Anni - <%= title %></p>
+
+    <% if (user.type === 2) { %>
+    <h1><%= user %></h1>
+    <% } %>
+
+    <ul>
+      <% users.forEach(function(user){ %>
+        <%- include('user/show', {user: user}); %>
+      <% }); %>
+    </ul>
+
+    <p>Welcome to Anni - <%= title %></p>
+  </header>
+
+  <%- include('footer'); -%>
+
+  <div class="pure-g container">
+    <div class="pure-u-1 pure-u-md-1-3">
+      <nav></nav>
+    </div>
+    <div class="pure-u-1 pure-u-md-2-3">
+      <main>
+        <form action="/users/login" method="post">
+          <div>
+            <label>Email:</label>
+            <input type="text" name="email"/>
+          </div>
+          <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+          </div>
+          <div>
+            <input class="btn btn-primary" type="submit" value="Log In"/>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+  <script>
+    function fetchData() {
+      var data = {
+        name: 'John',
+        location: 'Boston'
+      };
+      $.ajax({
+        method: 'POST',
+        url: '/xxx',
+        data: data,
+        dataType: 'json'
+      }).done(function( ret ) {
+        console.log(ret);
+        if (ret.success) {
+          // Succeeded
+          console.log(ret.data);
+        } else {
+          // Failed
+          console.log(ret.message);
+        }
+      });
+    }
+    $(document).ready(function(){
+      $('#button-sample').click(function(){
+        fetchData();
+      });
+    });
+  </script>
+</body>
+</html>
