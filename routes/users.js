@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const userDao = require('../dao/userDao');
 const userService = require('../service/userService');
 const sessionChecker = require('../middleware/sessionChecker');
 

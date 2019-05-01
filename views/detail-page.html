@@ -79,8 +79,10 @@
       <div class="navbar-right">
 
         <div class="account-photo">
-          <!--<span style="font-size: 35px; color: #bdbdbd; font-weight: normal">-->
-            <!--<i class="fas fa-circle"></i>-->
+          <div class="navbar-account-menu-arrow-container">
+            <div class="navbar-account-menu-arrow"></div>
+          </div>
+
         </div>
 
         <div class="navbar-button">
@@ -173,6 +175,25 @@
         <!--hamburgerIcon.onclick = function buttonOnClick() {-->
             <!--mobileMenu.style.display = "flex"; };-->
     <!--</script>-->
+
+    <div class="navbar-account-menu-outer-container">
+
+      <div class="navbar-account-menu">
+        <div class="navbar-account-menu-list">
+          <a href="#">Log in</a>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $ (".navbar-account-menu-arrow-container, .navbar-account-menu-outer-container").hide();
+            $(".account-photo").click(function(){
+                $(".navbar-account-menu-arrow-container, .navbar-account-menu-outer-container").toggle();
+            });
+        });
+    </script>
 
   </header>
 
