@@ -15,7 +15,7 @@
   background-image: url("img/user-banner.jpg");
   background-size: cover;
   background-position: center;
-  animation: cover-img-scale 1.5s .1s ease-in-out;
+  animation: cover-img-scale 1.5s ease-in-out;
 }
 
 .dummyHeader {
@@ -77,6 +77,20 @@
 }
 
 /*User & Notification - sideBar*/
+.mainBox {
+  width: 100%;
+}
+
+#sideBarBox,
+#contentBox {
+  display: none;
+}
+
+#sideBarBox {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 
 .sideBar {
   /* Box-model */
@@ -132,9 +146,9 @@
   cursor: pointer;
 }
 
-.sideBar,
-.contentBox {
-  animation: cover-img-scale 2s .5s ease-in-out;
+#sideBarBox,
+#contentBox {
+  animation: cover-img-scale 2s ease-in-out;
 }
 
 
@@ -320,6 +334,47 @@
   text-align: right;
   float: none;
 }
+
+.like-bookmark-container {
+  display: flex;
+  float: right;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.outline-icon-container2 {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #BDBDBD;
+  border-radius: 50px;
+  background: rgb(255,255,255,.5);
+}
+
+.outline-icon-like2 {
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+.outline-icon-bookmark2 {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.outline-icon-like2 i,
+.outline-icon-bookmark2 i {
+  font-size: .8em;
+  color: #BDBDBD;
+  text-align: center;
+  vertical-align: center;
+}
+
+.outline-icon-like2 i:hover,
+.outline-icon-bookmark2 i:hover {
+  color: #C6A48F;
+}
+
 
 @media only screen and (max-width: 1024px) {
   .avatar {
