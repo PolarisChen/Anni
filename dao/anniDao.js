@@ -71,6 +71,16 @@ module.exports = {
       return err;
     }
   },
+  queryLike: async (id) => {
+    try {
+      const ret = await pool.query($sql.queryLike, +id);
+      console.log('queryLike', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
   addBookmark: async (id, userId) => {
     try {
       const ret = await pool.query($sql.insertBookmark, [id, userId]);
@@ -91,6 +101,16 @@ module.exports = {
       return err;
     }
   },
+  queryBookmark: async (id) => {
+    try {
+      const ret = await pool.query($sql.queryBookmark, +id);
+      console.log('queryBookmark', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
   addMark: async (id, userId) => {
     try {
       const ret = await pool.query($sql.insertMark, [id, userId]);
@@ -105,6 +125,16 @@ module.exports = {
     try {
       const ret = await pool.query($sql.deleteMark, +id);
       console.log('deleteMark', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryMark: async (id) => {
+    try {
+      const ret = await pool.query($sql.queryMark, +id);
+      console.log('queryMark', ret);
       return ret;
     } catch(err) {
       console.log(err);
