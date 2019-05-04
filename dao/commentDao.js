@@ -22,9 +22,9 @@ module.exports = {
       return err;
     }
   },
-  update: async (content, parentId, userId, anniId, commentId) => {
+  update: async (content, commentId) => {
     try {
-      const ret = await pool.query($sql.update, [content, parentId, userId, anniId, commentId]);
+      const ret = await pool.query($sql.update, [content, commentId]);
       console.log('update', ret);
       return ret;
     } catch(err) {
