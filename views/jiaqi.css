@@ -36,7 +36,7 @@
   flex-basis: 100px;
   margin-top: 80px;
   margin-left: 30px;
-  background-image: url("img/avatar-1.jpeg");
+  background-color: #00B7FF;
   background-size: cover;
   background-position: center;
   clip-path: circle(50px at center);
