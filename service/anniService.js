@@ -7,6 +7,7 @@ const decorateAnni = async (anni, id) => {
     anni.bookmarkCount = await anniDao.queryBookmark(id);
     anni.markCount = await anniDao.queryMark(id);
     anni.comments = await commentDao.queryByAnniId(id);
+    anni.images = await anniDao.queryImage(id);
   } catch (err) {
     console.log(err);
     return err;
