@@ -5,15 +5,23 @@ const sessionChecker = require('../middleware/sessionChecker');
 
 // Fetch user data with id
 router.get('/', sessionChecker, (req, res, next) => {
-  // TODO - Return user data
   userService.getUser(req.session.userId).then((ret)=>{
     res.json(ret);
+    // res.render('user', ret.data);
   });
 });
 router.get('/:userId', (req, res, next) => {
-  // TODO - Return user data
   userService.getUser(req.params.userId).then((ret)=>{
     res.json(ret);
+    // res.render('user', ret.data);
+  });
+});
+
+
+router.get('/notifications', (req, res, next) => {
+  userService.getNotifications(req.params.userId).then((ret)=>{
+    res.json(ret);
+    // res.render('notification', { notifications: ret.data });
   });
 });
 
