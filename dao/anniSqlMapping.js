@@ -14,6 +14,9 @@ let anni = {
   insertMark: 'INSERT INTO anni_marks(anniId, userId) VALUES(?,?)',
   deleteMark: 'DELETE FROM anni_marks WHERE id=?',
   queryMark: 'SELECT COUNT(*) FROM anni_marks WHERE anniId=?',
+  insertImage: 'INSERT INTO anni_images(anniId, image, caption) VALUES(?,?,?)',
+  deleteImage: 'DELETE FROM anni_images WHERE id=?',
+  queryImage: 'SELECT * FROM anni_images WHERE anniId=?',
 };
 
 module.exports = anni;

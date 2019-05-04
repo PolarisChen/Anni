@@ -141,4 +141,34 @@ module.exports = {
       return err;
     }
   },
+  addImage: async (id, image, caption) => {
+    try {
+      const ret = await pool.query($sql.insertImage, [id, image, caption]);
+      console.log('addImage', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  deleteImage: async (id) => {
+    try {
+      const ret = await pool.query($sql.deleteImage, +id);
+      console.log('deleteImage', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryImage: async (id) => {
+    try {
+      const ret = await pool.query($sql.queryImage, +id);
+      console.log('queryImage', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
 };
