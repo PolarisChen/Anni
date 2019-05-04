@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const userDao = require('../dao/userDao');
 const anniDao = require('../dao/anniDao');
 const commentDao = require('../dao/commentDao');
+const notificationDao = require('../dao/notificationDao');
 
 module.exports = {
   getUser: async (id) => {
@@ -33,6 +34,28 @@ module.exports = {
             bookmarks: bookmarks,
             comments: comments
           }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  getNotifications: async (id) => {
+    try {
+      const notifications = await notificationDao.queryByUserId(id);
+      if (typeof notifications === 'undefined') {
+        return {
+          success: 0,
+          msg: 'No notifications',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: notifications
         }
       }
     } catch (err) {
