@@ -13,12 +13,12 @@ header {
   z-index: 1000;
   display: flex;
   -webkit-align-items: center;
-  /*max-width: 1340px;*/
+  max-width: 1340px;
   height: 60px;
-  margin-left: 5%;
-  margin-right: 5%;
-  /*padding-left: 5%;*/
-  /*padding-right: 10px;*/
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 
@@ -246,6 +246,76 @@ header {
   display: none;
 }
 
+/*Navbar account menu*/
+
+.navbar-account-menu-outer-container {
+  display: block;
+  margin-right: 10px;
+  height: 100%;
+  align-items: center;
+
+}
+
+
+.navbar-account-menu-arrow-container {
+  display: block;
+  float: right;
+  margin-top: 43px;
+  right: 0;
+  margin-right: 13px;
+  height: 10px;
+  width: 10px;
+}
+
+.navbar-account-menu-arrow {
+  /*position: absolute;*/
+  float: right;
+  top: 65px;
+  right: 0;
+  height: 10px;
+  width: 10px;
+  border-top: 1px solid #C4C4C4;
+  border-left: 1px solid #C4C4C4;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+
+.navbar-account-menu {
+  /*display: block;*/
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #C4C4C4;
+  box-shadow: 0 0 5px rgb(0,0,0,.1);
+
+
+}
+
+.navbar-account-menu-list {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /*width: 100px;*/
+  font-family: Lato Light;
+  font-size: .8em;
+  text-align: center;
+
+}
+
+.navbar-account-menu-list a {
+  color: #828282;
+  text-decoration: none;
+}
+
+.navbar-account-menu-list a:hover {
+  text-decoration: underline;
+}
+
 
 /*Nav bar media query mobile*/
 
@@ -404,9 +474,6 @@ header {
 
 
 }
-
-
-
 
 
 .anniall_body {
