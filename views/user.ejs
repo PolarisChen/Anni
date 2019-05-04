@@ -265,6 +265,10 @@
           <div class="postedAnnisList">
             <div class="postedAnnis">
 
+              <% if (annis.length === 0) { %>
+              <p class="noContent">Nothing can be found here. Try post your first Anni:)</p>
+              <% } else { %>
+
               <% annis.forEach(function(anni){ %>
 
               <div class="annisContent">
@@ -295,7 +299,8 @@
                 </div>
               </div>
 
-              <% }) %>
+                <% }); %>
+                <% } %>
 
             </div>
           </div>
@@ -303,6 +308,10 @@
           <!--userMemories-->
           <div class="userMemoriesList">
             <div class="userMemories">
+
+              <% if (comments.length === 0) { %>
+                <p class="noContent">Nothing can be found here. Try post your first memory:)</p>
+              <% } else { %>
 
               <% comments.forEach(function(memory){ %>
 
@@ -333,7 +342,8 @@
                 </div>
               </div>
 
-              <% }) %>
+                <% }); %>
+                <% } %>
 
             </div>
           </div>
@@ -341,6 +351,10 @@
           <!--user Likes-->
           <div class="userLikesList">
             <div class="postedAnnis">
+
+              <% if (annis.length === 0) { %>
+              <p class="noContent">Nothing can be found here. Try like your first new Anni:)</p>
+              <% } else { %>
 
               <% annis.forEach(function(anni){ %>
 
@@ -372,7 +386,8 @@
                 </div>
               </div>
 
-              <% }) %>
+                <% }); %>
+                <% } %>
 
             </div>
           </div>
@@ -381,37 +396,42 @@
           <div class="userBookmarksList">
             <div class="postedAnnis">
 
-              <% annis.forEach(function(anni){ %>
+              <% if (annis.length === 0) { %>
+                <p class="noContent">Nothing can be found here. Try bookmark your first new Anni:)</p>
+              <% } else { %>
 
-              <div class="annisContent">
-                <div class="contentHeader">
-                  <p class="youBookmarked">You bookmarked</p> <p class="postedAnnisDate">2 days ago</p>
-                </div>
-                <div class="lineBreak"><hr></div>
-                <div class="pure-g">
-                  <div class="pure-u-1-5 annisImage"></div>
-                  <div class="pure-u-4-5 annisText">
-                    <p class="annisTitle"><%= anni.title %></p>
-                    <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
-                    <p class="annisDate"><%= months[anni.month-1] %> <%= anni.day %></p>
-                    <p class="annisDescription"><%= anni.desc %></p>
-                    <div class="like-bookmark-container">
-                      <div class="outline-icon-container2">
-                        <div class="outline-icon-like2">
-                          <i class="fas fa-heart"></i>
+                <% annis.forEach(function(anni){ %>
+
+                <div class="annisContent">
+                  <div class="contentHeader">
+                    <p class="youBookmarked">You bookmarked</p> <p class="postedAnnisDate">2 days ago</p>
+                  </div>
+                  <div class="lineBreak"><hr></div>
+                  <div class="pure-g">
+                    <div class="pure-u-1-5 annisImage"></div>
+                    <div class="pure-u-4-5 annisText">
+                      <p class="annisTitle"><%= anni.title %></p>
+                      <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
+                      <p class="annisDate"><%= months[anni.month-1] %> <%= anni.day %></p>
+                      <p class="annisDescription"><%= anni.desc %></p>
+                      <div class="like-bookmark-container">
+                        <div class="outline-icon-container2">
+                          <div class="outline-icon-like2">
+                            <i class="fas fa-heart"></i>
+                          </div>
                         </div>
-                      </div>
-                      <div class="outline-icon-container2">
-                        <div class="outline-icon-bookmark2">
-                          <i class="fas fa-bookmark"></i>
+                        <div class="outline-icon-container2">
+                          <div class="outline-icon-bookmark2">
+                            <i class="fas fa-bookmark"></i>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <% }) %>
+                <% }); %>
+              <% } %>
 
             </div>
           </div>
