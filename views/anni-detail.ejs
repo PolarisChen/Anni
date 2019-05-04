@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Detail page</title>
   <!--<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">-->
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <script type="text/javascript" src="script-detail-page.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
-<%- include('global/header', {avatar: avatar}); %>
 
 
 <div class="main-body">
@@ -119,21 +118,21 @@
             <div class="album-container">
               <div class="album-column">
                 <div class="album-first-img-container">
-                  <div class="album-img" style="background-image: url('<%= images[0] %>');"></div>
+                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
                 </div>
                 <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('<%= images[3] %>');"></div>
+                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
                 </div>
               </div>
               <div class="album-column">
                 <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('<%= images[1] %>');"></div>
+                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
                 </div>
                 <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('<%= images[2] %>');"></div>
+                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
                 </div>
                 <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('<%= images[4] %>');"></div>
+                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
                 </div>
               </div>
 
@@ -154,18 +153,6 @@
             </div>
           </div>
 
-          <script>
-             $(document).ready(function(){
-              $(".album-detail-popup-container").hide();
-              $(".album-container").click(function(){
-                $(".album-detail-popup-container").show();
-              });
-              $(".cross-icon").click(function () {
-                $(this).parent(".album-detail-popup-container").hide();
-              });
-            });
-          </script>
-
           <!--<div class="see-more-container">-->
           <!--<div class="see-more-triangle">-->
           <!--</div>-->
@@ -174,9 +161,7 @@
           <!--</div>-->
           <!--</div>-->
 
-          <div class="web-footer">
-            <%- include('global/footer'); %>
-          </div>
+
 
 
         </div>
@@ -193,266 +178,137 @@
 
               <div class="memo-send-icon">
                 <i class="fas fa-paper-plane"></i>
-                </span>
               </div>
             </div>
           </div>
-
-          <script>
-
-          </script>
 
           <div class="hot-memos">
-            <div class="memo-type">
-              <h2>Hot memos</h2>
-            </div>
-
-            <div class="memo-card">
-              <div class="memo-original">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo">
-                    <img src="<%= avatar %>">
-                  </div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p><%= userName %></p>
-                  </div>
-                  <div class="memo-time">
-                    <p>Apr 20, 2019</p>
-                  </div>
-                  <div class="memo-content">
-                    <p><%= content %>></p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
+            <% if (comments.length === 0 ) { %>
+              <p class="memo-time">No comment.</p>
+            <% } else { %>
+              <% comments.forEach(function(comment){ %>
+                <div class="memo-card">
+                    <div class="memo-original">
+                      <div class="memo-account-photo-container">
+                        <div class="account-photo"></div>
                       </div>
-                      <div class="memo-stat">
-                        <p><%= likeCount %></p>
-                      </div>
-                    </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p><%= replies.length %></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="memo-reply-container">
-                <div class="reply-input-container">
-                  <div class="input-box">
-                    <input type="text" placeholder="Reply here...">
-                    <div class="memo-send-icon">
-                      <i class="fas fa-paper-plane"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="memo-reply">
-                  <div class="memo-account-photo-container">
-                    <div class="account-photo">
-                      <img src="<%= avatar %>">
-                    </div>
-                  </div>
-                  <div class="memo-text-container">
-                    <div class="user-name">
-                      <p>@</p><p><%= userName %></p>
-                    </div>
-                    <div class="memo-time">
-                      <p>Apr 13, 2019</p>
-                    </div>
-                    <div class="memo-content">
-                      <p>Reply <p>@</p><p style="color: #C6A48F"><%= userName %></p><p>: </p></p><p><%= content %></p>
-                    </div>
-                    <div class="memo-like-and-comment">
-                      <div class="memo-like">
-                        <div class="memo-icon">
-                          <i class="fas fa-thumbs-up"></i>
+                      <div class="memo-text-container">
+                        <div class="user-name">
+                          <p>@</p><p><% comment.userName %>></p>
                         </div>
-                        <div class="memo-stat">
-                          <p>10</p>
+                        <div class="memo-time">
+                          <p><%= comment.creatAt %></p>
+                        </div>
+                        <div class="memo-content">
+                          <p><%= comment.content %></p>
+                        </div>
+                        <div class="memo-like-and-comment">
+                          <div class="memo-like">
+                            <div class="memo-icon">
+                              <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <div class="memo-stat">
+                              <p><%= comment.likeCount %></p>
+                            </div>
+                          </div>
+                          <div class="memo-comment">
+                            <div class="memo-icon">
+                              <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="memo-stat">
+                              <p><%= comment.replies.length %></p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="memo-reply">
-                  <div class="memo-account-photo-container">
-                    <div class="account-photo"></div>
-                  </div>
-                  <div class="memo-text-container">
-                    <div class="user-name">
-                      <p>@</p><p>Hannah Rochester</p>
-                    </div>
-                    <div class="memo-time">
-                      <p>Apr 13, 2019</p>
-                    </div>
-                    <div class="memo-content">
-                      <p>Reply <p>@</p><p style="color: #C6A48F">Nicky Dooche</p><p>: </p></p><p>Haha and I bet they'll never stop</p>
-                    </div>
-                    <div class="memo-like-and-comment">
-                      <div class="memo-like">
-                        <div class="memo-icon">
-                          <i class="fas fa-thumbs-up"></i>
-                        </div>
-                        <div class="memo-stat">
-                          <p>1</p>
+                    <div class="memo-reply-container">
+                      <div class="reply-input-container">
+                        <div class="input-box">
+                          <input type="text" placeholder="Reply here...">
+                          <div class="memo-send-icon">
+                            <i class="fas fa-paper-plane"></i>
+                          </div>
                         </div>
                       </div>
+                      <% comment.replies.forEach(function(reply){ %>
+                        <div class="memo-reply">
+                          <div class="memo-account-photo-container">
+                            <div class="account-photo"></div>
+                          </div>
+                          <div class="memo-text-container">
+                            <div class="user-name">
+                              <p>@</p><p><%= reply.userName %></p>
+                            </div>
+                            <div class="memo-time">
+                              <p><%= reply.creatAt %></p>
+                            </div>
+                            <div class="memo-content">
+                              <p>Reply <p>@</p><p style="color: #C6A48F"><%= comment.userName %></p><p>: </p><p><%= reply.content %></p>
+                            </div>
+                            <!--<div class="memo-like-and-comment">-->
+                              <!--<div class="memo-like">-->
+                                <!--<div class="memo-icon">-->
+                                  <!--<i class="fas fa-thumbs-up"></i>-->
+                                <!--</div>-->
+                                <!--<div class="memo-stat">-->
+                                  <!--<p>1</p>-->
+                                <!--</div>-->
+                              <!--</div>-->
+                            <!--</div>-->
+                          </div>
+                        </div>
+                      <% }); %>
                     </div>
                   </div>
-                </div>
-              </div>
-
-
-            </div>
-
-            <script>
-              <%= $(document).ready(function(){
-                $(".memo-reply-container").hide();
-                $(".memo-comment .memo-icon i").click(function(){
-                  $(this).closest(".memo-card").find(".memo-reply-container").toggle();
-                });
-              }); %>
-
-            </script>
-
-
-
-          </div>
-
-          <div class="recent-memos">
-            <div class="memo-type">
-              <h2>Recent memos</h2>
-            </div>
-
-            <div class="memo-card">
-              <div class="memo-original">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo"></div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p>Tanni Mussani</p>
-                  </div>
-                  <div class="memo-time">
-                    <p>1 hr ago</p>
-                  </div>
-                  <div class="memo-content">
-                    <p>Somehow I thought he was British...</p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>0</p>
-                      </div>
-                    </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>0</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="memo-reply-container">
-                <div class="reply-input-container">
-                  <div class="input-box">
-                    <input type="text" placeholder="Reply here...">
-
-                    <div class="memo-send-icon">
-                      <i class="fas fa-paper-plane"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-
-            <div class="memo-card">
-              <div class="memo-original">
-                <div class="memo-account-photo-container">
-                  <div class="account-photo"></div>
-                </div>
-                <div class="memo-text-container">
-                  <div class="user-name">
-                    <p>@</p><p>Levin Cha</p>
-                  </div>
-                  <div class="memo-time">
-                    <p>1 hr ago</p>
-                  </div>
-                  <div class="memo-content">
-                    <p>Tried (may times) to learn Morse but failed everytime</p>
-                  </div>
-                  <div class="memo-like-and-comment">
-                    <div class="memo-like">
-                      <div class="memo-icon">
-                        <i class="fas fa-thumbs-up"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>0</p>
-                      </div>
-                    </div>
-                    <div class="memo-comment">
-                      <div class="memo-icon">
-                        <i class="fas fa-comment"></i>
-                      </div>
-                      <div class="memo-stat">
-                        <p>0</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="memo-reply-container">
-                <div class="reply-input-container">
-                  <div class="input-box">
-                    <input type="text" placeholder="Reply here...">
-
-                    <div class="memo-send-icon">
-                      <i class="fas fa-paper-plane"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-
-              </div>
-
-
-            </div>
-
-
+              <% }) %>
+            <% } %>
           </div>
 
         </div>
-
-
-
-
       </div>
 
 
-    </div>
+    <!--</div>-->
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".album-detail-popup-container").hide();
+      $(".album-container").click(function(){
+        $(".album-detail-popup-container").show();
+      });
+      $(".cross-icon").click(function () {
+        $(this).parent(".album-detail-popup-container").hide();
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function(){
+      $(".memo-reply-container").hide();
+      $(".memo-comment .memo-icon i").click(function(){
+        $(this).closest(".memo-card").find(".memo-reply-container").toggle();
+      });
+    });
+
+  </script>
+
+  <script>
+    $(document).ready(function(){
+      $(".memo-reply-container").hide();
+      $(".memo-comment .memo-icon i").click(function(){
+        $(this).closest(".memo-card").find(".memo-reply-container").toggle();
+      });
+    });
+
+  </script>
+
+
 </section>
 
-<div class="mobile-footer">
-  <%- include('global/footer'); %>
-</div>
+
 
 
 </body>
