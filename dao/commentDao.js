@@ -41,5 +41,25 @@ module.exports = {
       console.log(err);
       return err;
     }
-  }
+  },
+  addLike: async (id, userId) => {
+    try {
+      const ret = await pool.query($sql.insertLike, [id, userId]);
+      console.log('addLike', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  deleteLike: async (id) => {
+    try {
+      const ret = await pool.query($sql.deleteLike, +id);
+      console.log('deleteLike', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
 };
