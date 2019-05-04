@@ -19,6 +19,18 @@ router.get('/notifications', sessionChecker, (req, res, next) => {
   });
 });
 
+// router.get('/post', sessionChecker, (req, res, next) => {
+router.get('/post', (req, res, next) => {
+  res.render('anni-post', { title: 'Post' });
+});
+
+router.post('/post', sessionChecker, (req, res, next) => {
+  const {title, desc, quote, month, day, type, markType, cover, userId} = req.body;
+  anniService.addAnni(title, desc, quote, month, day, type, markType, cover, userId).then((ret)=>{
+    res.json(ret);
+  });
+});
+
 // Login
 router
   .get('/login', (req, res, next) => {

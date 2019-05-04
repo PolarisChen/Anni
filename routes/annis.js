@@ -10,27 +10,15 @@ router.get('/', (req, res, next) => {
   });
 });
 
-// router.get('/add', sessionChecker, (req, res, next) => {
-router.get('/add', (req, res, next) => {
-  res.render('anni-post', { title: 'Post' });
-});
-
-router.post('/add', sessionChecker, (req, res, next) => {
-  const {title, desc, quote, month, day, type, markType, cover, userId} = req.body;
-  anniService.addAnni(title, desc, quote, month, day, type, markType, cover, userId).then((ret)=>{
-    res.json(ret);
-  });
-});
-
-router.post('/update', sessionChecker, (req, res, next) => {
+router.post('/:anniId/update', sessionChecker, (req, res, next) => {
   const {title, desc, quote, month, day, type, markType, cover, anniId} = req.body;
   anniService.updateAnni(title, desc, quote, month, day, type, markType, cover, anniId).then((ret)=>{
     res.json(ret);
   });
 });
 
-router.post('/delete', sessionChecker, (req, res, next) => {
-  const {anniId} = req.body;
+router.post('/:anniId/delete', sessionChecker, (req, res, next) => {
+  const {anniId} = req.params;
   anniService.deleteAnni(anniId).then((ret)=>{
     res.json(ret);
   });
@@ -57,6 +45,13 @@ router.post('/:anniId/bookmark', sessionChecker, (req, res, next) => {
 
 router.post('/:anniId/mark', sessionChecker, (req, res, next) => {
   anniService.markAnni(req.params.anniId, req.session.userId).then(ret => {
+    res.json(ret);
+  });
+});
+
+router.post('/:anniId/comments/', sessionChecker, (req, res, next) => {
+  const {content, parentId, userId, anniId} = req.body;
+  anniService.addComment(content, parentId, userId, anniId).then(ret => {
     res.json(ret);
   });
 });

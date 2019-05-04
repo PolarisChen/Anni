@@ -206,6 +206,30 @@ module.exports = {
     }
   },
 
+  addComment: async (content, parentId, userId, anniId) => {
+    try {
+      const ret = await commentDao.add(content, parentId, userId, anniId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Add comment failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: anniId
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
   likeComment: async (commentId, userId) => {
     try {
       const ret = await commentDao.addLike(commentId, userId);
