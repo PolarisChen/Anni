@@ -11,8 +11,8 @@ router.get('/', (req, res, next) => {
 });
 router.get('/:anniId', (req, res, next) => {
   anniService.getAnni(req.params.anniId).then((ret)=>{
-    res.json(ret);
-    // res.render('anni-detail', ret.data);
+    // res.json(ret);
+    res.render('anni-detail', ret.data);
   });
 });
 
