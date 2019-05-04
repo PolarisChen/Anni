@@ -50,5 +50,65 @@ module.exports = {
       console.log(err);
       return err;
     }
-  }
+  },
+  addLike: async (id, userId) => {
+    try {
+      const ret = await pool.query($sql.insertLike, [id, userId]);
+      console.log('addLike', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  deleteLike: async (id) => {
+    try {
+      const ret = await pool.query($sql.deleteLike, +id);
+      console.log('deleteLike', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  addBookmark: async (id, userId) => {
+    try {
+      const ret = await pool.query($sql.insertBookmark, [id, userId]);
+      console.log('addBookmark', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  deleteBookmark: async (id) => {
+    try {
+      const ret = await pool.query($sql.deleteBookmark, +id);
+      console.log('deleteBookmark', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  addMark: async (id, userId) => {
+    try {
+      const ret = await pool.query($sql.insertMark, [id, userId]);
+      console.log('addMark', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  deleteMark: async (id) => {
+    try {
+      const ret = await pool.query($sql.deleteMark, +id);
+      console.log('deleteMark', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
 };
