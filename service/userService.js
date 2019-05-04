@@ -85,7 +85,9 @@ module.exports = {
             success: 1,
             msg: '',
             data: {
-              userId: user.id
+              userId: user.id,
+              name: user.name,
+              avatar: user.avatar
             }
           }
         }
@@ -116,11 +118,14 @@ module.exports = {
             data: {}
           }
         } else {
+          const userLogged = await userDao.queryByEmail(email);
           return {
             success: 1,
             msg: '',
             data: {
-              userId: ret.insertId
+              userId: userLogged.id,
+              name: userLogged.name,
+              avatar: userLogged.avatar
             }
           }
         }
