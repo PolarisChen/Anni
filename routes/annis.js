@@ -12,9 +12,8 @@ router.get('/', (req, res, next) => {
 
 // router.get('/add', sessionChecker, (req, res, next) => {
 router.get('/add', (req, res, next) => {
-    res.render('anni-post', { title: 'Post' });
-  });
-}
+  res.render('anni-post', { title: 'Post' });
+});
 
 router.post('/add', sessionChecker, (req, res, next) => {
   const {title, desc, quote, month, day, type, markType, cover, userId} = req.body;
