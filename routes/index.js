@@ -44,6 +44,8 @@ router
     userService.login(req.body.email, req.body.password).then((ret)=>{
       if (ret.success === 1) {
         req.session.userId = ret.data.userId;
+        req.session.userName = ret.data.name;
+        req.session.userAvatar = ret.data.avatar;
       }
       res.json(ret);
     });
@@ -63,6 +65,8 @@ router
     userService.signup(req.body.email, req.body.password).then((ret)=>{
       if (ret.success === 1) {
         req.session.userId = ret.data.userId;
+        req.session.userName = ret.data.name;
+        req.session.userAvatar = ret.data.avatar;
       }
       res.json(ret);
     });
