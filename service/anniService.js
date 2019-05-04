@@ -132,5 +132,29 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+
+  likeAnni: async (id, userId) => {
+    try {
+      const ret = await anniDao.addLike(id, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Like anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 };

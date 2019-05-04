@@ -16,6 +16,11 @@ router.get('/:anniId', (req, res, next) => {
   });
 });
 
+router.post('/:anniId/like', sessionChecker, (req, res, next) => {
+  anniService.likeAnni(req.params.anniId, req.session.userId).then(ret => {
+    res.json(ret);
+  });
+});
 
 router.get('/add', sessionChecker, (req, res, next) => {
   res.render('anni-post', { title: 'Post' });
