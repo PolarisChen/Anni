@@ -204,5 +204,29 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+
+  likeComment: async (commentId, userId) => {
+    try {
+      const ret = await commentDao.addLike(commentId, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Like comment failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            commentId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 };

@@ -34,6 +34,12 @@ router.post('/:anniId/mark', sessionChecker, (req, res, next) => {
   });
 });
 
+router.post('/:anniId/comments/:commentId/like', sessionChecker, (req, res, next) => {
+  anniService.likeComment(req.params.commentId, req.session.userId).then(ret => {
+    res.json(ret);
+  });
+});
+
 router.get('/add', sessionChecker, (req, res, next) => {
   res.render('anni-post', { title: 'Post' });
 });
