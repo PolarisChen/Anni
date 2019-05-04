@@ -6,6 +6,7 @@ let comment = {
   queryByAnniId: 'SELECT * FROM comments WHERE anniId=?',
   insertLike: 'INSERT INTO comment_likes(commentId, userId) VALUES(?,?)',
   deleteLike: 'DELETE FROM comment_likes WHERE id=?',
+  queryLike: 'SELECT COUNT(*) FROM comment_likes WHERE commentId=?',
 };
 
 module.exports = comment;

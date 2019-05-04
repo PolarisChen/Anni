@@ -62,4 +62,14 @@ module.exports = {
       return err;
     }
   },
+  queryLike: async (id) => {
+    try {
+      const ret = await pool.query($sql.queryLike, +id);
+      console.log('queryLike', ret);
+      return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  }
 };
