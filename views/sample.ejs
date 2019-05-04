@@ -55,46 +55,96 @@
     </div>
     <div class="pure-u-1 pure-u-md-2-3">
       <main>
-        <form action="/users/login" method="post">
-          <div>
-            <label>Email:</label>
-            <input type="text" name="email"/>
+        <div>
+          <label>Email:</label>
+          <input type="text" id="input-email"/>
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="password" id="input-password"/>
+        </div>
+        <div>
+          <input class="btn btn-primary" id="btn-login" value="Log In" data-str="sdsd"/>
+        </div>
+
+        <div class="comments">
+          <div class="comment">
+            <p>Name</p>
+            <p>Content</p>
           </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
+          <div class="comment">
+            <p>Name</p>
+            <p>Content</p>
           </div>
-          <div>
-            <input class="btn btn-primary" type="submit" value="Log In"/>
+          <div class="comment">
+            <p>Name</p>
+            <p>Content</p>
           </div>
-        </form>
+          <div class="comment">
+            <p>Name</p>
+            <p>Content</p>
+          </div>
+          <div class="comment">
+            <p>Name</p>
+            <p>Content</p>
+          </div>
+
+
+
+        </div>
       </main>
     </div>
   </div>
+
+  <input type="hidden" id="user-id" value="<%= %>">
+  <input type="hidden" id="anni-id" value="<%= anniI %>">
 
   <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
   <script>
     function postData() {
       var data = {
-        name: 'John',
-        location: 'Boston'
+        email: $('#input-email').val(),
+        password: $('#input-password').val(),
+        status: $('#btn-login').data("str"),
       };
+      var anniId = $('#anni-id').val();
+      var url = '/annis/' + anniId + '/like';
+
       $.ajax({
         method: 'POST',
-        url: '/xxx',
+        url: url,
         data: data,
         dataType: 'json'
-      }).done(function( ret ) {
+      }).done(function(ret) {
         console.log(ret);
         if (ret.success) {
           // Succeeded
           console.log(ret.data);
+          var userName = "Hello";
+          var content = "";
+          // var newComment = '<div>\n'
+          //         '<p>' + userName + '</p>\n' +
+          //         '<p>' + content + '</p>\n' +
+          //         '</div>';
+
+          var newComment = '<div>\n'
+          '<p><%= userName %></p>\n' +
+          '<p><%= content %></p>\n' +
+          '</div>';
+
+          var ele = ejs.render(newComment, {userName: userName, content: ""});
+          $('.comments').append(newComment);
+
+          window.location.href = "/users";
         } else {
           // Failed
-          console.log(ret.message);
+          console.log(ret.msg);
+          alert(ret.msg);
+          location.reload();
         }
       });
     }
+
     $(document).ready(function(){
       $('#button-sample').click(function(){
         postData();
