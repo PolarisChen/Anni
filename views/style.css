@@ -1229,6 +1229,12 @@ header {
   background: #00B7FF;
 }
 
+.album-img-popup {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
 .album-detail-popup-caption {
   position: relative;
   padding-top: 15px;

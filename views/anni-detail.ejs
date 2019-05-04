@@ -116,42 +116,28 @@
               <h1>ALBUM</h1>
             </div>
             <div class="album-container">
-              <div class="album-column">
-                <div class="album-first-img-container">
-                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
-                </div>
+              <% images.forEach(function(image){ %>
                 <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
+                  <div class="album-img" style="background-image: url('/images/annis/<%= images.image%>');"></div>
                 </div>
-              </div>
-              <div class="album-column">
-                <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
-                </div>
-                <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
-                </div>
-                <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('img/album-img-samuel-morse-1.jpeg');"></div>
-                </div>
-              </div>
+                <div class="album-detail-popup-container">
+                  <!--<div class="cross-icon">-->
+                  <i class="fas fa-times cross-icon"></i>
+                  <!--</div>-->
+                  <div class="album-detail-popup-img-container">
+                    <div class="album-img" style="background-image: url('/images/annis/<%= images.image%>');"></div>
+                  </div>
+                  <div class="album-detail-popup-caption">
+                    <p><%= images.caption%></p>
 
+                  </div>
+                </div>
+              <% }) %>
 
             </div>
           </div>
 
-          <div class="album-detail-popup-container">
-            <!--<div class="cross-icon">-->
-            <i class="fas fa-times cross-icon"></i>
-            <!--</div>-->
-            <div class="album-detail-popup-img-container">
 
-            </div>
-            <div class="album-detail-popup-caption">
-              <p>owfohshohfoshf</p>
-
-            </div>
-          </div>
 
           <!--<div class="see-more-container">-->
           <!--<div class="see-more-triangle">-->
@@ -272,43 +258,43 @@
     <!--</div>-->
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $(".album-detail-popup-container").hide();
-      $(".album-container").click(function(){
-        $(".album-detail-popup-container").show();
-      });
-      $(".cross-icon").click(function () {
-        $(this).parent(".album-detail-popup-container").hide();
-      });
-    });
-  </script>
+  <!--<script>-->
+    <!--$(document).ready(function(){-->
+      <!--$(".memo-reply-container").hide();-->
+      <!--$(".memo-comment .memo-icon i").click(function(){-->
+        <!--$(this).closest(".memo-card").find(".memo-reply-container").toggle();-->
+      <!--});-->
+    <!--});-->
 
-  <script>
-    $(document).ready(function(){
-      $(".memo-reply-container").hide();
-      $(".memo-comment .memo-icon i").click(function(){
-        $(this).closest(".memo-card").find(".memo-reply-container").toggle();
-      });
-    });
-
-  </script>
-
-  <script>
-    $(document).ready(function(){
-      $(".memo-reply-container").hide();
-      $(".memo-comment .memo-icon i").click(function(){
-        $(this).closest(".memo-card").find(".memo-reply-container").toggle();
-      });
-    });
-
-  </script>
-
+  <!--</script>-->
 
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script>
+  $(document).ready(function(){
+    $(".album-detail-popup-container").hide();
+    $(".album-container").click(function(){
+      $(".album-detail-popup-container").show();
+    });
+    $(".cross-icon").click(function () {
+      $(this).parent(".album-detail-popup-container").hide();
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $(".memo-reply-container").hide();
+    $(".memo-comment .memo-icon i").click(function(){
+      $(this).closest(".memo-card").find(".memo-reply-container").toggle();
+    });
+  });
+
+</script>
 
 
 </body>
