@@ -240,7 +240,6 @@ header {
   display: inline-block;
   margin-top: 2px;
   margin-bottom: 2px;
-
   height: 35px;
   width: 35px;
   background: #828282;
@@ -392,8 +391,6 @@ header {
     width: 100%;
   }
 
-  .account-photo {
-  }
 
   .navbar-button {
     display: none;
@@ -1158,6 +1155,7 @@ header {
   height: 100%;
   background-size: cover;
   opacity: .8;
+  vertical-align: center;
 }
 
 /*.first-img,*/
