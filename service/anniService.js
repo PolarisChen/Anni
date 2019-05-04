@@ -156,5 +156,53 @@ module.exports = {
       console.log(err);
       return err;
     }
+  },
+
+  bookmarkAnni: async (id, userId) => {
+    try {
+      const ret = await anniDao.addBookmark(id, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Bookmark anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  markAnni: async (id, userId) => {
+    try {
+      const ret = await anniDao.addMark(id, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Mark anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 };

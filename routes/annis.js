@@ -22,6 +22,18 @@ router.post('/:anniId/like', sessionChecker, (req, res, next) => {
   });
 });
 
+router.post('/:anniId/bookmark', sessionChecker, (req, res, next) => {
+  anniService.bookmarkAnni(req.params.anniId, req.session.userId).then(ret => {
+    res.json(ret);
+  });
+});
+
+router.post('/:anniId/mark', sessionChecker, (req, res, next) => {
+  anniService.markAnni(req.params.anniId, req.session.userId).then(ret => {
+    res.json(ret);
+  });
+});
+
 router.get('/add', sessionChecker, (req, res, next) => {
   res.render('anni-post', { title: 'Post' });
 });
