@@ -1,10 +1,16 @@
 const bcrypt = require('bcrypt');
-const userDao = require('../dao/UserDao');
+const userDao = require('../dao/userDao');
+const anniDao = require('../dao/anniDao');
+const commentDao = require('../dao/commentDao');
 
 module.exports = {
   getUser: async (id) => {
     try {
       const user = await userDao.queryById(id);
+      const annis = await anniDao.queryByUserId(id);
+      const likes = await anniDao.queryByLikerId(id);
+      const bookmarks = await anniDao.queryByBookmarkerId(id);
+      const comments = await commentDao.queryByUserId(id);
       if (typeof user === 'undefined') {
         return {
           success: 0,
@@ -21,7 +27,11 @@ module.exports = {
             email: user.email,
             bio: user.bio,
             avatar: user.avatar,
-            cover: user.cover
+            cover: user.cover,
+            annis: annis,
+            likes: likes,
+            bookmarks: bookmarks,
+            comments: comments
           }
         }
       }
