@@ -224,6 +224,13 @@
   color: #828282;
 }
 
+.noContent {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #828282;
+}
+
 .annisContent,
 .userMemoriesContent,
 .repliesContent,
