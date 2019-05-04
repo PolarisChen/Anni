@@ -273,7 +273,7 @@
 
               <div class="annisContent">
                 <div class="contentHeader">
-                  <p class="youPosted">You posted</p> <p class="postedAnnisDate">2 days ago</p>
+                  <p class="youPosted">You posted</p> <p class="postedAnnisDate"><%= anni.createAt %></p>
                 </div>
                 <div class="lineBreak"><hr></div>
                 <div class="pure-g">
@@ -318,7 +318,7 @@
               <div class="userMemoriesContent">
                 <div class="contentHeader">
                   <p class="youLeftMemories">You left memories on <a href="detail-page.html"><%= memory.anniTitle %></a></p>
-                  <p class="leftMemoriesDate">4 days ago</p>
+                  <p class="leftMemoriesDate"><%= memory.createAt %></p>
                 </div>
                 <div class="lineBreak"><hr></div>
                 <p class="userMemoriesText"><%= memory.content %></p>
@@ -360,7 +360,7 @@
 
               <div class="annisContent">
                 <div class="contentHeader">
-                  <p class="youLiked">You liked</p> <p class="postedAnnisDate">2 days ago</p>
+                  <p class="youLiked">You liked</p> <p class="postedAnnisDate"><%= anni.createAt %></p>
                 </div>
                 <div class="lineBreak"><hr></div>
                 <div class="pure-g">
@@ -404,7 +404,7 @@
 
                 <div class="annisContent">
                   <div class="contentHeader">
-                    <p class="youBookmarked">You bookmarked</p> <p class="postedAnnisDate">2 days ago</p>
+                    <p class="youBookmarked">You bookmarked</p> <p class="postedAnnisDate"><%= anni.createAt %></p>
                   </div>
                   <div class="lineBreak"><hr></div>
                   <div class="pure-g">
