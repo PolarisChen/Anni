@@ -1366,6 +1366,15 @@ header {
 
 }
 
+.no-comment {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Lato Regular;
+  font-size: .8em;
+  color: #BDBDBD;
+  text-align: center;
+}
+
 /*Memo card*/
 
 

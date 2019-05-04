@@ -28,13 +28,13 @@
       <img src="img/cover-front-top-triangle.svg" alt="">
     </div>
     <div class="cover-front-bottom-triangle">
-      <img src="img/cover-front-top-triangle.svg" alt="">
+      <img src="/images/annis/cover-front-top-triangle.svg" alt="">
     </div>
     <div class="cover-back-left-triangle">
-      <img src="img/cover-back-left-triangle.svg" alt="">
+      <img src="/images/annis/cover-back-left-triangle.svg" alt="">
     </div>
     <div class="cover-back-right-triangle">
-      <img src="img/cover-front-top-triangle.svg" alt="">
+      <img src="/images/annis/cover-front-top-triangle.svg" alt="">
     </div>
 
     <div class="cover-title-container">
@@ -184,17 +184,17 @@
 
           <div class="hot-memos">
             <% if (comments.length === 0 ) { %>
-              <p class="memo-time">No comment.</p>
+              <p class="no-comment">No comment.</p>
             <% } else { %>
               <% comments.forEach(function(comment){ %>
                 <div class="memo-card">
                     <div class="memo-original">
                       <div class="memo-account-photo-container">
-                        <div class="account-photo"></div>
+                        <div class="account-photo"><img src="/images/avatars/<%= comment.userAvatar%>"></div>
                       </div>
                       <div class="memo-text-container">
                         <div class="user-name">
-                          <p>@</p><p><% comment.userName %>></p>
+                          <p>@</p><p><%= comment.userName %></p>
                         </div>
                         <div class="memo-time">
                           <p><%= comment.creatAt %></p>
