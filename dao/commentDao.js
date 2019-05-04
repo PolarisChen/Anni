@@ -6,7 +6,25 @@ module.exports = {
   queryByAnniId: async (anniId) => {
     try {
       const comments = await pool.query($sql.queryByAnniId, +anniId);
-      return comments;
+      let commentsWithReplies = [];
+      for (let i = 0; i < comments.length; i++) {
+        const comment = comments[i];
+        if (comment.parentId === 0) {
+          commentsWithReplies.push(comment);
+        }
+      }
+      for (let i = 0; i < commentsWithReplies.length; i++) {
+        const comment = commentsWithReplies[i];
+        comment.replies = [];
+        for (let i = 0; i < comments.length; i++) {
+          const reply = comments[i];
+          if (reply.parentId === comment.id) {
+            comment.replies.push(comment);
+          }
+        }
+      }
+
+      return commentsWithReplies;
     } catch(err) {
       console.log(err);
       return err;
