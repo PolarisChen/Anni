@@ -30,6 +30,15 @@ module.exports = {
       return err;
     }
   },
+  queryByUserId: async (userId) => {
+    try {
+      const comments = await pool.query($sql.queryByUserId, +userId);
+      return comments;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
   add: async (content, parentId, userId, anniId) => {
     try {
       const ret = await pool.query($sql.insert, [content, parentId, userId, anniId]);
