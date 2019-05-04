@@ -1,5 +1,11 @@
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Prata", "Lato", Georgia, Roboto, Arial;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2em;
 }
 
 /*Main navigation bar*/
@@ -417,7 +423,7 @@ header {
 .post_body {
   margin-right: 15%;
   margin-left: 15%;
-
+  font-family: 'Lato', sans-serif;
 }
 
 input {
@@ -425,17 +431,14 @@ input {
 }
 
 
-    .font-sample {
-      font-family: 'Lato', sans-serif;
-      font-family: 'Prata', serif;
-    }
+
 
 
 h1 {
     font-size: 30px;
     font-weight: bold;
     margin-top: 80px; 
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 
 }
 
