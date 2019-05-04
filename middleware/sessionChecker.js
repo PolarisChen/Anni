@@ -3,7 +3,7 @@ const sessionChecker = (req, res, next) => {
   if (req.session.userId && req.cookies.userId) {
     next();
   } else {
-    res.redirect('/users/login');
+    res.redirect('/login');
   }
 };
 module.exports = sessionChecker;

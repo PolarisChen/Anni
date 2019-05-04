@@ -1,10 +1,17 @@
 const bcrypt = require('bcrypt');
-const userDao = require('../dao/UserDao');
+const userDao = require('../dao/userDao');
+const anniDao = require('../dao/anniDao');
+const commentDao = require('../dao/commentDao');
+const notificationDao = require('../dao/notificationDao');
 
 module.exports = {
   getUser: async (id) => {
     try {
       const user = await userDao.queryById(id);
+      const annis = await anniDao.queryByUserId(id);
+      const likes = await anniDao.queryByLikerId(id);
+      const bookmarks = await anniDao.queryByBookmarkerId(id);
+      const comments = await commentDao.queryByUserId(id);
       if (typeof user === 'undefined') {
         return {
           success: 0,
@@ -21,8 +28,34 @@ module.exports = {
             email: user.email,
             bio: user.bio,
             avatar: user.avatar,
-            cover: user.cover
+            cover: user.cover,
+            annis: annis,
+            likes: likes,
+            bookmarks: bookmarks,
+            comments: comments
           }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  getNotifications: async (id) => {
+    try {
+      const notifications = await notificationDao.queryByUserId(id);
+      if (typeof notifications === 'undefined') {
+        return {
+          success: 0,
+          msg: 'No notifications',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: notifications
         }
       }
     } catch (err) {

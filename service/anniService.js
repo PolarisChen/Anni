@@ -1,4 +1,17 @@
-const anniDao = require('../dao/AnniDao');
+const anniDao = require('../dao/anniDao');
+const commentDao = require('../dao/commentDao');
+
+const decorateAnni = async (anni, id) => {
+  try {
+    anni.likeCount = await anniDao.queryLike(id);
+    anni.bookmarkCount = await anniDao.queryBookmark(id);
+    anni.markCount = await anniDao.queryMark(id);
+    anni.comments = await commentDao.queryByAnniId(id);
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
+};
 
 module.exports = {
   getAllAnnis: async () => {
@@ -11,6 +24,9 @@ module.exports = {
           data: {}
         }
       } else {
+        for (let anni in annis) {
+          await decorateAnni(anni, id);
+        }
         return {
           success: 1,
           msg: '',
@@ -26,50 +42,7 @@ module.exports = {
   getAnni: async (id) => {
     try {
       const anni = await anniDao.queryById(id);
-      if (typeof anni === 'undefined') {
-        return {
-          success: 0,
-          msg: 'Anni not exists',
-          data: {}
-        }
-      } else {
-        return {
-          success: 1,
-          msg: '',
-          data: anni
-        }
-      }
-    } catch (err) {
-      console.log(err);
-      return err;
-    }
-  },
-
-  getAnni: async (id) => {
-    try {
-      const anni = await anniDao.queryById(id);
-      if (typeof anni === 'undefined') {
-        return {
-          success: 0,
-          msg: 'Anni not exists',
-          data: {}
-        }
-      } else {
-        return {
-          success: 1,
-          msg: '',
-          data: anni
-        }
-      }
-    } catch (err) {
-      console.log(err);
-      return err;
-    }
-  },
-
-  getAnni: async (id) => {
-    try {
-      const anni = await anniDao.queryById(id);
+      await decorateAnni(anni, id);
       if (typeof anni === 'undefined') {
         return {
           success: 0,
@@ -152,6 +125,102 @@ module.exports = {
           msg: '',
           data: {
             anniId: ret.insertId // TODO change key name
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  likeAnni: async (id, userId) => {
+    try {
+      const ret = await anniDao.addLike(id, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Like anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  bookmarkAnni: async (id, userId) => {
+    try {
+      const ret = await anniDao.addBookmark(id, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Bookmark anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  markAnni: async (id, userId) => {
+    try {
+      const ret = await anniDao.addMark(id, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Mark anni failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            anniId: id
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  },
+
+  likeComment: async (commentId, userId) => {
+    try {
+      const ret = await commentDao.addLike(commentId, userId);
+      if (typeof ret === 'undefined') {
+        return {
+          success: 0,
+          msg: 'Like comment failed',
+          data: {}
+        }
+      } else {
+        return {
+          success: 1,
+          msg: '',
+          data: {
+            commentId: id
           }
         }
       }
