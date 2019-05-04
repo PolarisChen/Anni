@@ -3,15 +3,6 @@ let pool = require('../util/dbUtil');
 let $sql = require('./anniSqlMapping');
 
 module.exports = {
-  queryAll: async () => {
-    try {
-      const annis = await pool.query($sql.queryAll);
-      return annis;
-    } catch(err) {
-      console.log(err);
-      return err;
-    }
-  },
   add: async (title, desc, quote, month, day, type, markType, cover, userId) => {
     try {
       const ret = await pool.query($sql.insert, [title, desc, quote, month, day, type, markType, cover, userId]);
@@ -26,6 +17,51 @@ module.exports = {
     try {
       const annis = await pool.query($sql.queryById, +id);
       return annis[0];
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryAll: async () => {
+    try {
+      const annis = await pool.query($sql.queryAll);
+      return annis;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryByUserId: async (userId) => {
+    try {
+      const annis = await pool.query($sql.queryByUserId, +userId);
+      return annis;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryByLikerId: async (userId) => {
+    try {
+      const annis = await pool.query($sql.queryByLikerId, +userId);
+      return annis;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryByBookmarkerId: async (userId) => {
+    try {
+      const annis = await pool.query($sql.queryByBookmarkerId, +userId);
+      return annis;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  queryByMarkerId: async (userId) => {
+    try {
+      const annis = await pool.query($sql.queryByMarkerId, +userId);
+      return annis;
     } catch(err) {
       console.log(err);
       return err;
