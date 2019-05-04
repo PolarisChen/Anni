@@ -20,7 +20,7 @@
   <div class="annis-cover">
 
     <div class="cover-img-container">
-      <img src="<%= cover %>">
+      <img src="/images/annis/<%= cover %>">
 
     </div>
 
@@ -118,7 +118,7 @@
             <div class="album-container">
               <% images.forEach(function(image){ %>
                 <div class="album-img-container">
-                  <div class="album-img" style="background-image: url('/images/annis/<%= images.image%>');"></div>
+                  <div class="album-img" style="background-image: url('/images/annis/sample-anni.jpg');"></div>
                 </div>
                 <div class="album-detail-popup-container">
                   <!--<div class="cross-icon">-->
@@ -176,7 +176,7 @@
                 <div class="memo-card">
                     <div class="memo-original">
                       <div class="memo-account-photo-container">
-                        <div class="account-photo"><img src="/images/avatars/<%= comment.userAvatar%>"></div>
+                        <div class="account-photo" style="background-image: url('/images/avatars/sample-avatar.jpg'); background-size: cover;"></div>
                       </div>
                       <div class="memo-text-container">
                         <div class="user-name">
