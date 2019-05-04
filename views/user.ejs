@@ -352,11 +352,11 @@
           <div class="userLikesList">
             <div class="postedAnnis">
 
-              <% if (annis.length === 0) { %>
+              <% if (likes.length === 0) { %>
               <p class="noContent">Nothing can be found here. Try like your first new Anni:)</p>
               <% } else { %>
 
-              <% annis.forEach(function(anni){ %>
+              <% likes.forEach(function(anni){ %>
 
               <div class="annisContent">
                 <div class="contentHeader">
@@ -396,11 +396,11 @@
           <div class="userBookmarksList">
             <div class="postedAnnis">
 
-              <% if (annis.length === 0) { %>
+              <% if (bookmarks.length === 0) { %>
                 <p class="noContent">Nothing can be found here. Try bookmark your first new Anni:)</p>
               <% } else { %>
 
-                <% annis.forEach(function(anni){ %>
+                <% bookmarks.forEach(function(anni){ %>
 
                 <div class="annisContent">
                   <div class="contentHeader">
