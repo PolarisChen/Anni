@@ -446,7 +446,8 @@ h1 {
 p {
     font-size: 18px;
     font-weight: medium;
-    margin-bottom: 8px; 
+    margin-bottom: 8px;
+    margin-top: 20px;
 }
 
 
