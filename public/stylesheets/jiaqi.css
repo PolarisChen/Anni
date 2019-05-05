@@ -257,7 +257,6 @@
 
 .annisImage {
   height: 100px;
-  background-image: url("img/samuel-morse-500px.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -408,4 +407,11 @@
     display: block;
     float: none;
   }
+
+  #sideBarBox {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
 }
