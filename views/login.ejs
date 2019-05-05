@@ -6,13 +6,12 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
-  <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="script-detail-page.js"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
 <div class="sign-up-log-in-page-container">
   <div class="sign-up-img-container">
-    <div class="sign-up-log-in-img" style="background-image: url('img/cover-carl-gauss.jpg')"></div>
+    <div class="sign-up-log-in-img" style="background-image: url('/images/annis/cover-carl-gauss.jpg')"></div>
   </div>
   <div class="sign-up-log-in-page-content-container">
     <div class="sign-up-log-in-page-title">
@@ -51,7 +50,7 @@
     </div>
     <div class="sign-up-log-in-page-button-container">
       <div class="sign-up-log-in-page-button">
-        <a href="#" class="sign-up-log-in-button">Log in</a>
+        <a href="#" class="sign-up-log-in-button" id="btn-login">Log in</a>
       </div>
     </div>
 
@@ -62,55 +61,41 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
-  function postData() {
+  function login() {
     var data = {
       email: $('#input-username').val(),
       password: $('#input-password').val(),
       // status: $('#btn-login').data("str"),
     };
     // var anniId = $('#anni-id').val();
-    // var url = '/annis/' + anniId + '/like';
+    var url = '/login';
 
     $.ajax({
       method: 'POST',
       url: url,
       data: data,
-      dataType: 'json'
+      dataType: 'json',
     }).done(function(ret) {
       console.log(ret);
       if (ret.success) {
         // Succeeded
         console.log(ret.data);
-        var userName = "Hello";
-        var content = "";
-        // var newComment = '<div>\n'
-        //         '<p>' + userName + '</p>\n' +
-        //         '<p>' + content + '</p>\n' +
-        //         '</div>';
-
-        var newComment = '<div>\n'
-        '<p><%= userName %></p>\n' +
-        '<p><%= content %></p>\n' +
-        '</div>';
-
-        var ele = ejs.render(newComment, {userName: userName, content: ""});
-        $('.comments').append(newComment);
-
         window.location.href = "/users";
       } else {
         // Failed
         console.log(ret.msg);
         alert(ret.msg);
-        location.reload();
+        // location.reload();
       }
     });
   }
 
   $(document).ready(function(){
-    $('#button-sample').click(function(){
-      postData();
+    $('#btn-login').click(function(){
+      login();
     });
   });
 </script>
