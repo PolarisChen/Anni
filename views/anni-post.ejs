@@ -5,14 +5,15 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/post.css">
+    <link rel="stylesheet" href="/stylesheets/user-post.css">
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
 
 
-<div class=post_body>
+<div class="post_body">
   <h1>Add a new post</h1>
   <p>Type</p>
         
@@ -91,6 +92,9 @@
                 <option value="31">31</option>
             </select>
         </div>
+        <form class="pure-u-1 pure-u-md-1-6 textarea_date">
+            <textarea id="year_input" class="textarea_post4" style="width:100%; min-width: 115px">2019</textarea>
+        </form>
 </div>
         
         
@@ -156,6 +160,7 @@
                 quote: "",
                 month: $('#select_month').val(),
                 day: $('#select_date').val(),
+                year: $('#year_input').val(),
                 userId: $('#userId').val(),
                 type: type,
                 cover: $('#add_local').val(),
