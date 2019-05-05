@@ -2,7 +2,7 @@
 
 html {
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   display: block;
 }
 
@@ -641,7 +641,7 @@ header {
 .cover-title-number-th {
   margin-top: -15px;
   margin-left: 15px;
-  font-family: Prata, Georgia;
+  font-family: "Prata", Georgia;
   font-size: 2em;
   font-weight: 100;
   color: #000;
@@ -655,7 +655,7 @@ header {
   padding-left: 10%;
   padding-right: 5%;
   background: #DCCCBB;
-  font-family: Prata, Georgia;
+  font-family: "Prata", Georgia;
   font-size: 2em;
   line-height: 1.2em;
   color: #000;
@@ -667,7 +667,7 @@ header {
   padding-right: 20%;
   right:0;
   margin-top: 30px;
-  font-family: "Lato ExtraLight";
+  font-family: "Lato";
   font-weight: 100;
   font-size: 3em;
   color: #C6A48F;
