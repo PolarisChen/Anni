@@ -176,7 +176,7 @@
               <p class="no-comment">No comment.</p>
             <% } else { %>
               <% comments.forEach(function(comment){ %>
-                <div class="memo-card">
+                <div class="memo-card" id="memo-card">
                     <div class="memo-original">
                       <div class="memo-account-photo-container">
                         <div class="account-photo" style="background-image: url('/images/avatars/sample-avatar.jpg'); background-size: cover;"></div>
@@ -323,18 +323,31 @@
       data: data,
       dataType: 'json',
     }).done(function(ret) {
-      console.log('RETURN', ret);
+      // console.log('RETURN', ret);
       if (ret.success) {
         // Succeeded
+
         console.log(ret.data);
         var userName = userName;
-        var content = "content";
-        var newComment = '<div>\n'
-          '<p>' + userName + '</p>\n' +
-          '<p>' + content + '</p>\n' +
-          '</div>';
+        var newCommentContent = data.content;
+        var newComment =
+          // '<div class="memo-card">'
+          '<div class="user-name">\n' +
+          '<p>@</p><p>' + userName + '</p>' +
+          '</div>' +
+          '<div class="memo-content">' +
+          '<p>' + newCommentContent + '</p>'
+          '</div>'
+          // '</div>'
+              // '<div class="user-name">\n'
+              // '<p>' + userName + '</p>\n' +
+              // '</div>';
+              // '<div class="memo-content">\n'
+              // '<p>' + newCommentContent + '</p>\n' +
+              // '</div>';
 
-        $('.comments').append(newComment);
+        $('#memo-card').append(newComment);
+        $('#input-comment').val('');
 
 
 
@@ -351,6 +364,8 @@
     $('#btn-comment-send').click(function(){
       commentPost();
     });
+
+
   });
 </script>
 
