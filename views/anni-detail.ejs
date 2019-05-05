@@ -171,6 +171,8 @@
             </div>
           </div>
 
+
+
           <div class="hot-memos">
             <% if (comments.length === 0 ) { %>
               <p class="no-comment">No comment.</p>
@@ -280,6 +282,8 @@
 
 <input type="hidden" id="user-id" value="<%= userId %>">
 <input type="hidden" id="anni-id" value="<%= id %>">
+<input type="hidden" id="database-user-name" value="<%= userName %>">
+
 
 <script>
   $(document).ready(function(){
@@ -311,6 +315,7 @@
       parentId: 0,
       userId: Number($('#user-id').val()),
       anniId: Number($('#anni-id').val()),
+      userName: $('#database-user-name').val()
       // status: $('#btn-login').data("str"),
     };
     var url = '/annis/'+ data.anniId +'/comments';
@@ -328,16 +333,25 @@
         // Succeeded
 
         console.log(ret.data);
-        var userName = userName;
+        var userName = data.userName;
         var newCommentContent = data.content;
         var newComment =
           // '<div class="memo-card">'
-          '<div class="user-name">\n' +
+          '<div class="memo-card" id="memo-card">\n<div class="memo-original">\n<div class="memo-account-photo-container">\n<div class="account-photo" style="background-image: url(\'/images/avatars/sample-avatar.jpg\'); background-size: cover;"></div>\n</div>'+
+          '<div class="memo-text-container"><div class="user-name">\n' +
           '<p>@</p><p>' + userName + '</p>' +
           '</div>' +
+          '<div class="memo-time">\n' +
+          '<p>' + 'time' + '</p>\n' +
+          '</div>' +
           '<div class="memo-content">' +
-          '<p>' + newCommentContent + '</p>'
-          '</div>'
+          '<p>' + newCommentContent + '</p>' +
+          '<div class="memo-like-and-comment">\n<div class="memo-like">\n<div class="memo-icon">\n<i class="fas fa-thumbs-up"></i>\n</div>' +
+          '<div class="memo-stat">' +
+          '<p>0</p>' +
+          '</div>\n</div>\n<div class="memo-comment">\n<div class="memo-icon">\n<i class="fas fa-comment"></i>\n</div>\n<div class="memo-stat">\n<p>0</p>' +
+          '</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>'
+
           // '</div>'
               // '<div class="user-name">\n'
               // '<p>' + userName + '</p>\n' +
@@ -346,7 +360,11 @@
               // '<p>' + newCommentContent + '</p>\n' +
               // '</div>';
 
-        $('#memo-card').append(newComment);
+        $('.hot-memos').prepend(newComment);
+
+        // $('.hot-memos').append($('#memo-card').html(newComment));
+
+        // $('#memo-card').append(newComment);
         $('#input-comment').val('');
 
 
