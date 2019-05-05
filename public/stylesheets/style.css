@@ -1230,7 +1230,19 @@ header {
 .album-detail-popup-img-container {
   position: relative;
   height: 600px;
+
 }
+
+.album-detail-popup-img-container .album-img {
+  opacity: 1;
+  overflow: scroll;
+}
+
+.album-detail-popup-img-container .album-img:hover {
+  transform: none;
+}
+
+
 
 .album-img-popup {
   width: 100%;
