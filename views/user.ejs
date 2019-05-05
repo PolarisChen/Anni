@@ -88,36 +88,35 @@
                 <p class="noContent">Nothing can be found here. Try post your first memory:)</p>
               <% } else { %>
 
-              <% comments.forEach(function(memory){ %>
+                <% comments.forEach(function(memory){ %>
 
-              <a class="userMemoriesContent" href="/annis/<%= memory.anniId%>">
-                <div class="contentHeader">
-                  <p class="youLeftMemories">You left memories on <a href="detail-page.html"><%= memory.anniTitle %></a></p>
-                  <p class="leftMemoriesDate render-time" datetime="<%= memory.createAt %>"></p>
-                </div>
-                <p class="userMemoriesText"><%= memory.content %></p>
-                <div class="memo-like-and-comment">
-                  <div class="memo-like">
-                    <div class="memo-icon">
-                      <i class="fas fa-thumbs-up"></i>
+                <a class="userMemoriesContent" href="/annis/<%= memory.anniId%>">
+                  <div class="contentHeader">
+                    <p class="youLeftMemories">You left memories on <%= memory.anniTitle %></p>
+                    <p class="leftMemoriesDate render-time" datetime="<%= memory.createAt %>"></p>
+                  </div>
+                  <p class="userMemoriesText"><%= memory.content %></p>
+                  <div class="memo-like-and-comment">
+                    <div class="memo-like">
+                      <div class="memo-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                      </div>
+                      <div class="memo-stat">
+                        <p><%= memory.likeCount %></p>
+                      </div>
                     </div>
-                    <div class="memo-stat">
-                      <p>12</p>
+                    <div class="memo-comment">
+                      <div class="memo-icon">
+                        <i class="fas fa-comment"></i>
+                      </div>
+                      <div class="memo-stat">
+                      </div>
                     </div>
                   </div>
-                  <div class="memo-comment">
-                    <div class="memo-icon">
-                      <i class="fas fa-comment"></i>
-                    </div>
-                    <div class="memo-stat">
-                      <p>3</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+                </a>
 
                 <% }); %>
-                <% } %>
+              <% } %>
 
             </div>
           </div>
