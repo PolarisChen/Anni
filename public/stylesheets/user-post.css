@@ -423,6 +423,7 @@ header {
 .post_body {
       margin-right: 15%;
       margin-left: 15%;
+      margin-bottom: 80px;
       font-family: 'Lato', sans-serif;
       color: black;
 }
@@ -579,19 +580,15 @@ span.upload_post {
     border-radius: 5px;
     font-size: 18px;
     font-weight: normal;
-    color: #DCCCBB;
+    color: white;
     transition-duration: 0.1s;
     cursor: pointer;
+    background-color: #DCCCBB;
     
 }
 
 .button_post2:hover {
-    background-color: #DCCCBB;
-    color: white;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: bold;
+    background-color: #BC8374;
 }
 
 .button_post3 {
