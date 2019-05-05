@@ -185,12 +185,10 @@
   display: none;
 }
 
-.lineBreak {
+.contentHeader {
   padding-bottom: 10px;
-}
-
-.lineBreak hr {
-  border-top: 1px solid #dcccbb;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dcccbb;
 }
 
 .youPosted,
@@ -238,6 +236,8 @@
 .likesContent,
 .bookmarksContent,
 .systemNotificationsContent {
+  display: block;
+  text-decoration: none;
   padding: 10px 30px;
   margin-bottom: 30px;
   background-color: #f2f2f2;
