@@ -406,4 +406,8 @@
     display: block;
     float: none;
   }
+
+  #sideBarBox {
+    position: relative;
+  }
 }
