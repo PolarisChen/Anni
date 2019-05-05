@@ -130,13 +130,18 @@
                     <div class="album-img" style="background-image: url('/images/annis/<%= images.image%>');"></div>
                   </div>
                   <div class="album-detail-popup-caption">
-                    <p><%= images.caption%></p>
+                    <p><%= image.caption%></p>
 
                   </div>
                 </div>
               <% }) %>
 
             </div>
+          </div>
+
+
+          <div class="web-footer">
+            <%- include('footer') %>
           </div>
 
 
@@ -152,8 +157,11 @@
 
 
 
+
         </div>
       </div>
+
+
 
 
       <!--Memos-->
@@ -274,6 +282,10 @@
   <!--</script>-->
 
 </section>
+
+<div class="mobile-footer">
+  <%- include('footer') %>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
