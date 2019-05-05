@@ -462,6 +462,7 @@ select {
     font-size: 14px;
     font-weight: lighter;
     font-style: italic;
+    height: 30px;
 }
 
 .custom-select3 {
@@ -477,20 +478,20 @@ select {
 .textarea_post1,
 .textarea_post4 {
     border-radius: 5px;
-    border-color: #828282;
+    border-color: #BDBDBD;
     background-color: #FFFEFE;
     font-size: 14px;
     font-weight: lighter;
     font-style: italic;
     resize: none;
+    color: #BDBDBD;
 }
 
 .textarea_post4 {
     margin-left: 40%;
-    margin-top: 3px;
-    height: 16.5px;
-    padding-top:0;
-    color: #828282;
+    margin-top: 0;
+    height: 20px;
+    padding-top:6px;
 }
 
 .post_plus {
@@ -520,14 +521,15 @@ span.upload_post {
 }
 
 .textarea_post3 {
-    height: 20px;
-    border-color: #828282;
+    height: 30px;
+    border-color: #BDBDBD;
     margin-left: 5%;
     margin-bottom: 5px; 
     border-radius: 5px;
     font-size: 14px;
     font-weight: lighter;
     font-style: italic;
+    color: #BDBDBD;
 }
 
 .button_post4 {
@@ -539,7 +541,6 @@ span.upload_post {
     font-weight: normal;
     color: black;
     cursor: pointer;
-    max-height: 40px;
 }
 
 
@@ -552,7 +553,9 @@ span.upload_post {
     font-weight: lighter;
     font-style: italic;
     min-height: 200px;
+    color: #BDBDBD;
 }
+
 
 .button_post1 {
     font-size: 14px;
@@ -562,7 +565,8 @@ span.upload_post {
     border-radius: 5px;
     color: black;
     cursor: pointer;
-    min-height: 40px;
+    height: 30px;
+    width: 200px;
 }
 
 
@@ -584,6 +588,8 @@ span.upload_post {
     transition-duration: 0.1s;
     cursor: pointer;
     background-color: #DCCCBB;
+    width: 200px;
+    height: 50px;
     
 }
 
@@ -617,6 +623,11 @@ span.upload_post {
     border-radius: 5px;
 }
 
+
+.button_post3,
+.button_post4 {
+    height: 30px;
+}
 
 @media only screen and (min-width: 1920px) {
   body {
