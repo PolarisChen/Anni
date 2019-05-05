@@ -242,7 +242,7 @@ header {
   margin-bottom: 2px;
   height: 35px;
   width: 35px;
-  background: #828282;
+  background-size: cover;
   border-radius: 50px;
 }
 
