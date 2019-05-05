@@ -122,17 +122,12 @@
           console.log(ret.data);
           var userName = "Hello";
           var content = "";
-          // var newComment = '<div>\n'
-          //         '<p>' + userName + '</p>\n' +
-          //         '<p>' + content + '</p>\n' +
-          //         '</div>';
-
           var newComment = '<div>\n'
-          '<p><%= userName %></p>\n' +
-          '<p><%= content %></p>\n' +
-          '</div>';
+                  '<p>' + userName + '</p>\n' +
+                  '<p>' + content + '</p>\n' +
+                  '</div>';
 
-          var ele = ejs.render(newComment, {userName: userName, content: ""});
+
           $('.comments').append(newComment);
 
           window.location.href = "/users";

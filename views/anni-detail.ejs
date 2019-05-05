@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <script type="text/javascript" src="script-detail-page.js"></script>
+
 </head>
 <body>
 
@@ -26,9 +26,9 @@
 
     </div>
 
-    <div class="cover-front-top-triangle">
-      <img src="img/cover-front-top-triangle.svg" alt="">
-    </div>
+    <!--<div class="cover-front-top-triangle">-->
+      <!--<img src="img/cover-front-top-triangle.svg" alt="">-->
+    <!--</div>-->
     <div class="cover-front-bottom-triangle">
       <img src="/images/annis/cover-front-top-triangle.svg" alt="">
     </div>
@@ -42,7 +42,7 @@
     <div class="cover-title-container">
       <div class="cover-title-number-container">
         <div class="cover-title-number">
-          <p><%= count %></p>
+          <p><%= 2019 - year %></p>
         </div>
         <div class="cover-title-number-th">
           <p>th</p>
@@ -163,9 +163,9 @@
           <div class="add-memo">
             <div class="input-box">
 
-              <input type="text" placeholder="Add memos here...">
+              <input type="text" placeholder="Add memos here..." id="input-comment">
 
-              <div class="memo-send-icon">
+              <div class="memo-send-icon" id="btn-comment-send">
                 <i class="fas fa-paper-plane"></i>
               </div>
             </div>
@@ -276,6 +276,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<input type="hidden" id="user-id" value="<%= userId %>">
+<input type="hidden" id="anni-id" value="<%= id %>">
 
 <script>
   $(document).ready(function(){
@@ -297,6 +301,57 @@
     });
   });
 
+</script>
+
+
+<script>
+  function commentPost() {
+    var data = {
+      content: $('#input-comment').val(),
+      parentId: 0,
+      userId: Number($('#user-id').val()),
+      anniId: Number($('#anni-id').val()),
+      // status: $('#btn-login').data("str"),
+    };
+    var url = '/annis/'+ data.anniId +'/comments';
+    console.log(data);
+    console.log(url);
+
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: data,
+      dataType: 'json',
+    }).done(function(ret) {
+      console.log('RETURN', ret);
+      if (ret.success) {
+        // Succeeded
+        console.log(ret.data);
+        var userName = userName;
+        var content = "content";
+        var newComment = '<div>\n'
+          '<p>' + userName + '</p>\n' +
+          '<p>' + content + '</p>\n' +
+          '</div>';
+
+        $('.comments').append(newComment);
+
+
+
+      } else {
+        // Failed
+        console.log(ret.msg);
+        alert(ret.msg);
+        // location.reload();
+      }
+    });
+  }
+
+  $(document).ready(function(){
+    $('#btn-comment-send').click(function(){
+      commentPost();
+    });
+  });
 </script>
 
 
