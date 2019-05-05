@@ -49,7 +49,7 @@ router.post('/:anniId/mark', sessionChecker, (req, res, next) => {
   });
 });
 
-router.post('/:anniId/comments/', sessionChecker, (req, res, next) => {
+router.post('/:anniId/comments', sessionChecker, (req, res, next) => {
   const {content, parentId, userId, anniId} = req.body;
   anniService.addComment(content, parentId, userId, anniId).then(ret => {
     res.json(ret);
