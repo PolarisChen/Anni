@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
   <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/card.css">
 </head>
 <body>
 <div class="sign-up-log-in-page-container">
@@ -33,11 +34,11 @@
     </div>
 
     <div class="sign-up-input-container">
-      <div class="sign-up-input">
-        <input type="text" placeholder="Username" id="input-username">
+      <div class="sign-up-input input-form">
+        <input type="text" placeholder="Email" id="input-email">
       </div>
-      <div class="sign-up-input">
-        <input type="text" placeholder="Password" id="input-password">
+      <div class="sign-up-input input-form">
+        <input type="password" placeholder="Password" id="input-password">
       </div>
     </div>
     <div class="remember-me-forget-password-container">
@@ -49,13 +50,11 @@
       </div>
     </div>
     <div class="sign-up-log-in-page-button-container">
-      <div class="sign-up-log-in-page-button">
-        <a href="#" class="sign-up-log-in-button" id="btn-login">Log in</a>
-      </div>
+        <a class="btn-primary" id="btn-login">Log In</a>
     </div>
 
     <div class="have-an-account">
-      <p>Do not have an account? <a href="#">Sign up now.</a></p>
+      <p>Do not have an account? <a href="/signup">Sign up</a> now.</p>
     </div>
 
   </div>
@@ -66,7 +65,7 @@
 <script>
   function login() {
     var data = {
-      email: $('#input-username').val(),
+      email: $('#input-email').val(),
       password: $('#input-password').val(),
       // status: $('#btn-login').data("str"),
     };
