@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sign up</title>
-  <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
-  <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="script-detail-page.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/card.css">
+    <style>
+        .sign-up-input input {
+            padding: 4px 0;
+            color: #333333;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 16px;
+        }
+        .btn-primary {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            width: 200px;
+            height: 22px;
+            font-weight: 400;
+            text-align: center;
+            text-decoration: none;
+            background: #DCCCBB;
+            color: #fff;
+            border-radius: 10px;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #C6A48F;
+        }
+    </style>
 </head>
 <body>
 <div class="sign-up-log-in-page-container">
   <div class="sign-up-img-container">
-    <div class="sign-up-log-in-img" style="background-image: url('img/cover-carl-gauss.jpg')"></div>
+    <div class="sign-up-log-in-img" style="background-image: url('/images/annis/cover-carl-gauss.jpg')"></div>
   </div>
   <div class="sign-up-log-in-page-content-container">
     <div class="sign-up-log-in-page-title">
-      <h1>Welcome to</h1>
+      <h1>Welcome To</h1>
     </div>
     <div class="sign-up-log-in-page-logo">
       <svg width="70px" height="52px" viewBox="0 0 70 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -45,13 +77,11 @@
       </div>
     </div>
     <div class="sign-up-log-in-page-button-container">
-      <div class="sign-up-log-in-page-button">
-        <a href="#" class="sign-up-log-in-button">Sign up</a>
-      </div>
+      <a class="btn-primary">Sign Up</a>
     </div>
 
     <div class="have-an-account">
-      <p>Already have an account? <a href="#">Log in now.</a></p>
+      <p>Already have an account? <a href="/login">Log in</a> now.</p>
     </div>
 
   </div>
