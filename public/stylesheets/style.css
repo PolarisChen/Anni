@@ -553,10 +553,17 @@ header {
   margin-top: 80px;
   left: 0;
   width: 55%;
-  max-height: 600px;
+  height: 600px;
   overflow: hidden;
   animation: cover-img-scale 1.5s .1s ease-in-out;
-  /*background-color: aqua;*/
+}
+
+.cover-img {
+  float: right;
+  height: 100%;
+  width: 70%;
+  background-size: cover;
+
 }
 
 @keyframes cover-img-scale {
