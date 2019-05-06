@@ -1788,6 +1788,7 @@ footer {
   padding-right: 0px;
 }
 .input-form input {
+  width: 100%;
   padding: 4px 0;
   color: #333333;
   font-family: 'Lato', sans-serif;
