@@ -110,8 +110,8 @@ module.exports = {
   queryLike: async (id) => {
     try {
       const ret = await pool.query($sql.queryLike, +id);
-      console.log('queryLike', ret);
-      return ret;
+      console.log('queryLike', ret, ret[0].num);
+      return ret[0].num;
     } catch(err) {
       console.log(err);
       return err;
@@ -140,8 +140,8 @@ module.exports = {
   queryBookmark: async (id) => {
     try {
       const ret = await pool.query($sql.queryBookmark, +id);
-      console.log('queryBookmark', ret);
-      return ret;
+      console.log('queryBookmark', ret, ret[0].num);
+      return ret[0].num;
     } catch(err) {
       console.log(err);
       return err;
@@ -170,8 +170,8 @@ module.exports = {
   queryMark: async (id) => {
     try {
       const ret = await pool.query($sql.queryMark, +id);
-      console.log('queryMark', ret);
-      return ret;
+      console.log('queryMark', ret, ret[0].num);
+      return ret[0].num;
     } catch(err) {
       console.log(err);
       return err;
