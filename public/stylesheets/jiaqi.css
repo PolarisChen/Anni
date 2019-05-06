@@ -409,8 +409,9 @@
   }
 
   #sideBarBox {
-    position: -webkit-sticky;
-    position: sticky;
+    /*position: -webkit-sticky;*/
+    /*position: sticky;*/
+    position: static;
     top: 0;
   }
 
