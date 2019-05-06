@@ -11,7 +11,6 @@
   /* Box-model */
   display: flex;
   margin-top: 80px;
-  padding-bottom: 50px;
   height: 200px;
   background-image: url("img/user-banner.jpg");
   background-size: cover;
@@ -20,13 +19,11 @@
 }
 
 .dummyHeader {
-  padding-bottom: 50px;
   margin-top: 40px;
 }
 
 .headerOverlay {
   position: absolute;
-  padding-bottom: 50px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -409,6 +406,13 @@
   .notificationDate {
     display: block;
     float: none;
+  }
+
+  .avatarInfo {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   #sideBarBox {
