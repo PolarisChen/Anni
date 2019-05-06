@@ -67,17 +67,17 @@
 
     <div class="sign-up-input-container">
       <div class="sign-up-input">
-        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Username" id="input-name">
       </div>
       <div class="sign-up-input">
-        <input type="text" placeholder="E-mail">
+        <input type="text" placeholder="E-mail" id="input-email">
       </div>
       <div class="sign-up-input">
-        <input type="text" placeholder="Password">
+        <input type="password" placeholder="Password" id="input-password">
       </div>
     </div>
     <div class="sign-up-log-in-page-button-container">
-      <a class="btn-primary">Sign Up</a>
+      <a class="btn-primary" id="btn-signup">Sign Up</a>
     </div>
 
     <div class="have-an-account">
@@ -86,5 +86,47 @@
 
   </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+  function signup() {
+    var data = {
+      name: $('#input-name').val(),
+      email: $('#input-email').val(),
+      password: $('#input-password').val(),
+    };
+    // var anniId = $('#anni-id').val();
+    var url = '/signup';
+
+    console.log(data);
+
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: data,
+      dataType: 'json',
+    }).done(function(ret) {
+      console.log(ret);
+      if (ret.success) {
+        // Succeeded
+        console.log(ret.data);
+        window.location.href = "/users";
+      } else {
+        // Failed
+        console.log(ret.msg);
+        alert(ret.msg);
+        // location.reload();
+      }
+    });
+  }
+
+  $(document).ready(function(){
+    $('#btn-signup').click(function(){
+      signup();
+    });
+  });
+</script>
+
 </body>
 </html>
