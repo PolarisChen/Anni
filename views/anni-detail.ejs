@@ -285,10 +285,11 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<input type="hidden" id="user-id" value="<%= userId %>">
+<input type="hidden" id="user-id" value="<%= currentUser.userId %>">
 <input type="hidden" id="anni-id" value="<%= id %>">
-<input type="hidden" id="database-user-name" value="<%= userName %>">
+<input type="hidden" id="user-name" value="<%= currentUser.userName %>">
 <input type="hidden" id="anni-type" value="<%= type %>">
+<input type="hidden" id="user-avatar" value="<%= currentUser.userAvatar %>">
 
 
 
@@ -332,7 +333,7 @@
       parentId: 0,
       userId: Number($('#user-id').val()),
       anniId: Number($('#anni-id').val()),
-      userName: $('#database-user-name').val()
+      // userName: $('#database-user-name').val()
       // status: $('#btn-login').data("str"),
     };
     var url = '/annis/'+ data.anniId +'/comments';
@@ -350,16 +351,17 @@
         // Succeeded
 
         console.log(ret.data);
-        var userName = data.userName;
+        var userName = $('#user-name').val();
+        var userAvatar = $('#user-avatar').val();
         var newCommentContent = data.content;
         var newComment =
           // '<div class="memo-card">'
-          '<div class="memo-card" id="memo-card">\n<div class="memo-original">\n<div class="memo-account-photo-container">\n<div class="account-photo" style="background-image: url(\'/images/avatars/sample-avatar.jpg\'); background-size: cover;"></div>\n</div>'+
+          '<div class="memo-card" id="memo-card">\n<div class="memo-original">\n<div class="memo-account-photo-container">\n<div class="account-photo" style="background-image: url(\'/images/avatars/'+ userAvatar +'\'); background-size: cover;"></div>\n</div>'+
           '<div class="memo-text-container"><div class="user-name">\n' +
           '<p>@</p><p>' + userName + '</p>' +
           '</div>' +
           '<div class="memo-time">\n' +
-          '<p>' + 'time' + '</p>\n' +
+          // '<p>' + 'time' + '</p>\n' +
           '</div>' +
           '<div class="memo-content">' +
           '<p>' + newCommentContent + '</p>' +
