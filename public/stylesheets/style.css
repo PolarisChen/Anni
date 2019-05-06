@@ -1544,10 +1544,12 @@ header {
   color: #C6A48F;
 }
 
-.memo-stat {
+
+.memo-stat p {
   font-family: "Lato";
   font-size: .8em;
   color: #BDBDBD;
+
 }
 
 /*Recent memos*/

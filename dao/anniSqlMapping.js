@@ -4,7 +4,7 @@ let anni = {
   update:'UPDATE annis set title=?, desc=?, quote=?, month=?, day=?, type=?, markType=?, cover=? where id=?',
   delete: 'DELETE FROM annis WHERE id=?',
   queryById: 'SELECT a.*, u.name AS userName FROM annis a, users u WHERE a.id=? AND a.userId=u.id',
-  queryAll: 'SELECT a.*, u.name AS userName FROM annis a, users u WHERE a.userId=u.id',
+  queryAll: 'SELECT a.*, u.name AS userName FROM annis a, users u WHERE a.userId=u.id ORDER BY a.id',
   queryByUserId: 'SELECT a.*, u.name AS userName, u.avatar AS userAvatar FROM annis a, users u WHERE a.userId=? AND a.userId=u.id',
   queryByLikerId: 'SELECT a.*, u.name AS userName, u.avatar AS userAvatar, l.createAt AS likeAt FROM annis a, users u, anni_likes l WHERE l.userId=? AND l.anniId=a.id AND a.userId=u.id',
   queryByBookmarkerId: 'SELECT a.*, u.name AS userName, u.avatar AS userAvatar, b.createAt AS bookmarkAt FROM annis a, users u, anni_bookmarks b WHERE b.userId=? AND b.anniId=a.id AND a.userId=u.id',
