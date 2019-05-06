@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notification</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/jiaqi.css">
+    <script>
+        $(function() {
+          $("#repliesButton").css("background-color", "#dcccbb");
+
+          $("#repliesButton").click(function(event){
+              hideAll();
+              $(".repliesList").fadeIn("slow");
+              $("#repliesButton").css("background-color", "#dcccbb");
+          });
+
+          $("#likesButton").click(function(event){
+              hideAll();
+              $(".likesList").fadeIn("slow");
+              $("#likesButton").css("background-color", "#dcccbb");
+          });
+
+          $("#bookmarksButton").click(function(event){
+              hideAll();
+              $(".bookmarksList").fadeIn("slow");
+              $("#bookmarksButton").css("background-color", "#dcccbb");
+          });
+
+          $("#systemNotificationsButton").click(function(event){
+              hideAll();
+              $(".systemNotificationsList").fadeIn("slow");
+              $("#systemNotificationsButton").css("background-color", "#dcccbb");
+          });
+
+          resizeLayout();
+          $("#sideBarBox").show();
+          $("#contentBox").show();
+        });
+
+        function hideAll() {
+          $(".repliesList").hide();
+          $(".likesList").hide();
+          $(".bookmarksList").hide();
+          $(".systemNotificationsList").hide();
+          let cssStyle = {"background-color": ""};
+          $("#repliesButton").css(cssStyle);
+          $("#likesButton").css(cssStyle);
+          $("#bookmarksButton").css(cssStyle);
+          $("#systemNotificationsButton").css(cssStyle);
+        }
+
+        $(window).resize(function() {
+          resizeLayout();
+        });
+
+        function resizeLayout() {
+          $("#sideBarBox").removeClass();
+          $("#contentBox").removeClass();
+          if ($(this).width() > 1007) {
+            $("#sideBarBox").addClass("pure-u-1-3");
+            $("#contentBox").addClass("pure-u-2-3");
+          } else {
+            $("#sideBarBox").addClass("pure-u-1");
+            $("#contentBox").addClass("pure-u-1");
+          }
+        }
+    </script>
+  </head>
+
+  <body>
+
+  <%- include('header', { user: currentUser }) %>
+
+    <div class="pure-g userContainer">
+      <div class="pure-u-1 dummyHeader"></div>
+      <div class="pure-g mainBox">
+        <div id="sideBarBox">
+          <!-- sideBar -->
+          <div class="sideBar">
+            <p class="sideBarTitle">Notifications</p>
+            <p class="sideBarItem" id="repliesButton">Replies</p>
+            <p class="sideBarItem" id="likesButton">Likes</p>
+            <p class="sideBarItem" id="bookmarksButton">Bookmarks</p>
+            <p class="sideBarItem" id="systemNotificationsButton">System Notifications</p>
+          </div>
+        </div>
+
+        <div id="contentBox">
+          <!--replies-->
+          <div class="repliesList">
+            <div class="contentBoxTitle"><p>Replies</p></div>
+            <div class="replies">
+              <div class="repliesContent">
+                <div class="contentHeader">
+                  <div class="fromUser">
+                    <p>@Amanda Shelly</p>
+                  </div>
+                  <p class="repliedYou">replied you on <a href="detail-page.html">Samuel Morse's 228th Birthday</a></p>
+                  <p class="repliedDate">4 days ago</p>
+                </div>
+                <div class="lineBreak"><hr></div>
+                <p class="repliesText">Samuel is the greatest person in my mind:P</p>
+                <div class="memo-like-and-comment">
+                  <div class="memo-like">
+                    <div class="memo-icon">
+                      <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>12</p>
+                    </div>
+                  </div>
+                  <div class="memo-comment">
+                    <div class="memo-icon">
+                      <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="memo-stat">
+                      <p>3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--likes-->
+          <div class="likesList">
+            <div class="contentBoxTitle"><p>Likes</p></div>
+            <div class="likes">
+              <div class="likesContent">
+                <div class="contentHeader">
+                  <div class="fromUser">
+                    <p>@Amanda Shelly</p>
+                  </div>
+                  <p class="likedYou">liked your post</p>
+                  <p class="likedDate">4 days ago</p>
+                </div>
+                <div class="lineBreak"><hr></div>
+                <div class="pure-g">
+                  <div class="pure-u-1-5 annisImage"></div>
+                  <div class="pure-u-4-5 annisText">
+                    <p class="annisTitle">Samuel Morse's 228th Birthday</p>
+                    <p class="annisDate">April 27, 2019</p>
+                    <p class="annisDescription">Samuel Finley Breese Morse, OIC (April 27, 1791 – April 2, 1872) was an American painter and inventor. After having established his reputation as a portrait painter, in his middle age Morse contributed to the invention of a single-wire telegraph system based on European telegraphs.</p>
+                    <div class="like-bookmark-container">
+                      <div class="outline-icon-container2">
+                        <div class="outline-icon-like2">
+                          <i class="fas fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="outline-icon-container2">
+                        <div class="outline-icon-bookmark2">
+                          <i class="fas fa-bookmark"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--bookmarks-->
+          <div class="bookmarksList">
+            <div class="contentBoxTitle"><p>Bookmarks</p></div>
+            <div class="bookmarks">
+              <div class="bookmarksContent">
+                <div class="contentHeader">
+                  <div class="fromUser">
+                    <p>@Amanda Shelly</p>
+                  </div>
+                  <p class="bookmarkedYou">bookmarked your post</p>
+                  <p class="bookmarkedDate">4 days ago</p>
+                </div>
+                <div class="lineBreak"><hr></div>
+                <div class="pure-g">
+                  <div class="pure-u-1-5 annisImage"></div>
+                  <div class="pure-u-4-5 annisText">
+                    <p class="annisTitle">Samuel Morse's 228th Birthday</p>
+                    <p class="annisDate">April 27, 2019</p>
+                    <p class="annisDescription">Samuel Finley Breese Morse, OIC (April 27, 1791 – April 2, 1872) was an American painter and inventor. After having established his reputation as a portrait painter, in his middle age Morse contributed to the invention of a single-wire telegraph system based on European telegraphs.</p>
+                    <div class="like-bookmark-container">
+                      <div class="outline-icon-container2">
+                        <div class="outline-icon-like2">
+                          <i class="fas fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="outline-icon-container2">
+                        <div class="outline-icon-bookmark2">
+                          <i class="fas fa-bookmark"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--system notifications-->
+          <div class="systemNotificationsList">
+            <div class="contentBoxTitle"><p>System Notifications</p></div>
+            <div class="systemNotifications">
+              <div class="systemNotificationsContent">
+                <div class="contentHeader">
+                  <p class="notificationText">Your anni has passed review</p>
+                  <p class="notificationDate">4 days ago</p>
+                </div>
+                <div class="lineBreak"><hr></div>
+                <div class="pure-g">
+                  <div class="pure-u-1-5 annisImage"></div>
+                  <div class="pure-u-4-5 annisText">
+                    <p class="annisTitle">Samuel Morse's 228th Birthday</p>
+                    <p class="annisDate">April 27, 2019</p>
+                    <p class="annisDescription">Samuel Finley Breese Morse, OIC (April 27, 1791 – April 2, 1872) was an American painter and inventor. After having established his reputation as a portrait painter, in his middle age Morse contributed to the invention of a single-wire telegraph system based on European telegraphs.</p>
+                    <div class="like-bookmark-container">
+                      <div class="outline-icon-container2">
+                        <div class="outline-icon-like2">
+                          <i class="fas fa-heart"></i>
+                        </div>
+                      </div>
+                      <div class="outline-icon-container2">
+                        <div class="outline-icon-bookmark2">
+                          <i class="fas fa-bookmark"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <%- include('footer') %>
+  </body>
+</html>
