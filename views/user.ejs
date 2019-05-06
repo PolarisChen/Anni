@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <%- include('header'); -%>
+    <%- include('header', { user: currentUser }) %>
 
     <div class="pure-g userContainer">
       <div class="pure-u-1 userHeader" style="background-image: url('/images/covers/<%= cover %>');">

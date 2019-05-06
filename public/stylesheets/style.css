@@ -147,7 +147,7 @@ header {
 #navbar-search-icon {
   z-index: 1000;
   float: right;
-  width: 30px;
+  width: 24px;
   display: inline-block;
   padding-right: 5px;
   padding-top: 10px;
@@ -183,7 +183,7 @@ header {
 .navbar-notification-icon {
   display: inline-block;
   float: right;
-  width: 30px;
+  width: 24px;
   /*margin-top: 12px;*/
   /*margin-right: 20px;*/
   /*margin-left: 20px;*/
@@ -406,7 +406,7 @@ header {
   .plus {
     display: inline-block;
     float: right;
-    width: 30px;
+    width: 24px;
     height: 30px;
     margin-right: 5px;
     padding: 10px 5px 10px 5px;

@@ -7,21 +7,21 @@ const sessionChecker = require('../middleware/sessionChecker');
 /* GET home page. */
 router.get('/', (req, res, next) => {
   anniService.getAllAnnis().then(ret => {
-    res.render('index', { title: 'Hello', annis: ret.data });
+    res.render('index', { currentUser: req.session, title: 'Hello', annis: ret.data });
   });
 });
 
 
 router.get('/notifications', sessionChecker, (req, res, next) => {
   userService.getNotifications(req.session.userId).then((ret)=>{
-    res.json(ret);
-    // res.render('notification', { notifications: ret.data });
+    // res.json(ret);
+    res.render('notification', { currentUser: req.session, notifications: ret.data });
   });
 });
 
 // router.get('/post', sessionChecker, (req, res, next) => {
 router.get('/post', (req, res, next) => {
-  res.render('anni-post', { title: 'Post' });
+  res.render('anni-post', { currentUser: req.session, title: 'Post' });
 });
 
 router.post('/post', sessionChecker, (req, res, next) => {

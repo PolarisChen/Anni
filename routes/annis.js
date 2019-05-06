@@ -6,14 +6,16 @@ const sessionChecker = require('../middleware/sessionChecker');
 router.get('/', (req, res, next) => {
   anniService.getAllAnnis().then((ret)=>{
     // res.json(ret);
-    res.render('anni-list', { annis: ret.data });
+    res.render('anni-list', { currentUser: req.session, annis: ret.data });
   });
 });
 
 router.get('/:anniId', (req, res, next) => {
   anniService.getAnni(req.params.anniId).then((ret)=>{
     // res.json(ret);
-    res.render('anni-detail', ret.data);
+    let data = ret.data;
+    data.currentUser = req.session;
+    res.render('anni-detail', data);
   });
 });
 
