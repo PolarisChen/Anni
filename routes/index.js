@@ -8,7 +8,7 @@ const sessionChecker = require('../middleware/sessionChecker');
 router.get('/', (req, res, next) => {
   anniService.getAllAnnis().then(ret => {
     const annis = {
-      features: ret.data.slice(0, 2),
+      features: ret.data.slice(0, 4),
       populars: ret.data,
       upcomings: ret.data
     }

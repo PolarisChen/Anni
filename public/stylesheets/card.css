@@ -112,6 +112,7 @@ body {
   display: block;
   text-decoration: none;
   cursor: pointer;
+  color: #333333;
   background: #faf5f1;
   transition: all .3s ease-in-out;
 }
