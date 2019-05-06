@@ -20,14 +20,14 @@
     <div class="carousel">
         <div class="carousel-stage">
             <% annis.features.forEach(function(anni){ %>
-            <div class="carousel-scene" style="background-image: url('/images/annis/<%= anni.cover%>')">
+            <a href="/annis/<%= anni.id %>" class="carousel-scene" style="background-image: url('/images/annis/<%= anni.cover%>')">
                 <div class="carousel-label">
                     <div class="container-content">
                         <p class="carousel-date"><%= months[anni.month - 1]%> <%= anni.day%></p>
                         <h2 class="carousel-title"><%= anni.title%></h2>
                     </div>
                 </div>
-            </div>
+            </a>
             <% }); %>
         </div>
         <div class="carousel-control">
