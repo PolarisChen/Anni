@@ -19,11 +19,11 @@ module.exports = {
         for (let i = 0; i < comments.length; i++) {
           const reply = comments[i];
           if (reply.parentId === comment.id) {
-            comment.replies.push(comment);
+            comment.replies.push(reply);
           }
         }
       }
-
+      console.log('queryByAnniId', commentsWithReplies);
       return commentsWithReplies;
     } catch(err) {
       console.log(err);
