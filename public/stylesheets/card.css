@@ -100,6 +100,14 @@ body {
   color: #828282;
 }
 
+.page-desc {
+  margin-left: 6px;
+  margin-right: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #333333;
+}
+
 .card {
   display: block;
   text-decoration: none;

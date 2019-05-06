@@ -16,6 +16,9 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get('/about', (req, res, next) => {
+  res.render('about', { currentUser: req.session, title: 'About' });
+});
 
 router.get('/notifications', sessionChecker, (req, res, next) => {
   userService.getNotifications(req.session.userId).then((ret)=>{
