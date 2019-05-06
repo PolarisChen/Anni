@@ -5,8 +5,17 @@ const sessionChecker = require('../middleware/sessionChecker');
 
 router.get('/', (req, res, next) => {
   anniService.getAllAnnis().then((ret)=>{
-    res.json(ret);
-    // res.render('anni-list', { annis: ret.data });
+    // res.json(ret);
+    res.render('anni-list', { currentUser: req.session, annis: ret.data });
+  });
+});
+
+router.get('/:anniId', (req, res, next) => {
+  anniService.getAnni(req.params.anniId).then((ret)=>{
+    // res.json(ret);
+    let data = ret.data;
+    data.currentUser = req.session;
+    res.render('anni-detail', data);
   });
 });
 
@@ -21,13 +30,6 @@ router.post('/:anniId/delete', sessionChecker, (req, res, next) => {
   const {anniId} = req.params;
   anniService.deleteAnni(anniId).then((ret)=>{
     res.json(ret);
-  });
-});
-
-router.get('/:anniId', (req, res, next) => {
-  anniService.getAnni(req.params.anniId).then((ret)=>{
-    // res.json(ret);
-    res.render('anni-detail', ret.data);
   });
 });
 

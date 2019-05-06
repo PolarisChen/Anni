@@ -7,13 +7,17 @@ const sessionChecker = require('../middleware/sessionChecker');
 router.get('/', sessionChecker, (req, res, next) => {
   userService.getUser(req.session.userId).then((ret)=>{
     // res.json(ret);
-    res.render('user', ret.data);
+    let data = ret.data;
+    data.currentUser = req.session;
+    res.render('user', data);
   });
 });
 router.get('/:userId', (req, res, next) => {
   userService.getUser(req.params.userId).then((ret)=>{
     // res.json(ret);
-    res.render('user', ret.data);
+    let data = ret.data;
+    data.currentUser = req.session;
+    res.render('user', data);
   });
 });
 

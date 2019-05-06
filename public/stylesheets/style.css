@@ -60,6 +60,7 @@ header {
 .navbar-logo {
   z-index: 1000;
   float:left;
+  cursor: pointer;
 }
 
 .navbar-logo svg {
@@ -79,8 +80,8 @@ header {
   padding-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
-  font-family: "Lato Light";
-  font-weight: 400;
+  font-family: "Lato";
+  font-weight: 300;
   font-size: 16px;
   text-align: center;
 }
@@ -146,10 +147,12 @@ header {
 #navbar-search-icon {
   z-index: 1000;
   float: right;
+  width: 24px;
   display: inline-block;
   padding-right: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 #navbar-searchbar {
@@ -168,8 +171,8 @@ header {
   outline: none;
   width: 100%;
   height: 20px;
-  font-family: Lato Light;
-  font-weight: 200;
+  font-family: 'Lato';
+  font-weight: 300;
   font-size: .8em;
   color: #000;
 }
@@ -180,6 +183,7 @@ header {
 .navbar-notification-icon {
   display: inline-block;
   float: right;
+  width: 24px;
   /*margin-top: 12px;*/
   /*margin-right: 20px;*/
   /*margin-left: 20px;*/
@@ -196,7 +200,8 @@ header {
   /*margin-right: 20px;*/
   padding-top: 8px;
   padding-bottom: 8px;
-  padding-right: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
   display: inline-block;
   float: right;
 }
@@ -212,7 +217,7 @@ header {
   padding-bottom: 8px;
   border: solid 1px #828282;
   border-radius: 10px;
-  font-family: Lato;
+  font-family: 'Lato';
   font-size: .6em;
   font-weight: 300;
   color: #000;
@@ -246,12 +251,14 @@ header {
   border-radius: 50px;
 }
 
+.navbar-plus-icon i,
 .navbar-notification-icon i,
 #navbar-search-icon i {
   font-size: 1.2em;
   color: #bdbdbd;
 }
 
+.navbar-plus-icon i:hover,
 .navbar-notification-icon i:hover,
 #navbar-search-icon i:hover {
   color: #828282;
@@ -317,7 +324,8 @@ header {
   padding-top: 5px;
   padding-bottom: 5px;
   /*width: 100px;*/
-  font-family: Lato Light;
+  font-family: 'Lato';
+  font-weight: 300;
   font-size: .8em;
   text-align: center;
 
@@ -399,7 +407,7 @@ header {
   .plus {
     display: inline-block;
     float: right;
-    width: 30px;
+    width: 24px;
     height: 30px;
     margin-right: 5px;
     padding: 10px 5px 10px 5px;
@@ -415,10 +423,12 @@ header {
 
   }
 
+  .navbar-plus-icon i,
   .navbar-notification-icon i {
     color: #C6A48F;
   }
 
+  .navbar-plus-icon i:hover
   .navbar-notification-icon i:hover {
     color: #C6A48F;
   }
@@ -470,7 +480,7 @@ header {
     margin-right: auto;
     width: 80%;
     height: 40px;
-    font-family: "Lato Light";
+    font-family: "Lato";
     font-weight: 300;
     font-size: 1.2em;
     outline: none;
@@ -663,7 +673,7 @@ header {
   padding-right: 20%;
   right:0;
   margin-top: 30px;
-  font-family: "Lato ExtraLight";
+  font-family: "Lato";
   font-weight: 100;
   font-size: 3em;
   color: #C6A48F;
@@ -861,7 +871,7 @@ header {
 .button-text-container,
 .celebrate-text {
   padding-left: 10px;
-  font-family: Lato;
+  font-family: 'Lato';
   font-size: .8em;
   color: #828282;
 
@@ -1084,7 +1094,7 @@ header {
 }
 
 .content-title {
-  font-family: Lato Regular;
+  font-family: 'Lato';
   font-size: .8em;
   color: #BDBDBD;
 }
@@ -1092,7 +1102,7 @@ header {
 .basic-info-content {
   margin-top: 15px;
   padding-right: 20px;
-  font-family: Lato;
+  font-family: 'Lato';
   font-weight: 300;
   font-size: 1em;
   color: #000;
@@ -1102,6 +1112,8 @@ header {
 /*Album*/
 
 .album-container {
+  clear: both;
+  overflow: hidden;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -1200,7 +1212,7 @@ header {
   width: 550px;
   height: auto;
   max-height: 700px;
-  background: #fff;
+  background: #00B7FF;
   /*border-radius: 10px;*/
   box-shadow: 0 0 5px rgb(0,0,0,.1);
   animation: album-detail-desktop .8s ease-in-out;
@@ -1228,7 +1240,19 @@ header {
 .album-detail-popup-img-container {
   position: relative;
   height: 600px;
+
 }
+
+.album-detail-popup-img-container .album-img {
+  opacity: 1;
+  overflow: scroll;
+}
+
+.album-detail-popup-img-container .album-img:hover {
+  transform: none;
+}
+
+
 
 .album-img-popup {
   width: 100%;
@@ -1239,15 +1263,18 @@ header {
 .album-detail-popup-caption {
   position: relative;
   padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-bottom: 15px;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 100%;
   height: 100%;
-  font-family: Lato Regular;
+  font-family: 'Lato';
   font-size: .8em;
   line-height: 1.3em;
   color: #333;
+  background: #F2F2F2;
 }
 
 @keyframes album-detail-mobile {
@@ -1282,7 +1309,7 @@ header {
 }
 
 .see-more-text {
-  font-family: "Lato Regular";
+  font-family: "Lato";
   font-size: .8em;
   color: #828282;
   text-align: center;
@@ -1336,8 +1363,8 @@ header {
   outline: none;
   width: 100%;
   height: 25px;
-  font-family: Lato Light;
-  font-weight: 200;
+  font-family: 'Lato';
+  font-weight: 300;
   font-size: .8em;
   color: #000;
 
@@ -1367,7 +1394,7 @@ header {
 }
 
 .memo-type h2 {
-  font-family: Lato regular;
+  font-family: 'Lato';
   font-size: .8em;
   color: #828282;
 
@@ -1376,7 +1403,7 @@ header {
 .no-comment {
   margin-left: auto;
   margin-right: auto;
-  font-family: Lato Regular;
+  font-family: 'Lato';
   font-size: .8em;
   color: #BDBDBD;
   text-align: center;
@@ -1428,13 +1455,13 @@ header {
 
 .user-name p {
   display: inline;
-  font-family: Lato Medium;
+  font-family: 'Lato';
   font-size: .8em;
   color: #000;
 }
 
 .memo-time {
-  font-family: Lato Regular;
+  font-family: 'Lato';
   font-size: .6em;
   color: #BDBDBD;
 }
@@ -1446,7 +1473,7 @@ header {
 
 .memo-content p {
   display: inline;
-  font-family: Lato Regular;
+  font-family: 'Lato';
   font-size: .8em;
   line-height: 1.3em;
   color: #333;
@@ -1480,7 +1507,7 @@ header {
 }
 
 .memo-stat {
-  font-family: "Lato Regular";
+  font-family: "Lato";
   font-size: .8em;
   color: #BDBDBD;
 }
@@ -1503,7 +1530,7 @@ header {
     margin-top: 50px;
     margin-left: 0;
     padding-bottom: 20px;
-    padding-right: 10%;
+    /*padding-right: 10%;*/
     height: 100%;
   }
 
@@ -1535,7 +1562,7 @@ header {
 .sign-up-log-in-page-container {
   display: flex;
   height: 100vh;
-  font-family: Lato Light, Lato Regular;
+  font-family: 'Lato';
 }
 .sign-up-img-container {
   width: 50%;
@@ -1599,7 +1626,7 @@ header {
 .sign-up-input input {
   font-size: .8em;
   font-weight: 200;
-  color: #C4C4C4;
+  color: #000;
   background: none;
   border: none;
   outline: none;
@@ -1691,7 +1718,7 @@ footer {
   border-top: 1px solid #DCCCBB;
   margin-top: 105px;
   height: 50px;
-  font-family: "Lato Regular";
+  font-family: "Lato";
   font-size: .8em;
   color: #C6A48F;
   text-align: center;
@@ -1715,4 +1742,13 @@ footer {
   .web-footer {
     display: none;
   }
+}
+
+/* FIX */
+
+.navbar-el {
+  margin-left: 12px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
