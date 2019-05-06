@@ -208,6 +208,13 @@ header {
 
 .navbar-button a {
   text-decoration: none;
+  font-size: 12px;
+  transition: all .3s ease-in-out;
+}
+
+.navbar-button a:hover {
+  color: #BC8374;
+  /*background-color: #BC8374;*/
 }
 
 .button {
@@ -222,16 +229,17 @@ header {
   font-weight: 300;
   color: #000;
   background-color: #fff;
+  transition: all .3s ease-in-out;
 }
 
 .button a {
   color: #000;
   text-decoration: none;
+  transition: all .3s ease-in-out;
 }
 
 .button:hover {
-  border: 1px solid #000;
-  transition-duration: .5s;
+  border: 1px solid #BC8374;
 }
 
 .plus {
