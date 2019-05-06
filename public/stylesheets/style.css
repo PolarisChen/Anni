@@ -563,7 +563,7 @@ header {
   height: 100%;
   width: 70%;
   background-size: cover;
-
+  background-position: center;
 }
 
 @keyframes cover-img-scale {
