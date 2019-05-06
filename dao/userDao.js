@@ -3,9 +3,9 @@ let pool = require('../util/dbUtil');
 let $sql = require('./userSqlMapping');
 
 module.exports = {
-  add: async (email, password) => {
+  add: async (name, email, password) => {
     try {
-      const ret = await pool.query($sql.insert, [email, password]);
+      const ret = await pool.query($sql.insert, [name, email, password]);
       console.log('add', ret);
       return ret;
     } catch(err) {

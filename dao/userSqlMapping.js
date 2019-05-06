@@ -1,7 +1,7 @@
 
 let user = {
-  insert:'INSERT INTO users(email, password) VALUES(?,?)',
-  update:'UPDATE users set name=? where id=?',
+  insert: 'INSERT INTO users(name, email, password) VALUES (?,?,?)',
+  update: 'UPDATE users set name=? WHERE id=?',
   delete: 'DELETE FROM users WHERE id=?',
   queryById: 'SELECT * FROM users WHERE id=?',
   queryAll: 'SELECT * FROM users',

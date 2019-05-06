@@ -98,7 +98,7 @@ module.exports = {
     }
   },
 
-  signup: async (email, password) => {
+  signup: async (name, email, password) => {
     try {
       const user = await userDao.queryByEmail(email);
       if (typeof user !== 'undefined') {
@@ -110,7 +110,7 @@ module.exports = {
       } else {
         const salt = bcrypt.genSaltSync();
         password = bcrypt.hashSync(password, salt);
-        const ret = await userDao.add(email, password);
+        const ret = await userDao.add(name, email, password);
         if (typeof ret === 'undefined') {
           return {
             success: 0,

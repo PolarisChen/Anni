@@ -66,8 +66,8 @@ router
     }
   })
   .post('/signup', (req, res, next) => {
-    console.log(req.body.email, req.body.password);
-    userService.signup(req.body.email, req.body.password).then((ret)=>{
+    const { name, email, password } = req.body;
+    userService.signup(name, email, password).then((ret)=>{
       if (ret.success === 1) {
         req.session.userId = ret.data.userId;
         req.session.userName = ret.data.name;
