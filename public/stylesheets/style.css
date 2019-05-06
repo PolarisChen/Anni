@@ -147,6 +147,7 @@ header {
 #navbar-search-icon {
   z-index: 1000;
   float: right;
+  width: 30px;
   display: inline-block;
   padding-right: 5px;
   padding-top: 10px;
@@ -182,6 +183,7 @@ header {
 .navbar-notification-icon {
   display: inline-block;
   float: right;
+  width: 30px;
   /*margin-top: 12px;*/
   /*margin-right: 20px;*/
   /*margin-left: 20px;*/
@@ -1739,4 +1741,13 @@ footer {
   .web-footer {
     display: none;
   }
+}
+
+/* FIX */
+
+.navbar-el {
+  margin-left: 12px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }

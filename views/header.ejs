@@ -64,32 +64,30 @@
 
 
         <div class="navbar-right">
+            <% if (typeof currentUser !== 'undefined' && typeof currentUser.userId !== 'undefined') { %>
+                <div class="account-photo navbar-el" style="background-image: url('/images/avatars/<%= currentUser.userAvatar %>');"></div>
 
-
-            <% if (typeof user !== 'undefined') { %>
-                <div class="account-photo" style="background-image: url('/images/avatars/<%= user.userAvatar %>');"></div>
-
-                <div class="navbar-button navbar-post">
+                <div class="navbar-button navbar-post navbar-el">
                     <a href="/post" class="button">New Annis</a>
                 </div>
 
-                <div class="plus navbar-plus-icon">
+                <div class="plus navbar-plus-icon navbar-el">
                     <a href="/post"><i class="fas fa-plus"></i></a>
                 </div>
 
-                <div class="navbar-notification-icon">
+                <div class="navbar-notification-icon navbar-el">
                     <a href="/notifications"><i class="fas fa-bell"></i></a>
                 </div>
             <% } else { %>
-                <div class="navbar-button">
+                <div class="navbar-button navbar-el">
                     <a href="/signup" class="button">Sign Up</a>
                 </div>
-                <div class="navbar-button">
+                <div class="navbar-button navbar-el">
                     <a href="/login" class="button">Log In</a>
                 </div>
 
 
-                <div class="plus navbar-plus-icon">
+                <div class="plus navbar-plus-icon navbar-el">
                     <a href="/signup"><i class="fas fa-user-circle"></i></a>
                 </div>
             <% } %>
