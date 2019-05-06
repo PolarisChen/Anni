@@ -21,7 +21,9 @@
   <div class="annis-cover">
 
     <div class="cover-img-container">
-      <img src="/images/annis/<%= cover %>">
+      <div class="cover-img"  style="background-image: url('/images/annis/<%= cover %>');">
+      </div>
+      <!--<img src="/images/annis/<%= cover %>">-->
 
     </div>
 
@@ -47,6 +49,7 @@
           <p>th</p>
         </div>
       </div>
+
       <div class="cover-title-text">
         <p><%= title %></p>
       </div>
@@ -284,6 +287,8 @@
 <input type="hidden" id="user-id" value="<%= userId %>">
 <input type="hidden" id="anni-id" value="<%= id %>">
 <input type="hidden" id="database-user-name" value="<%= userName %>">
+<input type="hidden" id="anni-type" value="<%= type %>">
+
 
 
 <script>
@@ -295,6 +300,17 @@
     $(".cross-icon").click(function () {
       $(this).parent(".album-detail-popup-container").hide();
     });
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    var type = Number($('#anni-type').val());
+    if (type === 1 || type === 2) {
+      $('.cover-title-number-container').show();
+    } else {
+      $('.cover-title-number-container').hide();
+    }
   });
 </script>
 
