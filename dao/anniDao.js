@@ -3,9 +3,9 @@ let pool = require('../util/dbUtil');
 let $sql = require('./anniSqlMapping');
 
 module.exports = {
-  add: async (title, desc, quote, month, day, type, markType, cover, userId) => {
+  add: async (title, desc, quote, year, month, day, type, markType, cover, userId) => {
     try {
-      const ret = await pool.query($sql.insert, [title, desc, quote, month, day, type, markType, cover, userId]);
+      const ret = await pool.query($sql.insert, [title, desc, quote, year, month, day, type, markType, cover, userId]);
       console.log('add', ret);
       return ret;
     } catch(err) {

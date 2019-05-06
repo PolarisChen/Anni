@@ -115,9 +115,11 @@
     <a class="btn-primary" id="btn-post">Post</a>
 </div>
 
+<input type="hidden" id="user-id" value="<%= currentUser.userId %>">
+
 <%- include('footer') %>
 
-<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function(){
     $('#btn-post').click(function() {
@@ -137,33 +139,33 @@
       title: $('#input-title').val(),
       desc: $('#input-desc').val(),
       quote: '',
-      month: $('#select-month').val(),
-      day: $('#select-day').val(),
-      year: $('#input-year').val(),
-      userId: $('#userId').val(),
+      month: Number($('#select-month').val()),
+      day: Number($('#select-day').val()),
+      year: Number($('#input-year').val()),
+      userId: Number($('#user-id').val()),
       type: type,
-      cover: '',
+      cover: 'default-cover.jpg',
       markType: markType
     };
     console.log(data);
 
-    // $.ajax({
-    //     url: '',
-    //     method: 'POST',
-    //     data: data,
-    //     dataType: 'json'
-    // }).done(function(ret) {
-    //     console.log(ret);
-    //     if (ret.success) {
-    //         // Succeeded
-    //         console.log(ret.data);
-    //         window.location.href = "/annis/" + ret.data.anniId;
-    //     } else {
-    //         // Failed
-    //         console.log(ret.msg);
-    //         alert(ret.msg);
-    //     }
-    // });
+    $.ajax({
+        url: '/post',
+        method: 'POST',
+        data: data,
+        dataType: 'json'
+    }).done(function(ret) {
+        console.log(ret);
+        if (ret.success) {
+            // Succeeded
+            console.log(ret.data);
+            window.location.href = "/annis/" + ret.data.anniId;
+        } else {
+            // Failed
+            console.log(ret.msg);
+            alert(ret.msg);
+        }
+    });
   }
 </script>
 
