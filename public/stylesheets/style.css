@@ -150,6 +150,7 @@ header {
   padding-right: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 #navbar-searchbar {
@@ -246,12 +247,14 @@ header {
   border-radius: 50px;
 }
 
+.navbar-plus-icon i,
 .navbar-notification-icon i,
 #navbar-search-icon i {
   font-size: 1.2em;
   color: #bdbdbd;
 }
 
+.navbar-plus-icon i:hover,
 .navbar-notification-icon i:hover,
 #navbar-search-icon i:hover {
   color: #828282;
@@ -415,10 +418,12 @@ header {
 
   }
 
+  .navbar-plus-icon i,
   .navbar-notification-icon i {
     color: #C6A48F;
   }
 
+  .navbar-plus-icon i:hover
   .navbar-notification-icon i:hover {
     color: #C6A48F;
   }
