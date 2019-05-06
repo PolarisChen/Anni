@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/user-post.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+    <link rel="stylesheet" href="/stylesheets/post.css">
+    <link rel="stylesheet" href="/stylesheets/card.css">
+</head>
 
-  <body>
+<body>
 
-  <%- include('header', { user: currentUser }) %>
+<%- include('header', { user: currentUser }) %>
 
 <div class="post_body">
-  <h1>Add a new post</h1>
-  <p>Type</p>
-        
-        <div class="pure-u-1 pure-u-md-1-6 custom-select1">
-            <select id="select_type" style="width:100%; min-width: 115px">
-                <option value="0">Choose type:</option>
-                <option id="birth" value="1">Birthday</option>
-                <option id="death" value="2">Deathday</option>
-                <option value="3">Invention</option>
-                <option value="4">Festival</option>
-                <option value="5">Day/Event</option>
-                <option value="6">Starting Point</option>
-            </select>
-        </div>
+    <h1>Add a new post</h1>
+    <p>Type</p>
 
-        <p>Title</p>
-        
-<form class="pure-u-1 pure-u-md-3-4 textarea1">
-  <textarea id="title_input" class="textarea_post1" style="width:100%; min-width: 115px" placeholder="e.g. Vincent van Gogh’s 100th Birthday"></textarea>
-</form>
-        
-        <p>Time</p> 
-        
-<div class="pure-g container">
+    <div class="pure-u-1 pure-u-md-1-6 custom-select1">
+        <select id="select_type" style="width:100%; min-width: 115px">
+            <option value="0">Choose type:</option>
+            <option id="birth" value="1">Birthday</option>
+            <option id="death" value="2">Deathday</option>
+            <option value="3">Invention</option>
+            <option value="4">Festival</option>
+            <option value="5">Day/Event</option>
+            <option value="6">Starting Point</option>
+        </select>
+    </div>
+
+    <p>Title</p>
+
+    <form class="pure-u-1 pure-u-md-3-4 textarea1">
+        <textarea id="title_input" class="textarea_post1" style="width:100%; min-width: 115px" placeholder="e.g. Vincent van Gogh’s 100th Birthday"></textarea>
+    </form>
+
+    <p>Time</p>
+
+    <div class="pure-g container">
         <div class="pure-u-1 pure-u-md-1-6 custom-select2">
             <select id="select_month"style="width:100%; min-width: 115px">
                 <option value="0">Month</option>
@@ -55,8 +59,8 @@
                 <option value="12">December</option>
             </select>
         </div>
-  
-      <div class="pure-u-1 pure-u-md-1-6 custom-select3">
+
+        <div class="pure-u-1 pure-u-md-1-6 custom-select3">
             <select id="select_date"style="width:100%; min-width: 115px">
                 <option value="0">Date</option>
                 <option value="1">1</option>
@@ -95,103 +99,99 @@
         <form class="pure-u-1 pure-u-md-1-6 textarea_date">
             <textarea id="year_input" class="textarea_post4" style="width:100%; min-width: 115px" placeholder="2019"></textarea>
         </form>
-</div>
-        
-        
-        
-        <div class="clearfix">
-        </div>
-        
-        <p>Cover image</p>
-        
-     
-        <span class="upload_post">
+    </div>
+
+
+
+    <div class="clearfix">
+    </div>
+
+    <p>Cover image</p>
+
+
+    <span class="upload_post">
             <div class="pure-u-1 pure-u-md-1-2 post_plus">+</div>
                 <br/><br/>Upload from computer
                 <br/><br/>or<br/><br/>
-          
-          <div class="pure-g container">   
+
+          <div class="pure-g container">
                 <form class="pure-u-1 pure-u-md-1-2 textarea_post3">
                   <textarea id="imgurl_input" class="textarea_post3" style="width:100%; min-width: 15px" placeholder="Add image url here"></textarea>
                 </form>
             <button class="pure-u-1 pure-u-md-1-4 button_post4">Upload</button> </div>
         </span>
-        
-        <p>Basic infomation</p>
-        
-        <form class="pure-u-1 pure-u-md-3-4 textarea_post2">
-  <textarea id="information_input" class="textarea_post2" style="width:100%; min-width: 60px" placeholder="Brief introduction within 300 words (including time, duration, location, related person, influence...)"></textarea>
-        </form>
 
-        
-        <p>Album</p>
-        
-        <button id="add_local" class="button_post1">Add an image from local</button>
-        
-        <br>
-    
-        <button id="post" class="button_post2">Submit</button>
+    <p>Basic infomation</p>
+
+    <form class="pure-u-1 pure-u-md-3-4 textarea_post2">
+        <textarea id="information_input" class="textarea_post2" style="width:100%; min-width: 60px" placeholder="Brief introduction within 300 words (including time, duration, location, related person, influence...)"></textarea>
+    </form>
 
 
+    <p>Album</p>
 
-    <%- include('footer') %>
+    <button id="add_local" class="button_post1">Add an image from local</button>
 
+    <br>
 
-    <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function(){
-            $('#post').click(function() {
-                // var value= $('#submit option:selected').attr('value');
-                postData();
-            })
-        })
+    <button id="post" class="button_post2">Submit</button>
 
-        function postData() {
-            var type = Number($('#select_type').val());
-            var markType = 0;
-            if (type === 1) {
-                markType = 1;
-            } else if (type === 2) {
-                markType = 2;
-            }
-            var data = {
-                title: $('#title_input').val(),
-                desc: $('#information_input').val(),
-                quote: "",
-                month: $('#select_month').val(),
-                day: $('#select_date').val(),
-                year: $('#year_input').val(),
-                userId: $('#userId').val(),
-                type: type,
-                cover: $('#add_local').val(),
-                url: $('#imgurl_input').val(),
-                markType: markType
-            };
-            console.log(data);
-
-            // $.ajax({
-            //     url: '',
-            //     method: 'POST',
-            //     data: data,
-            //     dataType: 'json'
-            // }).done(function(ret) {
-            //     console.log(ret);
-            //     if (ret.success) {
-            //         // Succeeded
-            //         console.log(ret.data);
-            //         window.location.href = "/annis/" + ret.data.anniId;
-            //     } else {
-            //         // Failed
-            //         console.log(ret.msg);
-            //         alert(ret.msg);
-            //     }
-            // });
-        }
-    </script>
-        
 </div>
 
 
-        
+<%- include('footer') %>
+
+<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $('#post').click(function() {
+      // var value= $('#submit option:selected').attr('value');
+      postData();
+    })
+  })
+
+  function postData() {
+    var type = Number($('#select_type').val());
+    var markType = 0;
+    if (type === 1) {
+      markType = 1;
+    } else if (type === 2) {
+      markType = 2;
+    }
+    var data = {
+      title: $('#title_input').val(),
+      desc: $('#information_input').val(),
+      quote: "",
+      month: $('#select_month').val(),
+      day: $('#select_date').val(),
+      year: $('#year_input').val(),
+      userId: $('#userId').val(),
+      type: type,
+      cover: $('#add_local').val(),
+      url: $('#imgurl_input').val(),
+      markType: markType
+    };
+    console.log(data);
+
+    // $.ajax({
+    //     url: '',
+    //     method: 'POST',
+    //     data: data,
+    //     dataType: 'json'
+    // }).done(function(ret) {
+    //     console.log(ret);
+    //     if (ret.success) {
+    //         // Succeeded
+    //         console.log(ret.data);
+    //         window.location.href = "/annis/" + ret.data.anniId;
+    //     } else {
+    //         // Failed
+    //         console.log(ret.msg);
+    //         alert(ret.msg);
+    //     }
+    // });
+  }
+</script>
+
 </body>
 </html>
