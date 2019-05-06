@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detail page</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        .container-full {
+            width: 100%;
+        }
+        .carousel {
+            position: relative;
+            height: 600px;
+            margin-top: 60px;
+        }
+        .carousel-scene {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            display: none;
+            background-color: #C6A48F;
+            background-position: center;
+            background-size: cover;
+        }
+        .carousel-scene-active {
+            display: block;
+        }
+        .carousel-label {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 48px 10%;
+            background-color: rgba(0, 0, 0, .4);
+            color: #FFF;
+        }
+        .carousel-date {
+            margin-bottom: 12px;
+            font-family: 'Prata', serif;
+            font-size: 36px;
+        }
+        .carousel-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+        }
+        .carousel-control {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 6px 0;
+            text-align: center;
+        }
+        .carousel-dot {
+            width: 32px;
+            height: 12px;
+            display: inline-block;
+            margin: 0 3px;
+            border-radius: 6px;
+            background-color: #BDBDBD;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+        .carousel-dot-active,
+        .carousel-dot:hover {
+            background-color: #BC8374;
+        }
+    </style>
+</head>
+<body>
+
+<%- include('header', { user: currentUser }) %>
+
+<div class="container-full">
+    <div class="carousel">
+        <div class="carousel-stage">
+            <div class="carousel-scene carousel-scene-active" style="background-image: url('/images/annis/sample-1.jpg')">
+                <div class="carousel-label">
+                    <p class="carousel-date">Jan 19</p>
+                    <h2 class="carousel-title">Allen Poe's Birthday</h2>
+                </div>
+            </div>
+            <div class="carousel-scene" style="background-image: url('/images/annis/sample-2.jpg')">
+                <div class="carousel-label">
+                    <p class="carousel-date">Jan 18</p>
+                    <h2 class="carousel-title">Jay Chow's Birthday</h2>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-control">
+            <div class="carousel-dot carousel-dot-active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+        </div>
+    </div>
+</div>
+
+<div class="pure-g container">
+    <div class="pure-u-1 pure-u-md-1-3">
+        <nav></nav>
+    </div>
+    <div class="pure-u-1 pure-u-md-2-3">
+        <main>
+            <div>
+                <label>Email:</label>
+                <input type="text" id="input-email"/>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" id="input-password"/>
+            </div>
+            <div>
+                <input class="btn btn-primary" id="btn-login" value="Log In" data-str="sdsd"/>
+            </div>
+
+            <div class="comments">
+                <div class="comment">
+                    <p>Name</p>
+                    <p>Content</p>
+                </div>
+                <div class="comment">
+                    <p>Name</p>
+                    <p>Content</p>
+                </div>
+                <div class="comment">
+                    <p>Name</p>
+                    <p>Content</p>
+                </div>
+                <div class="comment">
+                    <p>Name</p>
+                    <p>Content</p>
+                </div>
+                <div class="comment">
+                    <p>Name</p>
+                    <p>Content</p>
+                </div>
+
+
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $('.carousel-dot').click(function(){
+      $('.carousel-scene').removeClass('carousel-scene-active');
+      var index = $('.carousel-dot').index(this)
+      $('.carousel-scene').eq(index).addClass('carousel-scene-active');
+      $('.carousel-dot').removeClass('carousel-dot-active');
+      $(this).addClass('carousel-dot-active');
+    });
+  });
+</script>
+
+</body>
 </html>
