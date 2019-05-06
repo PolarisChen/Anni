@@ -37,16 +37,20 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            padding: 48px 10%;
+            padding: 48px 0;
             background-color: rgba(0, 0, 0, .4);
             color: #FFF;
         }
         .carousel-date {
+            margin-left: 6px;
+            margin-right: 6px;
             margin-bottom: 12px;
             font-family: 'Prata', serif;
             font-size: 36px;
         }
         .carousel-title {
+            margin-left: 6px;
+            margin-right: 6px;
             font-family: 'Lato', sans-serif;
             font-size: 18px;
             font-weight: 300;
@@ -76,29 +80,71 @@
         .container-content {
             margin: 0 10%;
         }
+        @media only screen and (max-width: 1024px) {
+            .container-content {
+                margin: 0 5%;
+            }
+        }
+        @media only screen and (max-width: 790px) {
+            .container-content {
+                margin: 0 3%;
+            }
+        }
 
         .section-title {
+            margin-left: 6px;
+            margin-right: 6px;
             padding: 24px 0;
             font-family: 'Lato', sans-serif;
             font-size: 16px;
             color: #828282;
         }
-        .card-pop {
+        .card {
             display: block;
-            min-height: 240px;
-            margin-bottom: 24px;
-            background: #faf5f1;
             text-decoration: none;
             cursor: pointer;
+            background: #faf5f1;
             transition: all .3s ease-in-out;
         }
-        .card-pop:hover {
+        .card:hover {
             box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
             /*box-shadow: 0 2px 16px 0 rgba(188,131,116,0.4);*/
         }
+        .card-title {
+            margin-bottom: 6px;
+            font-family: 'Prata', serif;
+            font-size: 24px;
+            line-height: 24px;
+        }
+        .card-date {
+            margin-bottom: 18px;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+        }
+        .card-actions {
+        }
+        .card-action {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+        .card-action:hover {
+            color: #BC8374;
+        }
+
+        .card-pop {
+            display: flex;
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-bottom: 24px;
+        }
         .card-pop-image {
             width: 100%;
-            min-height: 240px;
+            height: 100%;
+            min-height: 200px;
             background-color: #C6A48F;
             background-position: center;
             background-size: cover;
@@ -107,32 +153,8 @@
             height: 100%;
             padding: 32px 24px;
         }
-        .card-pop-title {
-            margin-bottom: 6px;
-            font-family: 'Prata', serif;
-            font-size: 24px;
-        }
-        .card-pop-date {
-            margin-bottom: 18px;
-            font-family: 'Lato', sans-serif;
-            font-size: 18px;
-            font-weight: 300;
-        }
-        .card-pop-actions {
-            margin-bottom: 18px;
-        }
-        .card-pop-action {
-            display: inline-block;
-            margin-right: 12px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all .3s ease-in-out;
-        }
-        .card-pop-action:hover {
-            color: #BC8374;
-        }
         .card-pop-comment {
-            /*margin-bottom: 12px;*/
+            margin-top: 18px;
             display: flex;
         }
         .card-pop-comment .card-avatar {
@@ -148,6 +170,22 @@
         .card-pop-comment .card-text {
             /*width: 80%;*/
         }
+
+        .card-classic {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-bottom: 12px;
+        }
+        .card-classic-image {
+            width: 100%;
+            min-height: 180px;
+            background-color: #C6A48F;
+            background-position: center;
+            background-size: cover;
+        }
+        .card-classic-text {
+            padding: 24px 24px;
+        }
     </style>
 </head>
 <body>
@@ -159,14 +197,18 @@
         <div class="carousel-stage">
             <div class="carousel-scene carousel-scene-active" style="background-image: url('/images/annis/sample-1.jpg')">
                 <div class="carousel-label">
-                    <p class="carousel-date">Jan 19</p>
-                    <h2 class="carousel-title">Allen Poe's Birthday</h2>
+                    <div class="container-content">
+                        <p class="carousel-date">Jan 18</p>
+                        <h2 class="carousel-title">Jay Chow's Birthday</h2>
+                    </div>
                 </div>
             </div>
             <div class="carousel-scene" style="background-image: url('/images/annis/sample-2.jpg')">
                 <div class="carousel-label">
-                    <p class="carousel-date">Jan 18</p>
-                    <h2 class="carousel-title">Jay Chow's Birthday</h2>
+                    <div class="container-content">
+                        <p class="carousel-date">Jan 18</p>
+                        <h2 class="carousel-title">Jay Chow's Birthday</h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,20 +223,20 @@
 
 <div class="container-content">
     <h3 class="section-title">POPULAR ON ANNI</h3>
-    <a class="pure-g card-pop">
+    <a class="pure-g card card-pop">
         <div class="pure-u-1 pure-u-md-2-5">
             <div class="card-pop-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
         </div>
         <div class="pure-u-1 pure-u-md-3-5">
             <div class="card-pop-text">
-                <h4 class="card-pop-title">Allen Poe's Birthday</h4>
-                <p class="card-pop-date">Jan 19</p>
-                <div class="card-pop-actions">
-                    <div class="card-pop-action">
+                <h4 class="card-title">Allen Poe's Birthday</h4>
+                <p class="card-date">Jan 19</p>
+                <div class="card-actions">
+                    <div class="card-action">
                         <i class="fas fa-heart"></i>
                         <span>3012</span>
                     </div>
-                    <div class="card-pop-action">
+                    <div class="card-action">
                         <i class="fas fa-comment"></i>
                         <span>3012</span>
                     </div>
@@ -207,20 +249,20 @@
         </div>
     </a>
 
-    <a class="pure-g card-pop">
+    <a class="pure-g card card-pop">
         <div class="pure-u-1 pure-u-md-2-5">
             <div class="card-pop-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
         </div>
         <div class="pure-u-1 pure-u-md-3-5">
             <div class="card-pop-text">
-                <h4 class="card-pop-title">Allen Poe's Birthday</h4>
-                <p class="card-pop-date">Jan 19</p>
-                <div class="card-pop-actions">
-                    <div class="card-pop-action">
+                <h4 class="card-title">Allen Poe's Birthday</h4>
+                <p class="card-date">Jan 19</p>
+                <div class="card-actions">
+                    <div class="card-action">
                         <i class="fas fa-heart"></i>
                         <span>3012</span>
                     </div>
-                    <div class="card-pop-action">
+                    <div class="card-action">
                         <i class="fas fa-comment"></i>
                         <span>3012</span>
                     </div>
@@ -232,6 +274,69 @@
             </div>
         </div>
     </a>
+
+    <h3 class="section-title">UPCOMING ANNI</h3>
+    <div class="pure-g card-container">
+        <div class="pure-u-1 pure-u-md-1-3">
+            <a class="card card-classic">
+                <div class="card-classic-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
+                <div class="card-classic-text">
+                    <h4 class="card-title">Allen Poe's Birthday</h4>
+                    <p class="card-date">Jan 19</p>
+                    <div class="card-actions">
+                        <div class="card-action">
+                            <i class="fas fa-heart"></i>
+                            <span>3012</span>
+                        </div>
+                        <div class="card-action">
+                            <i class="fas fa-comment"></i>
+                            <span>3012</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-3">
+            <a class="card card-classic">
+                <div class="card-classic-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
+                <div class="card-classic-text">
+                    <h4 class="card-title">Allen Poe's Birthday</h4>
+                    <p class="card-date">Jan 19</p>
+                    <div class="card-actions">
+                        <div class="card-action">
+                            <i class="fas fa-heart"></i>
+                            <span>3012</span>
+                        </div>
+                        <div class="card-action">
+                            <i class="fas fa-comment"></i>
+                            <span>3012</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-3">
+            <a class="card card-classic">
+                <div class="card-classic-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
+                <div class="card-classic-text">
+                    <h4 class="card-title">Allen Poe's Birthday</h4>
+                    <p class="card-date">Jan 19</p>
+                    <div class="card-actions">
+                        <div class="card-action">
+                            <i class="fas fa-heart"></i>
+                            <span>3012</span>
+                        </div>
+                        <div class="card-action">
+                            <i class="fas fa-comment"></i>
+                            <span>3012</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
