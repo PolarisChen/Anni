@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="anni-all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/anni-all.css">
 </head>
 
 <body>
@@ -83,38 +83,18 @@
 
     <div class="anniall">
         <div class="last_row pure-g container">
-            <div class="first_group_last_row pure-u-1 pure-u-md-1-3">
-                <div class="last_row_image style= width:100%">
-                    <% images.forEach(function(image){ %>
-                        <img class="pure-img" style="img: url('/images/annis/sample-anni.jpg');" alt="<%= images.caption%>">
-                    <% }) %>
+            <% annis.forEach(function(anni){ %>
+                <div class="first_group_last_row pure-u-1 pure-u-md-1-3">
+                    <div class="last_row_image style= width:100%">
+                        <img class="pure-img" src="/images/annis/<%=anni.cover%>">
+                    </div>
+                    <div class="annotation">
+                        <h2 class="text-box-head"><%= anni.title %></h2>
+                        <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
+                        <h3 class="text-box-subhead"><%= months[anni.month-1] %> <%= anni.day %>, 2019</h3>
+                    </div>
                 </div>
-                <div class="annotation">
-                    <h2 class="text-box-head"><%= title %></h2>
-                    <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
-                    <h3 class="text-box-subhead"><%= months[month-1] %> <%= day %>, 2019</h3>
-                </div>
-            </div>
-            <div class="second_group_last_row pure-u-1 pure-u-md-1-3">
-                <div class="last_row_image style= width:100%">
-                    <img class="pure-img" style="img: url('/images/annis/sample-anni.jpg');" alt="<%= images.caption%>">
-                </div>
-                <div class="annotation">
-                    <h2 class="text-box-head"><%= title %></h2>
-                    <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
-                    <h3 class="text-box-subhead"><%= months[month-1] %> <%= day %>, 2019</h3>
-                </div>
-            </div>
-            <div class="third_group_last_row pure-u-1 pure-u-md-1-3">
-                <div class="last_row_image style= width:100%">
-                    <img class="pure-img" style="img: url('/images/annis/sample-anni.jpg');" alt="<%= images.caption%>">
-                </div>
-                <div class="annotation">
-                    <h2 class="text-box-head"><%= title %></h2>
-                    <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
-                    <h3 class="text-box-subhead"><%= months[month-1] %> <%= day %>, 2019</h3>
-                </div>
-            </div>
+            <% }); %>
         </div>
 
     </div>
