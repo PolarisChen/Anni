@@ -11,6 +11,7 @@
   /* Box-model */
   display: flex;
   margin-top: 80px;
+  padding-bottom: 20px;
   height: 200px;
   background-image: url("img/user-banner.jpg");
   background-size: cover;
