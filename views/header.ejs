@@ -65,10 +65,10 @@
 
         <div class="navbar-right">
             <% if (typeof currentUser !== 'undefined' && typeof currentUser.userId !== 'undefined') { %>
-                <div class="account-photo navbar-el" style="background-image: url('/images/avatars/<%= currentUser.userAvatar %>');"></div>
+                <a href="/users" class="account-photo navbar-el" style="background-image: url('/images/avatars/<%= currentUser.userAvatar %>');"></a>
 
                 <div class="navbar-button navbar-post navbar-el">
-                    <a href="/post" class="button">New Annis</a>
+                    <a href="/post" class="button">New Anni</a>
                 </div>
 
                 <div class="plus navbar-plus-icon navbar-el">
