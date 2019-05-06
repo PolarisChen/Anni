@@ -7,10 +7,11 @@ const sessionChecker = require('../middleware/sessionChecker');
 /* GET home page. */
 router.get('/', (req, res, next) => {
   anniService.getAllAnnis().then(ret => {
+    const a = ret.data;
     const annis = {
-      features: ret.data.slice(0, 4),
-      populars: ret.data,
-      upcomings: ret.data
+      features: [ a[8], a[3], a[5], a[11], a[12] ],
+      populars: [ a[9], a[10], a[11], a[13] ],
+      upcomings: [ a[8], a[14], a[15], a[16], a[9], a[10] ]
     }
     res.render('index', { currentUser: req.session, title: 'Hello', annis: annis });
   });

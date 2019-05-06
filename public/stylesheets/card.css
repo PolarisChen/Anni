@@ -112,6 +112,10 @@ body {
   color: #333333;
 }
 
+.card-container {
+  display: flex;
+}
+
 .card {
   display: block;
   text-decoration: none;
@@ -200,4 +204,5 @@ body {
 }
 .card-classic-text {
   padding: 24px 24px;
+  min-height: 136px;
 }

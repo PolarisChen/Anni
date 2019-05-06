@@ -563,7 +563,7 @@ header {
   height: 100%;
   width: 70%;
   background-size: cover;
-
+  background-position: center;
 }
 
 @keyframes cover-img-scale {
@@ -1791,6 +1791,7 @@ footer {
   padding-right: 0px;
 }
 .input-form input {
+  width: 100%;
   padding: 4px 0;
   color: #333333;
   font-family: 'Lato', sans-serif;
