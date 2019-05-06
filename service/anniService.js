@@ -25,8 +25,9 @@ module.exports = {
           data: {}
         }
       } else {
-        for (let anni in annis) {
-          await decorateAnni(anni, id);
+        for (let i = 0; i < annis.length; i++) {
+          let anni = annis[i];
+          await decorateAnni(anni, anni.id);
         }
         return {
           success: 1,
@@ -43,7 +44,6 @@ module.exports = {
   getAnni: async (id) => {
     try {
       const anni = await anniDao.queryById(id);
-      await decorateAnni(anni, id);
       if (typeof anni === 'undefined') {
         return {
           success: 0,
@@ -51,6 +51,7 @@ module.exports = {
           data: {}
         }
       } else {
+        await decorateAnni(anni, id);
         return {
           success: 1,
           msg: '',
