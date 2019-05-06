@@ -19,16 +19,13 @@
             margin-top: 60px;
         }
         .carousel-scene {
-            position: relative;
+            position: absolute;
             width: 100%;
             height: 600px;
-            display: none;
+            display: block;
             background-color: #C6A48F;
             background-position: center;
             background-size: cover;
-        }
-        .carousel-scene-active {
-            display: block;
         }
         .carousel-label {
             position: absolute;
@@ -149,13 +146,45 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
+  function initCarousel() {
+    var $scenes = $('.carousel-scene');
+    $scenes.hide();
+    $scenes.removeClass('carousel-scene-active');
+    $scenes.eq(0).show();
+    $scenes.eq(0).addClass('carousel-scene-active');
+
+    setInterval(playCarousel, 4000);
+  }
+  function playCarousel() {
+    showNextScene();
+  }
+  function showNextScene(nextIndex) {
+    var $dots = $('.carousel-dot');
+    var $scenes = $('.carousel-scene');
+
+    var previousIndex = $scenes.index($('.carousel-scene-active'));
+    if (typeof nextIndex === 'undefined') {
+      nextIndex = (previousIndex + 1) % $scenes.length;
+    }
+    // console.log(previousIndex, '->', nextIndex);
+
+    $scenes.eq(previousIndex).fadeOut('slow');
+    $scenes.removeClass('carousel-scene-active');
+
+    $scenes.eq(nextIndex).fadeIn('slow');
+    $scenes.eq(nextIndex).addClass('carousel-scene-active');
+
+    $dots.removeClass('carousel-dot-active');
+    $dots.eq(nextIndex).addClass('carousel-dot-active');
+  }
+
   $(document).ready(function(){
+    initCarousel();
+
     $('.carousel-dot').click(function(){
-      $('.carousel-scene').removeClass('carousel-scene-active');
-      var index = $('.carousel-dot').index(this)
-      $('.carousel-scene').eq(index).addClass('carousel-scene-active');
-      $('.carousel-dot').removeClass('carousel-dot-active');
-      $(this).addClass('carousel-dot-active');
+      var $dots = $('.carousel-dot');
+      var nextIndex = $dots.index(this);
+      showNextScene(nextIndex);
     });
   });
 </script>
