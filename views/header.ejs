@@ -64,20 +64,33 @@
         <div class="navbar-right">
 
 
-            <div class="account-photo" style="background-image: url('/images/avatars/sample-avatar.jpg');">
-            </div>
+            <% if (typeof user !== 'undefined') { %>
+                <div class="account-photo" style="background-image: url('/images/avatars/<%= user.userAvatar %>');"></div>
 
-            <div class="navbar-button">
-                <a href="/post" class="button">New Annis</a>
-            </div>
+                <div class="navbar-button navbar-post">
+                    <a href="/post" class="button">New Annis</a>
+                </div>
 
-            <div class="plus navbar-plus-icon">
-                <a href="/post"><i class="fas fa-plus"></i></a>
-            </div>
+                <div class="plus navbar-plus-icon">
+                    <a href="/post"><i class="fas fa-plus"></i></a>
+                </div>
 
-            <div class="navbar-notification-icon">
-                <a href="/notifications"><i class="fas fa-bell"></i></a>
-            </div>
+                <div class="navbar-notification-icon">
+                    <a href="/notifications"><i class="fas fa-bell"></i></a>
+                </div>
+            <% } else { %>
+                <div class="navbar-button">
+                    <a href="/signup" class="button">Sign Up</a>
+                </div>
+                <div class="navbar-button">
+                    <a href="/login" class="button">Log In</a>
+                </div>
+
+
+                <div class="plus navbar-plus-icon">
+                    <a href="/signup"><i class="fas fa-user-circle"></i></a>
+                </div>
+            <% } %>
 
             <div id="navbar-searchbar">
                 <div class="navbar-search-input">
