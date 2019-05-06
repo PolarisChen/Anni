@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/post.css">
     <link rel="stylesheet" href="/stylesheets/card.css">
 </head>
 
@@ -17,141 +16,119 @@
 
 <%- include('header', { user: currentUser }) %>
 
-<div class="post_body">
-    <h1>Add a new post</h1>
-    <p>Type</p>
-
-    <div class="pure-u-1 pure-u-md-1-6 custom-select1">
-        <select id="select_type" style="width:100%; min-width: 115px">
-            <option value="0">Choose type:</option>
-            <option id="birth" value="1">Birthday</option>
-            <option id="death" value="2">Deathday</option>
-            <option value="3">Invention</option>
-            <option value="4">Festival</option>
-            <option value="5">Day/Event</option>
-            <option value="6">Starting Point</option>
-        </select>
-    </div>
-
-    <p>Title</p>
-
-    <form class="pure-u-1 pure-u-md-3-4 textarea1">
-        <textarea id="title_input" class="textarea_post1" style="width:100%; min-width: 115px" placeholder="e.g. Vincent van Gogh’s 100th Birthday"></textarea>
-    </form>
-
-    <p>Time</p>
-
-    <div class="pure-g container">
-        <div class="pure-u-1 pure-u-md-1-6 custom-select2">
-            <select id="select_month"style="width:100%; min-width: 115px">
-                <option value="0">Month</option>
-                <option value="1">January</option>
-                <option value="2">Febuary</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">Sepetember</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
+<div class="container-content container-page">
+    <h1 class="page-title">Post New Anni</h1>
+    <div class="input-group">
+        <label>Type</label>
+        <div class="input-box">
+            <select id="select-type">
+                <option value="0">Choose Type:</option>
+                <option id="birth" value="1">Birthday</option>
+                <option id="death" value="2">Deathday</option>
+                <option value="3">Invention</option>
+                <option value="4">Festival</option>
+                <option value="5">Day/Event</option>
+                <option value="6">Starting Point</option>
             </select>
         </div>
-
-        <div class="pure-u-1 pure-u-md-1-6 custom-select3">
-            <select id="select_date"style="width:100%; min-width: 115px">
-                <option value="0">Date</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-            </select>
+    </div>
+    <div class="input-group">
+        <label>Title</label>
+        <div class="input-box">
+            <input type="text" placeholder="Title, e.g. Vincent van Gogh’s Birthday" id="input-title">
         </div>
-        <form class="pure-u-1 pure-u-md-1-6 textarea_date">
-            <textarea id="year_input" class="textarea_post4" style="width:100%; min-width: 115px" placeholder="2019"></textarea>
-        </form>
+    </div>
+    <div class="input-group">
+        <label>Date</label>
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <div class="input-box">
+                    <select id="select-month">
+                        <option value="0">Month</option>
+                        <option value="1">January</option>
+                        <option value="2">Febuary</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">Sepetember</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3">
+                <div class="input-box">
+                    <select id="select-day">
+                        <option value="0">Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3">
+                <div class="input-box">
+                    <input type="text" placeholder="Year" id="input-year" value="2019">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <label>Description</label>
+        <div class="input-box input-box-l">
+            <textarea id="input-desc" rows="4" placeholder="Brief introduction within 300 words (including time, duration, location, related person, influence...)"></textarea>
+        </div>
     </div>
 
-
-
-    <div class="clearfix">
-    </div>
-
-    <p>Cover image</p>
-
-
-    <span class="upload_post">
-            <div class="pure-u-1 pure-u-md-1-2 post_plus">+</div>
-                <br/><br/>Upload from computer
-                <br/><br/>or<br/><br/>
-
-          <div class="pure-g container">
-                <form class="pure-u-1 pure-u-md-1-2 textarea_post3">
-                  <textarea id="imgurl_input" class="textarea_post3" style="width:100%; min-width: 15px" placeholder="Add image url here"></textarea>
-                </form>
-            <button class="pure-u-1 pure-u-md-1-4 button_post4">Upload</button> </div>
-        </span>
-
-    <p>Basic infomation</p>
-
-    <form class="pure-u-1 pure-u-md-3-4 textarea_post2">
-        <textarea id="information_input" class="textarea_post2" style="width:100%; min-width: 60px" placeholder="Brief introduction within 300 words (including time, duration, location, related person, influence...)"></textarea>
-    </form>
-
-
-    <p>Album</p>
-
-    <button id="add_local" class="button_post1">Add an image from local</button>
-
-    <br>
-
-    <button id="post" class="button_post2">Submit</button>
-
+    <a class="btn-primary" id="btn-post">Post</a>
 </div>
 
+<input type="hidden" id="user-id" value="<%= currentUser.userId %>">
 
 <%- include('footer') %>
 
-<script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function(){
-    $('#post').click(function() {
-      // var value= $('#submit option:selected').attr('value');
-      postData();
+    $('#btn-post').click(function() {
+      postAnni();
     })
   })
 
-  function postData() {
-    var type = Number($('#select_type').val());
+  function postAnni() {
+    var type = Number($('#select-type').val());
     var markType = 0;
     if (type === 1) {
       markType = 1;
@@ -159,37 +136,36 @@
       markType = 2;
     }
     var data = {
-      title: $('#title_input').val(),
-      desc: $('#information_input').val(),
-      quote: "",
-      month: $('#select_month').val(),
-      day: $('#select_date').val(),
-      year: $('#year_input').val(),
-      userId: $('#userId').val(),
+      title: $('#input-title').val(),
+      desc: $('#input-desc').val(),
+      quote: '',
+      month: Number($('#select-month').val()),
+      day: Number($('#select-day').val()),
+      year: Number($('#input-year').val()),
+      userId: Number($('#user-id').val()),
       type: type,
-      cover: $('#add_local').val(),
-      url: $('#imgurl_input').val(),
+      cover: 'default-cover.jpg',
       markType: markType
     };
     console.log(data);
 
-    // $.ajax({
-    //     url: '',
-    //     method: 'POST',
-    //     data: data,
-    //     dataType: 'json'
-    // }).done(function(ret) {
-    //     console.log(ret);
-    //     if (ret.success) {
-    //         // Succeeded
-    //         console.log(ret.data);
-    //         window.location.href = "/annis/" + ret.data.anniId;
-    //     } else {
-    //         // Failed
-    //         console.log(ret.msg);
-    //         alert(ret.msg);
-    //     }
-    // });
+    $.ajax({
+        url: '/post',
+        method: 'POST',
+        data: data,
+        dataType: 'json'
+    }).done(function(ret) {
+        console.log(ret);
+        if (ret.success) {
+            // Succeeded
+            console.log(ret.data);
+            window.location.href = "/annis/" + ret.data.anniId;
+        } else {
+            // Failed
+            console.log(ret.msg);
+            alert(ret.msg);
+        }
+    });
   }
 </script>
 

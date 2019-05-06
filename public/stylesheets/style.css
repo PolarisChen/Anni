@@ -1361,8 +1361,9 @@ header {
 
 .input-box {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
   overflow: hidden;
   height: 45px;
   border: 1px solid #BDBDBD;
@@ -1370,19 +1371,38 @@ header {
   background: #fff;
 }
 
-.input-box input {
-  padding-top: 9px;
-  padding-bottom: 9px;
+.input-box input,
+.input-box textarea,
+.input-box select {
   padding-left: 10px;
   border: 0;
   outline: none;
   width: 100%;
-  height: 25px;
+  height: 100%;
   font-family: 'Lato';
   font-weight: 300;
-  font-size: .8em;
+  font-size: 14px;
+  line-height: 14px;
   color: #000;
+}
 
+.input-box textarea {
+  padding: 14px 10px;
+}
+.input-box-l {
+  height: 240px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+.input-group label {
+  display: block;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
 }
 
 .memo-send-icon {

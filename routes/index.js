@@ -8,7 +8,7 @@ const sessionChecker = require('../middleware/sessionChecker');
 router.get('/', (req, res, next) => {
   anniService.getAllAnnis().then(ret => {
     const annis = {
-      features: ret.data.slice(0, 2),
+      features: ret.data.slice(0, 4),
       populars: ret.data,
       upcomings: ret.data
     }
@@ -16,6 +16,9 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get('/about', (req, res, next) => {
+  res.render('about', { currentUser: req.session, title: 'About' });
+});
 
 router.get('/notifications', sessionChecker, (req, res, next) => {
   userService.getNotifications(req.session.userId).then((ret)=>{
@@ -24,14 +27,14 @@ router.get('/notifications', sessionChecker, (req, res, next) => {
   });
 });
 
-// router.get('/post', sessionChecker, (req, res, next) => {
-router.get('/post', (req, res, next) => {
+router.get('/post', sessionChecker, (req, res, next) => {
+// router.get('/post', (req, res, next) => {
   res.render('anni-post', { currentUser: req.session, title: 'Post' });
 });
 
 router.post('/post', sessionChecker, (req, res, next) => {
-  const {title, desc, quote, month, day, type, markType, cover, userId} = req.body;
-  anniService.addAnni(title, desc, quote, month, day, type, markType, cover, userId).then((ret)=>{
+  const {title, desc, quote, year, month, day, type, markType, cover, userId} = req.body;
+  anniService.addAnni(title, desc, quote, year, month, day, type, markType, cover, userId).then((ret)=>{
     res.json(ret);
   });
 });

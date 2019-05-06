@@ -64,9 +64,9 @@ module.exports = {
     }
   },
 
-  addAnni: async (title, desc, quote, month, day, type, markType, cover, userId) => {
+  addAnni: async (title, desc, quote, year, month, day, type, markType, cover, userId) => {
     try {
-      const ret = await anniDao.add(title, desc, quote, month, day, type, markType, cover, userId);
+      const ret = await anniDao.add(title, desc, quote, year, month, day, type, markType, cover, userId);
       if (typeof ret === 'undefined') {
         return {
           success: 0,
