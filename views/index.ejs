@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400|Prata">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: #333333;
+        }
         .container-full {
             width: 100%;
         }
@@ -66,6 +72,82 @@
         .carousel-dot:hover {
             background-color: #BC8374;
         }
+
+        .container-content {
+            margin: 0 10%;
+        }
+
+        .section-title {
+            padding: 24px 0;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #828282;
+        }
+        .card-pop {
+            display: block;
+            min-height: 240px;
+            margin-bottom: 24px;
+            background: #faf5f1;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+        .card-pop:hover {
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
+            /*box-shadow: 0 2px 16px 0 rgba(188,131,116,0.4);*/
+        }
+        .card-pop-image {
+            width: 100%;
+            min-height: 240px;
+            background-color: #C6A48F;
+            background-position: center;
+            background-size: cover;
+        }
+        .card-pop-text {
+            height: 100%;
+            padding: 32px 24px;
+        }
+        .card-pop-title {
+            margin-bottom: 6px;
+            font-family: 'Prata', serif;
+            font-size: 24px;
+        }
+        .card-pop-date {
+            margin-bottom: 18px;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+        }
+        .card-pop-actions {
+            margin-bottom: 18px;
+        }
+        .card-pop-action {
+            display: inline-block;
+            margin-right: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+        .card-pop-action:hover {
+            color: #BC8374;
+        }
+        .card-pop-comment {
+            /*margin-bottom: 12px;*/
+            display: flex;
+        }
+        .card-pop-comment .card-avatar {
+            width: 36px;
+            height: 36px;
+            margin-right: 12px;
+            border-radius: 50%;
+            background-color: #C6A48F;
+            background-position: center;
+            background-size: cover;
+            flex-shrink: 0;
+        }
+        .card-pop-comment .card-text {
+            /*width: 80%;*/
+        }
     </style>
 </head>
 <body>
@@ -97,51 +179,59 @@
     </div>
 </div>
 
-<div class="pure-g container">
-    <div class="pure-u-1 pure-u-md-1-3">
-        <nav></nav>
-    </div>
-    <div class="pure-u-1 pure-u-md-2-3">
-        <main>
-            <div>
-                <label>Email:</label>
-                <input type="text" id="input-email"/>
+<div class="container-content">
+    <h3 class="section-title">POPULAR ON ANNI</h3>
+    <a class="pure-g card-pop">
+        <div class="pure-u-1 pure-u-md-2-5">
+            <div class="card-pop-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
+        </div>
+        <div class="pure-u-1 pure-u-md-3-5">
+            <div class="card-pop-text">
+                <h4 class="card-pop-title">Allen Poe's Birthday</h4>
+                <p class="card-pop-date">Jan 19</p>
+                <div class="card-pop-actions">
+                    <div class="card-pop-action">
+                        <i class="fas fa-heart"></i>
+                        <span>3012</span>
+                    </div>
+                    <div class="card-pop-action">
+                        <i class="fas fa-comment"></i>
+                        <span>3012</span>
+                    </div>
+                </div>
+                <div class="card-pop-comment">
+                    <div class="card-avatar" style="background-image: url('/images/avatars/sample-avatar.jpg')"></div>
+                    <p class="card-text">Novelist and play writers really need to thank him for inventing a universal cipher that can be easily applied to any suspense stories (way more than needed)</p>
+                </div>
             </div>
-            <div>
-                <label>Password:</label>
-                <input type="password" id="input-password"/>
+        </div>
+    </a>
+
+    <a class="pure-g card-pop">
+        <div class="pure-u-1 pure-u-md-2-5">
+            <div class="card-pop-image" style="background-image: url('/images/annis/sample-1.jpg')"></div>
+        </div>
+        <div class="pure-u-1 pure-u-md-3-5">
+            <div class="card-pop-text">
+                <h4 class="card-pop-title">Allen Poe's Birthday</h4>
+                <p class="card-pop-date">Jan 19</p>
+                <div class="card-pop-actions">
+                    <div class="card-pop-action">
+                        <i class="fas fa-heart"></i>
+                        <span>3012</span>
+                    </div>
+                    <div class="card-pop-action">
+                        <i class="fas fa-comment"></i>
+                        <span>3012</span>
+                    </div>
+                </div>
+                <div class="card-pop-comment">
+                    <div class="card-avatar" style="background-image: url('/images/avatars/sample-avatar.jpg')"></div>
+                    <p class="card-text">Novelist and play writers really need to thank him for inventing a universal cipher that can be easily applied to any suspense stories (way more than needed)</p>
+                </div>
             </div>
-            <div>
-                <input class="btn btn-primary" id="btn-login" value="Log In" data-str="sdsd"/>
-            </div>
-
-            <div class="comments">
-                <div class="comment">
-                    <p>Name</p>
-                    <p>Content</p>
-                </div>
-                <div class="comment">
-                    <p>Name</p>
-                    <p>Content</p>
-                </div>
-                <div class="comment">
-                    <p>Name</p>
-                    <p>Content</p>
-                </div>
-                <div class="comment">
-                    <p>Name</p>
-                    <p>Content</p>
-                </div>
-                <div class="comment">
-                    <p>Name</p>
-                    <p>Content</p>
-                </div>
-
-
-
-            </div>
-        </main>
-    </div>
+        </div>
+    </a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
