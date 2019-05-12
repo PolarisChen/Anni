@@ -34,7 +34,7 @@ body {
 .carousel-date {
   margin-left: 6px;
   margin-right: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-family: 'Prata', serif;
   font-size: 36px;
 }
@@ -53,8 +53,8 @@ body {
   text-align: center;
 }
 .carousel-dot {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   display: inline-block;
   margin: 0 3px;
   border-radius: 6px;
@@ -137,7 +137,7 @@ body {
 .card-title {
   margin-bottom: 6px;
   font-family: 'Prata', serif;
-  font-size: 24px;
+  font-size: 1.2em;
   line-height: 24px;
 }
 .card-date {
@@ -151,11 +151,17 @@ body {
 .card-action {
   display: inline-block;
   margin-right: 12px;
-  font-size: 18px;
-  color: #828282;
+  font-size: 16px;
+  font-weight:300;
+  color: #BDBDBD;
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
+
+.card-action span{
+  color: #828282;
+}
+
 .card-action:hover {
   color: #BC8374;
 }

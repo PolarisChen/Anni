@@ -690,7 +690,7 @@ header {
   right:0;
   margin-top: 30px;
   font-family: "Lato";
-  font-weight: 100;
+  font-weight: 200;
   font-size: 3em;
   color: #C6A48F;
   text-align: right;
@@ -876,6 +876,7 @@ header {
   border-radius: 100px;
   background: #fff;
   box-shadow: 0 0 5px rgb(0,0,0,.2);
+  align-items: center;
 
 }
 .button-slider-icon i {
@@ -885,7 +886,16 @@ header {
   align-items: center;
   font-size: 1.3em;
   color: #C6A48F;
-  text-align: center;
+}
+
+#icon-class {
+  padding-left: 16px;
+}
+
+@media only screen and (max-width: 800px){
+  #icon-class {
+    padding-left: 0;
+  }
 }
 
 .slider-background {
