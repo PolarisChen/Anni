@@ -87,44 +87,6 @@
 
 
 
-      <script>
-        // var markType= Number($('#anni-markType').val() )
-          $(".button-text-container").append().html("<p>Slide to celebrate!</p>");
-          $(".button-slider-icon").draggable({
-            axis: 'x',
-            containment: 'parent',
-            drag: function(even, ui){
-              if(ui.position.left>100){
-                // $(".button-text-container p").hide();
-                // $(".button-text-container").append().html("<p>Thank you!</p>");
-              }
-              if (ui.position.left>151){
-                $(".button-slider-icon").css("background","#C6A48F", "right","0");
-                $(".button-slider-icon i").css("color","#fff");
-                $(".button-text-container").append().html("<p>Thank you!</p>");
-              }
-            },
-            stop: function(event, ui){
-              if(ui.position.left<150){
-                $(this).animate({
-                  left:2
-                })
-                $(this).css("background","#fff")
-                $(".button-slider-icon i").css("color","#C6A48F");
-                $(".button-text-container").append().html("<p>Slide to celebrate!</p>");
-
-              } else if(ui.position.left>151){
-                $(this).animate({
-                  left:188
-                })
-              }
-            }
-
-          })
-
-      </script>
-
-
 
     </div>
 
@@ -336,6 +298,53 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+
+<script>
+
+  $(".button-text-container").append().html("<p>Slide to celebrate!</p>");
+  $(".button-slider-icon").draggable({
+    axis: 'x',
+    containment: 'parent',
+    drag: function(even, ui){
+      if(ui.position.left>100){
+        // $(".button-text-container p").hide();
+        // $(".button-text-container").append().html("<p>Thank you!</p>");
+      }
+      if (ui.position.left>151){
+        $(".button-slider-icon").css("background","#C6A48F", "right","0");
+        $(".button-slider-icon i").css("color","#fff");
+        $(".button-text-container").append().html("<p>Thank you!</p>");
+      }
+    },
+    stop: function(event, ui){
+      if(ui.position.left<150){
+        $(this).animate({
+          left:2
+        })
+        $(this).css("background","#fff")
+        $(".button-slider-icon i").css("color","#C6A48F");
+        $(".button-text-container").append().html("<p>Slide to celebrate!</p>");
+
+      } else if(ui.position.left>151){
+        $(this).animate({
+          left:188
+        })
+      }
+    }
+
+
+  })
+
+
+
+
+
+</script>
+
 
 <input type="hidden" id="user-id" value="<%= currentUser.userId %>">
 <input type="hidden" id="anni-id" value="<%= id %>">
