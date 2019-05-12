@@ -53,18 +53,18 @@ body {
   text-align: center;
 }
 .carousel-dot {
-  width: 32px;
+  width: 12px;
   height: 12px;
   display: inline-block;
   margin: 0 3px;
   border-radius: 6px;
-  background-color: #BDBDBD;
+  background-color: #fff;
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
 .carousel-dot-active,
 .carousel-dot:hover {
-  background-color: #BC8374;
+  background-color: #C6A48F;
 }
 
 .container-content {
@@ -121,13 +121,19 @@ body {
   text-decoration: none;
   cursor: pointer;
   color: #333333;
-  background: #faf5f1;
+  /*background: #faf5f1;*/
   transition: all .3s ease-in-out;
 }
 .card:hover {
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
-  /*box-shadow: 0 2px 16px 0 rgba(188,131,116,0.4);*/
+  background: #faf5f1;
 }
+
+
+.card-hover{
+  transform: scale(1.05);
+  transition: all .6s ease-in-out;
+}
+
 .card-title {
   margin-bottom: 6px;
   font-family: 'Prata', serif;
@@ -200,9 +206,17 @@ body {
   min-height: 180px;
   background-color: #C6A48F;
   background-position: center;
-  background-size: cover;
+  overflow: hidden;
 }
 .card-classic-text {
   padding: 24px 24px;
   min-height: 136px;
+}
+
+.card-classic-inner-image {
+  width: 100%;
+  min-height: 180px;
+  background-color: #C6A48F;
+  background-position: center;
+  background-size: cover;
 }

@@ -44,7 +44,9 @@
     <% annis.populars.forEach(function(anni){ %>
     <a class="pure-g card card-pop" href="/annis/<%= anni.id %>">
         <div class="pure-u-1 pure-u-md-2-5">
-            <div class="card-pop-image" style="background-image: url('/images/annis/<%= anni.cover%>')"></div>
+            <div class="card-classic-image" style="height:100%;">
+                <div class="card-classic-inner-image" style="height:100%; background-image: url('/images/annis/<%= anni.cover%>')"></div>
+            </div>
         </div>
         <div class="pure-u-1 pure-u-md-3-5">
             <div class="card-pop-text">
@@ -83,7 +85,9 @@
         <% annis.upcomings.forEach(function(anni){ %>
         <div class="pure-u-1 pure-u-md-1-3">
             <a class="card card-classic" href="/annis/<%= anni.id %>">
-                <div class="card-classic-image" style="background-image: url('/images/annis/<%= anni.cover%>')"></div>
+                <div class="card-classic-image">
+                    <div class="card-classic-inner-image" style="background-image: url('/images/annis/<%= anni.cover%>')"></div>
+                </div>
                 <div class="card-classic-text">
                     <h4 class="card-title"><%= anni.title%></h4>
                     <p class="card-date"><%= months[anni.month - 1]%> <%= anni.day%></p>
@@ -112,6 +116,20 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
+
+  $(".card").hover(function(){
+    $(this).find(".card-classic-inner-image").addClass("card-hover")
+  })
+  $(".card").mouseleave(function(){
+    $(this).find(".card-classic-inner-image").removeClass("card-hover")
+  })
+
+  $(document).ready(function(){
+    $('#post').click(function() {
+      // var value= $('#submit option:selected').attr('value');
+      postData();
+    })
+  })
   function initCarousel() {
     var $dots = $('.carousel-dot');
     var $scenes = $('.carousel-scene');

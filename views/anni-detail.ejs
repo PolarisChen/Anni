@@ -63,7 +63,16 @@
       <div class="cover-slider-container">
         <div class="slider-background">
           <div class="button-slider-icon">
-            <i class="fas fa-birthday-cake"></i>
+            <!--<i class="fas fa-birthday-cake"></i>-->
+            <% if (markType === 1 ) { %>
+              <i class="fas fa-birthday-cake"></i>
+            <% }
+            if (markType === 0) { %>
+              <i class="fas fa-glass-cheers" style="padding-left:16px;"></i>
+             <%}%>
+            <% if (markType === 2){%>
+              <i class="fas fa-sad-tear"></i>
+            <%}%>
 
           </div>
           <div class="button-text-container">
@@ -74,8 +83,13 @@
         </div>
       </div>
 
+
+
+
+
       <script>
-          $(".button-text-container").append().html("<p>Slide to send a cake</p>");
+        // var markType= Number($('#anni-markType').val() )
+          $(".button-text-container").append().html("<p>Slide to celebrate!</p>");
           $(".button-slider-icon").draggable({
             axis: 'x',
             containment: 'parent',
@@ -97,7 +111,7 @@
                 })
                 $(this).css("background","#fff")
                 $(".button-slider-icon i").css("color","#C6A48F");
-                $(".button-text-container").append().html("<p>Slide to send a cake!</p>");
+                $(".button-text-container").append().html("<p>Slide to celebrate!</p>");
 
               } else if(ui.position.left>151){
                 $(this).animate({
@@ -331,7 +345,9 @@
 
 
 
+
 <script>
+
   $(document).ready(function(){
     $(".album-detail-popup-container").hide();
     // $(".album-container").click(function(){
