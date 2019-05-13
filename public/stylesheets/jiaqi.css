@@ -12,7 +12,6 @@
   display: flex;
   margin-top: 80px;
   height: 200px;
-  background-image: url("img/user-banner.jpg");
   background-size: cover;
   background-position: center;
   animation: cover-img-scale 1.5s ease-in-out;
@@ -34,12 +33,14 @@
 .avatar {
   display: inline-block;
   flex-basis: 100px;
-  margin-top: 80px;
+  flex-shrink: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: 30px;
-  background-image: url("img/avatar-1.jpeg");
   background-size: cover;
   background-position: center;
-  clip-path: circle(50px at center);
+  border-radius: 50px;
+  z-index: 1;
 }
 
 .avatar:hover {
@@ -52,8 +53,9 @@
   /* Box-model */
   display: inline-block;
   float: right;
-  margin-top: 120px;
-  margin-left: 30px;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .avatarName {
@@ -77,19 +79,13 @@
 }
 
 /*User & Notification - sideBar*/
-.mainBox {
+#mainBox {
   width: 100%;
 }
 
 #sideBarBox,
 #contentBox {
   display: none;
-}
-
-#sideBarBox {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
 }
 
 .sideBar {
@@ -381,12 +377,17 @@
   color: #C6A48F;
 }
 
+.sticky {
+  top: 0;
+}
 
-
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 768px) {
   .avatar {
     flex-basis: 80px;
-    clip-path: circle(40px at center);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    flex-shrink: 0;
+    border-radius: 40px;
   }
 
   .postedAnnisList,
@@ -410,8 +411,6 @@
   }
 
   #sideBarBox {
-    /*position: -webkit-sticky;*/
-    /*position: sticky;*/
     position: static;
     top: 0;
   }
