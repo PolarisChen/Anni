@@ -21,6 +21,7 @@ let anni = {
   insertImage: 'INSERT INTO anni_images(anniId, image, caption) VALUES (?,?,?)',
   deleteImage: 'DELETE FROM anni_images WHERE id=?',
   queryImage: 'SELECT * FROM anni_images WHERE anniId=?',
+  insertComment: 'INSERT INTO comments(content, parentId, userId, anniId) VALUES(?,?,?,?)',
 };
 
 module.exports = anni;

@@ -28,6 +28,7 @@ module.exports = {
         for (let i = 0; i < annis.length; i++) {
           let anni = annis[i];
           await decorateAnni(anni, anni.id);
+          // await anniDao.addData(anni);
         }
         return {
           success: 1,

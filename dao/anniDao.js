@@ -2,12 +2,40 @@
 let pool = require('../util/dbUtil');
 let $sql = require('./anniSqlMapping');
 
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (+max - +min)) + +min;
+}
+
 module.exports = {
   add: async (title, desc, quote, year, month, day, type, markType, cover, userId) => {
     try {
       const ret = await pool.query($sql.insert, [title, desc, quote, year, month, day, type, markType, cover, userId]);
       console.log('add', ret);
       return ret;
+    } catch(err) {
+      console.log(err);
+      return err;
+    }
+  },
+  addData: async (anni) => {
+    try {
+      for (let i = 1; i <= 4; i++) {
+        const anniId = anni.id;
+        if (getRandom(0, 4) > 0) await pool.query($sql.insertLike, [anniId, i]);
+        if (getRandom(0, 4) > 0) await pool.query($sql.insertBookmark, [anniId, i]);
+        if (getRandom(0, 4) > 0) await pool.query($sql.insertMark, [anniId, i]);
+        const contents = [
+          'It is a wonderful day!',
+          'Science and technology revolutionize our lives, but memory, tradition and myth frame our response.',
+          'It is sadder to find the past again and find it inadequate to the present than it is to have it elude you and remain forever a harmonious conception of memory.',
+          'Memory is the treasure house of the mind wherein the monuments thereof are kept and preserved.',
+          'Memory... is the diary that we all carry about with us.',
+          'I have a memory like an elephant. I remember every elephant I\'ve ever met.'
+        ];
+        const content = contents[getRandom(1, 100) % contents.length];
+        if (getRandom(0, 8) > 0) await pool.query($sql.insertComment, [content, 0, i, anniId]);
+      }
+      return {};
     } catch(err) {
       console.log(err);
       return err;
